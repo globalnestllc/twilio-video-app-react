@@ -29,6 +29,12 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(1),
       width: 200,
     },
+    textFieldnone: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+      display:'none',
+    },
     loadingSpinner: {
       marginLeft: '1em',
     },
@@ -43,18 +49,27 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function MenuBar() {
   const classes = useStyles();
   const { URLRoomName } = useParams();
+  const { uName } = useParams();
+  const { eName } = useParams();
   const { user, getToken, isFetching } = useAppState();
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
 
   const [name, setName] = useState<string>(user?.displayName || '');
   const [roomName, setRoomName] = useState<string>('');
+  const [eventName, setEventmName] = useState<string>('');                                         
 
   useEffect(() => {
     if (URLRoomName) {
       setRoomName(URLRoomName);
+    }  
+    if(uName){
+      setName(uName);    
     }
-  }, [URLRoomName]);
+    if(eName){
+      setEventmName(eName);
+    }                                       
+  }, [URLRoomName,uName,eName]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -95,7 +110,7 @@ export default function MenuBar() {
             <TextField
               id="menu-room"
               label="Room"
-              className={classes.textField}
+              className={classes.textFieldnone}
               value={roomName}
               onChange={handleRoomNameChange}
               margin="dense"
@@ -111,7 +126,7 @@ export default function MenuBar() {
             {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
           </form>
         ) : (
-          <h3>{roomName}</h3>
+          <h3>{eventName}</h3>
         )}
         <ToggleFullscreenButton />
         <Menu />
