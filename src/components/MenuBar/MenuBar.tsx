@@ -51,13 +51,17 @@ export default function MenuBar() {
   const { URLRoomName } = useParams();
   const { uName } = useParams();
   const { eName } = useParams();
+  const { vType } = useParams();
+  const { recording } = useParams();
   const { user, getToken, isFetching } = useAppState();
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
 
   const [name, setName] = useState<string>(user?.displayName || '');
   const [roomName, setRoomName] = useState<string>('');
-  const [eventName, setEventmName] = useState<string>('');                                         
+  const [eventName, setEventmName] = useState<string>('');     
+  const [videoType, setVideoType] = useState<string>('');
+  const [recordingType, setRecordingType] = useState<string>('');                                         
 
   useEffect(() => {
     if (URLRoomName) {
@@ -68,8 +72,14 @@ export default function MenuBar() {
     }
     if(eName){
       setEventmName(eName);
+    }  
+    if(vType){
+      setVideoType(vType);
+    }
+    if(recording){
+      setRecordingType(recording);
     }                                       
-  }, [URLRoomName,uName,eName]);
+  }, [URLRoomName,uName,eName,vType,recording]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -85,7 +95,7 @@ export default function MenuBar() {
     if (!window.location.origin.includes('twil.io')) {
       window.history.replaceState(null, '', window.encodeURI(`/room/${roomName}`));
     }
-    getToken(name, roomName).then(token => connect(token));
+    getToken(name, roomName,videoType,recordingType).then(token => connect(token));
   };
 
   return (
