@@ -49,10 +49,10 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   } else {
     contextValue = {
       ...contextValue,
-      getToken: async (identity, roomName,room_type,recording) => {
+      getToken: async (identity, unique_name,room_type,recording) => {
         const headers = new window.Headers();
         const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
-        const params = new window.URLSearchParams({ identity, roomName, room_type, recording });
+        const params = new window.URLSearchParams({ identity, unique_name, room_type, recording });
 
         return fetch(`${endpoint}?${params}`, { headers }).then(res => res.text());
       },
