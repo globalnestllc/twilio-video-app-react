@@ -48,6 +48,12 @@ const useStyles = makeStyles((theme: Theme) =>
     marginL20:{
       marginLeft:'200px',
     },
+    meetingOver:{
+      marginLeft: '150px',
+      color: 'red!important;',
+      fontWeight: 'bold',
+      background: 'transparent!important;',
+    },
   })
 );
 
@@ -76,6 +82,7 @@ export default function MenuBar() {
   const [calldis, setCallDis] = useState<string>('false');
   const [endTime ,setEndTime] =useState<string>('');
   const [ timezone, setTimeZone] = useState('');
+  const [ enable,setEnable] = useState('true');                                         
   const { room } = useVideoContext();
                                            
   const tick = () => {
@@ -132,6 +139,9 @@ export default function MenuBar() {
           setMinute(Math.abs(Math.round(diff / 60)));
           setSecond(Math.abs(Math.round(diff %60)));
         }
+        else{
+          setEnable('false');
+        }                                  
       }
     }
     let timerID = setInterval(() => tick(), 1000);
@@ -183,6 +193,7 @@ export default function MenuBar() {
               onChange={handleRoomNameChange}
               margin="dense"
             />
+            { enable=='true' ?(
             <Button
               type="submit"
               color="primary"
@@ -191,6 +202,17 @@ export default function MenuBar() {
             >
               Join Room
             </Button>
+            ) : (
+              <Button
+              type="submit"
+              color="primary"
+              variant="contained"
+              className={classes.meetingOver}
+              disabled
+            >
+              Meeting is over 
+            </Button>
+            )}
             {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
           </form>
         ) : (
