@@ -133,7 +133,10 @@ export default function MenuBar() {
           setSecond(Math.abs(Math.round(diff %60)));
         }
       }
-    }                                       
+    }
+    let timerID = setInterval(() => tick(), 1000);
+  
+    return () => clearInterval(timerID);                                       
   }, [URLRoomName,uName,eName,vType,recording,second,minute,end,endTime]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
