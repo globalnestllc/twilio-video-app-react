@@ -55,7 +55,7 @@ ReactDOM.render(
           <PrivateRoute exact path="/">
             <VideoApp />
           </PrivateRoute>
-          <PrivateRoute path="/room/:URLRoomName/:uName/:eName/:vType/:recording">
+          <PrivateRoute path="/room/:URLRoomName/:uName/:eName/:vType/:recording/:end/:zone">
             <VideoApp />
           </PrivateRoute>
           <Route path="/login">
