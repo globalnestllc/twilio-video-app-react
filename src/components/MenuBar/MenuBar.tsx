@@ -80,7 +80,7 @@ export default function MenuBar() {
                                            
   const tick = () => {
    const currentTime = moment.tz(new Date(), timezone).format("MM/DD/YYYY LT"); 
-  // console.log(endTime+" | "+currentTime);console.log(new Date(currentTime) > new Date(endTime));
+   console.log(endTime+" | "+currentTime);console.log(new Date(currentTime) > new Date(endTime));
   //console.log(timezone);
     if(second > 0){
       setSecond(second => second-1);
