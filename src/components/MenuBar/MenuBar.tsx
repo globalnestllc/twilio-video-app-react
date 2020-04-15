@@ -90,12 +90,12 @@ export default function MenuBar() {
        // console.log("sec : "+second+"  | Min : "+minute);
         if(roomState === 'connected'){
           room.disconnect();
-          window.close();                                 
+         // window.close();                                 
         }
         if(new Date(currentTime) > new Date(endTime)){
           console.log("Came h e r e.. ");
          // room.disconnect();
-          window.close();
+          //window.close();
         }
       }else{
         setMinute(minute => minute-1);
