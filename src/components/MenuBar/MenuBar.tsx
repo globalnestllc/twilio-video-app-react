@@ -14,6 +14,8 @@ import { useParams } from 'react-router-dom';
 import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import { Typography } from '@material-ui/core';
+import moment from 'moment';
+import 'moment-timezone';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,6 +45,9 @@ const useStyles = makeStyles((theme: Theme) =>
       minWidth: '200px',
       fontWeight: 600,
     },
+    marginL20:{
+      marginLeft:'200px',
+    },
   })
 );
 
@@ -53,6 +58,8 @@ export default function MenuBar() {
   const { eName } = useParams();
   const { vType } = useParams();
   const { recording } = useParams();
+  const { end } = useParams();
+  const { zone } = useParams();
   const { user, getToken, isFetching } = useAppState();
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
@@ -61,7 +68,41 @@ export default function MenuBar() {
   const [roomName, setRoomName] = useState<string>('');
   const [eventName, setEventmName] = useState<string>('');     
   const [videoType, setVideoType] = useState<string>('');
-  const [recordingType, setRecordingType] = useState<string>('');                                         
+  const [recordingType, setRecordingType] = useState<string>('');  
+  //Timer Code
+  
+  const [second, setSecond] = useState(0);
+  const [minute, setMinute] = useState(0);
+  const [calldis, setCallDis] = useState<string>('false');
+  const [endTime ,setEndTime] =useState<string>('');
+  const [ timezone, setTimeZone] = useState('');
+  const { room } = useVideoContext();
+                                           
+  const tick = () => {
+   const currentTime = moment.tz(new Date(), timezone).format("MM/DD/YYYY LT"); 
+  // console.log(endTime+" | "+currentTime);console.log(new Date(currentTime) > new Date(endTime));
+  //console.log(timezone);
+    if(second > 0){
+      setSecond(second => second-1);
+    }
+    if(second === 0){
+      if(minute === 0){
+       // console.log("sec : "+second+"  | Min : "+minute);
+        if(roomState === 'connected'){
+          room.disconnect();
+          window.close();                                 
+        }
+        if(new Date(currentTime) > new Date(endTime)){
+          console.log("Came h e r e.. ");
+         // room.disconnect();
+          window.close();
+        }
+      }else{
+        setMinute(minute => minute-1);
+        setSecond(59);  
+      }
+    }
+  }                                         
 
   useEffect(() => {
     if (URLRoomName) {
@@ -78,8 +119,22 @@ export default function MenuBar() {
     }
     if(recording){
       setRecordingType(recording);
+    }
+    if(end && zone){
+      setEndTime(end.replace(/-/g,"/"));
+      setTimeZone(zone.replace(/-/g,"/"));
+      if(endTime != '' && timezone!='' && calldis == 'false'){
+        setCallDis('true');
+        //console.log("Came here for end time 11:"+endTime+"  | zone: "+ timezone);
+        const currentTime = new Date(moment.tz(new Date(), timezone).format("MM/DD/YYYY LT"));
+        if(currentTime.getTime() < new Date(endTime).getTime()){
+          let diff = (currentTime.getTime() - new Date(endTime).getTime()) / 1000;
+          setMinute(Math.abs(Math.round(diff / 60)));
+          setSecond(Math.abs(Math.round(diff %60)));
+        }
+      }
     }                                       
-  }, [URLRoomName,uName,eName,vType,recording]);
+  }, [URLRoomName,uName,eName,vType,recording,second,minute,end,endTime]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -136,7 +191,7 @@ export default function MenuBar() {
             {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
           </form>
         ) : (
-          <h3>{eventName}</h3>
+          <h3>{eventName}  <span className={classes.marginL20}> </span>Time left : {minute}:{second < 10 ? `0${second}` : second}</h3>
         )}
         <ToggleFullscreenButton />
         <Menu />
