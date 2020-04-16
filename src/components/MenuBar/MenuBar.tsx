@@ -97,6 +97,7 @@ export default function MenuBar() {
        // console.log("sec : "+second+"  | Min : "+minute);
         if(roomState === 'connected'){
           room.disconnect();
+          setEnable('false');                                 
          // window.close();                                 
         }
         if(new Date(currentTime) > new Date(endTime)){
