@@ -66,6 +66,7 @@ export default function MenuBar() {
   const { recording } = useParams();
   const { end } = useParams();
   const { zone } = useParams();
+  const { base } = useParams();
   const { user, getToken, isFetching } = useAppState();
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
@@ -82,7 +83,8 @@ export default function MenuBar() {
   const [calldis, setCallDis] = useState<string>('false');
   const [endTime ,setEndTime] =useState<string>('');
   const [ timezone, setTimeZone] = useState('');
-  const [ enable,setEnable] = useState('true');                                         
+  const [ enable,setEnable] = useState('true'); 
+  const [ msg, setMsg ] = useState<string>('Meeting is over');                                         
   const { room } = useVideoContext();
                                            
   const tick = () => {
@@ -141,6 +143,7 @@ export default function MenuBar() {
           setSecond(Math.abs(Math.round(diff %60)));
         }
         else{
+          setMsg("MEETING IS OVER");                                 
           setEnable('false');
         }                                  
       }
@@ -164,7 +167,27 @@ export default function MenuBar() {
     if (!window.location.origin.includes('twil.io')) {
       window.history.replaceState(null, '', window.encodeURI(`/room/${roomName}`));
     }
-    getToken(name, roomName,videoType,recordingType).then(token => connect(token));
+    const headers = new window.Headers();
+    const b = base;
+    let url = "https://"+base+".force.com";
+    url = url+'/services/apexrest/BLN_ASC_MM_ScheduleStatus?meetingid='+roomName;
+    console.log(url);
+    fetch(url,{headers})
+    .then(res =>res.json())
+    .then((data)=>{
+     // console.log("Data",data);
+      const currentTime = new Date(moment.tz(new Date(), timezone).format("MM/DD/YYYY LT"));
+      if(data.aptStatus.toLowerCase() == 'cancelled'){
+        setMsg("Meeting is cancelled");
+        setEnable('false');
+      }else if(currentTime.getTime() <= new Date(data.starttime.replace(/-/g,"/")).getTime()){
+        setMsg("Meeting has not started.");
+        setEnable('false');
+      }
+      else{
+        getToken(name, roomName,videoType,recordingType).then(token => connect(token));
+      }
+    })
   };
 
   return (
@@ -211,7 +234,7 @@ export default function MenuBar() {
               className={classes.meetingOver}
               disabled
             >
-              Meeting is over 
+              { msg }
             </Button>
             )}
             {(isConnecting || isFetching) && <CircularProgress className={classes.loadingSpinner} />}
