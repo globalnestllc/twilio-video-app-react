@@ -5,9 +5,11 @@ import usePasscodeAuth from './usePasscodeAuth/usePasscodeAuth';
 import { User } from 'firebase';
 
 export interface StateContextType {
+  displayName: string;
   error: TwilioError | null;
   setError(error: TwilioError | null): void;
-  getToken(name: string, room: string, room_type:string,recording:string,passcode?: string): Promise<string>;
+  getToken(name: string, room: string, room_type: string, recording: string, passcode?: string): Promise<string>;
+  setUserName(name: string): void;
   user?: User | null | { displayName: undefined; photoURL: undefined; passcode?: string };
   signIn?(passcode?: string): Promise<void>;
   signOut?(): Promise<void>;
@@ -29,6 +31,7 @@ export const StateContext = createContext<StateContextType>(null!);
 export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   const [error, setError] = useState<TwilioError | null>(null);
   const [isFetching, setIsFetching] = useState(false);
+  const [displayName, setDisplayName] = useState('');
 
   let contextValue = {
     error,
@@ -49,7 +52,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   } else {
     contextValue = {
       ...contextValue,
-      getToken: async (identity, unique_name,room_type,recording) => {
+      getToken: async (identity, unique_name, room_type, recording) => {
         const headers = new window.Headers();
         const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
         const params = new window.URLSearchParams({ identity, unique_name, room_type, recording });
@@ -59,10 +62,10 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
     };
   }
 
-  const getToken: StateContextType['getToken'] = (name, room,room_type,recording) => {
+  const getToken: StateContextType['getToken'] = (name, room, room_type, recording) => {
     setIsFetching(true);
     return contextValue
-      .getToken(name, room,room_type,recording)
+      .getToken(name, room, room_type, recording)
       .then(res => {
         setIsFetching(false);
         return res;
@@ -74,7 +77,13 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
       });
   };
 
-  return <StateContext.Provider value={{ ...contextValue, getToken }}>{props.children}</StateContext.Provider>;
+  const setUserName = (name: string) => {
+    setDisplayName(name);
+  };
+
+  return (
+    <StateContext.Provider value={{ ...contextValue, getToken, setUserName }}>{props.children}</StateContext.Provider>
+  );
 }
 
 export function useAppState() {
