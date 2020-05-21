@@ -34,6 +34,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   const [displayName, setDisplayName] = useState('');
 
   let contextValue = {
+    displayName,
     error,
     setError,
     isFetching,
