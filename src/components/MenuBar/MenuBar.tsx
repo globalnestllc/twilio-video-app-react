@@ -93,7 +93,6 @@ export default function MenuBar() {
     const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
     console.log(endTime + ' | ' + currentTime);
     console.log(new Date(currentTime) > new Date(endTime));
-    console.log('deploy testing 2');
     if (second > 0) {
       setSecond(second => second - 1);
     }
@@ -140,11 +139,11 @@ export default function MenuBar() {
       if (endTime != '' && timezone != '' && calldis == 'false') {
         setCallDis('true');
         //console.log("Came here for end time 11:"+endTime+"  | zone: "+ timezone);
-        const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LT'));
-        if (currentTime.getTime() <= new Date(endTime).getTime()) {
-          let diff = (currentTime.getTime() - new Date(endTime).getTime()) / 1000;
-          setMinute(Math.abs(Math.round(diff / 60)));
-          setSecond(Math.abs(Math.round(diff % 60)));
+        const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LTS'));
+        if (currentTime.getTime() < new Date(endTime).getTime()) {
+          let diff = (new Date(endTime).getTime() - currentTime.getTime()) / 1000;
+          setMinute(Math.abs(Math.floor(diff / 60)));
+          setSecond(Math.abs(diff % 60));
         } else {
           setMsg('MEETING IS OVER');
           setEnable('false');
