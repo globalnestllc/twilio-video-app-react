@@ -97,6 +97,7 @@ export default function MenuBar() {
     if (second > 0) {
       setSecond(second => second - 1);
     }
+    console.log('second checking ....', second);
     if (second === 0) {
       if (minute === 0) {
         // console.log("sec : "+second+"  | Min : "+minute);
@@ -114,8 +115,6 @@ export default function MenuBar() {
         setMinute(minute => minute - 1);
         if (minute !== 1) {
           setSecond(59);
-        } else {
-          setSecond(second => second - 1);
         }
       }
     }
