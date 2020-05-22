@@ -240,7 +240,7 @@ export default function MenuBar() {
           </h3>
         )}
         <ToggleFullscreenButton />
-        <Menu />
+        {/* <Menu /> */}
       </Toolbar>
     </AppBar>
   );
