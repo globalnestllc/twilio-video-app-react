@@ -71,7 +71,6 @@ export default function MenuBar() {
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
 
-  // const [name, setName] = useState<string>(user?.displayName || '');
   if (user?.displayName && displayName === '') {
     setUserName(user.displayName);
   }
@@ -94,8 +93,6 @@ export default function MenuBar() {
     const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
     console.log(endTime + ' | ' + currentTime);
     console.log(new Date(currentTime) > new Date(endTime));
-    console.log('deploy trying 2');
-    //console.log(timezone);
     if (second > 0) {
       setSecond(second => second - 1);
     }
@@ -124,7 +121,6 @@ export default function MenuBar() {
       setRoomName(URLRoomName);
     }
     if (uName && displayName === '') {
-      // setName(uName);
       setUserName(uName);
     }
     if (eName) {
@@ -159,7 +155,6 @@ export default function MenuBar() {
   }, [URLRoomName, uName, eName, vType, recording, second, minute, end, endTime]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    // setName(event.target.value);
     setUserName(event.target.value);
   };
 
@@ -178,7 +173,6 @@ export default function MenuBar() {
     let url = 'https://' + base + '.force.com';
     url = url + '/services/apexrest/BLN_ASC_MM_ScheduleStatus?meetingid=' + roomName;
     console.log(url);
-    const timeDiff = 60000; // 1min = 60 * 1000
     fetch(url, { headers })
       .then(res => res.json())
       .then(data => {
@@ -191,7 +185,6 @@ export default function MenuBar() {
           setMsg('Meeting has not started.');
           setEnable('false');
         } else {
-          // getToken(name, roomName,videoType,recordingType).then(token => connect(token));
           getToken(displayName, roomName, videoType, recordingType).then(token => connect(token));
         }
       });
