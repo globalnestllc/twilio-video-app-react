@@ -93,6 +93,7 @@ export default function MenuBar() {
     const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
     console.log(endTime + ' | ' + currentTime);
     console.log(new Date(currentTime) > new Date(endTime));
+    console.log('deploy testing 1');
     if (second > 0) {
       setSecond(second => second - 1);
     }
@@ -111,7 +112,11 @@ export default function MenuBar() {
         }
       } else {
         setMinute(minute => minute - 1);
-        setSecond(59);
+        if (minute !== 1) {
+          setSecond(59);
+        } else {
+          setSecond(second => second - 1);
+        }
       }
     }
   };
