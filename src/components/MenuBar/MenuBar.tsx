@@ -71,10 +71,10 @@ export default function MenuBar() {
   const { isConnecting, connect } = useVideoContext();
   const roomState = useRoomState();
 
-  const [name, setName] = useState<string>(user?.displayName || '');
-  // if (user?.displayName && displayName === '') {
-  //   setUserName(user.displayName);
-  // }
+  // const [name, setName] = useState<string>(user?.displayName || '');
+  if (user?.displayName && displayName === '') {
+    setUserName(user.displayName);
+  }
   const [roomName, setRoomName] = useState<string>('');
   const [eventName, setEventmName] = useState<string>('');
   const [videoType, setVideoType] = useState<string>('');
@@ -94,7 +94,7 @@ export default function MenuBar() {
     const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
     console.log(endTime + ' | ' + currentTime);
     console.log(new Date(currentTime) > new Date(endTime));
-    console.log('deploy trying 1');
+    console.log('deploy trying 2');
     //console.log(timezone);
     if (second > 0) {
       setSecond(second => second - 1);
@@ -123,10 +123,10 @@ export default function MenuBar() {
     if (URLRoomName) {
       setRoomName(URLRoomName);
     }
-    // if (uName && displayName === '') {
-    //   // setName(uName);
-    //   setUserName(uName);
-    // }
+    if (uName && displayName === '') {
+      // setName(uName);
+      setUserName(uName);
+    }
     if (eName) {
       setEventmName(eName);
     }
@@ -159,8 +159,8 @@ export default function MenuBar() {
   }, [URLRoomName, uName, eName, vType, recording, second, minute, end, endTime]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-    // setUserName(event.target.value);
+    // setName(event.target.value);
+    setUserName(event.target.value);
   };
 
   const handleRoomNameChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -191,8 +191,8 @@ export default function MenuBar() {
           setMsg('Meeting has not started.');
           setEnable('false');
         } else {
-          getToken(name, roomName, videoType, recordingType).then(token => connect(token));
-          // getToken(displayName, roomName, videoType, recordingType).then(token => connect(token));
+          // getToken(name, roomName,videoType,recordingType).then(token => connect(token));
+          getToken(displayName, roomName, videoType, recordingType).then(token => connect(token));
         }
       });
   };
@@ -207,7 +207,7 @@ export default function MenuBar() {
                 id="menu-name"
                 label="Name"
                 className={classes.textField}
-                value={name}
+                value={displayName}
                 onChange={handleNameChange}
                 margin="dense"
               />
@@ -229,7 +229,7 @@ export default function MenuBar() {
                 type="submit"
                 color="primary"
                 variant="contained"
-                disabled={isConnecting || !name || !roomName || isFetching}
+                disabled={isConnecting || !displayName || !roomName || isFetching}
               >
                 Join Room
               </Button>
