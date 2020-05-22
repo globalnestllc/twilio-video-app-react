@@ -93,11 +93,11 @@ export default function MenuBar() {
     const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
     console.log(endTime + ' | ' + currentTime);
     console.log(new Date(currentTime) > new Date(endTime));
-    console.log('deploy testing 1');
+    console.log('deploy testing 2');
     if (second > 0) {
       setSecond(second => second - 1);
     }
-    console.log('second checking ....', second);
+
     if (second === 0) {
       if (minute === 0) {
         // console.log("sec : "+second+"  | Min : "+minute);
@@ -113,9 +113,7 @@ export default function MenuBar() {
         }
       } else {
         setMinute(minute => minute - 1);
-        if (minute !== 1) {
-          setSecond(59);
-        }
+        setSecond(59);
       }
     }
   };
@@ -143,7 +141,7 @@ export default function MenuBar() {
         setCallDis('true');
         //console.log("Came here for end time 11:"+endTime+"  | zone: "+ timezone);
         const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LT'));
-        if (currentTime.getTime() < new Date(endTime).getTime()) {
+        if (currentTime.getTime() <= new Date(endTime).getTime()) {
           let diff = (currentTime.getTime() - new Date(endTime).getTime()) / 1000;
           setMinute(Math.abs(Math.round(diff / 60)));
           setSecond(Math.abs(Math.round(diff % 60)));
