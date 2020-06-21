@@ -8,7 +8,7 @@ export default function useLocalVideoToggle() {
     localTracks,
     getLocalVideoTrack,
   } = useVideoContext();
-  const videoTrack = localTracks.find(track => track.name === 'camera') as LocalVideoTrack;
+  const videoTrack = localTracks.find(track => track.name.includes('camera')) as LocalVideoTrack;
 
   const toggleVideoEnabled = useCallback(() => {
     if (videoTrack) {
@@ -21,7 +21,7 @@ export default function useLocalVideoToggle() {
     } else {
       getLocalVideoTrack().then((track: LocalVideoTrack) => {
         if (localParticipant) {
-          localParticipant.publishTrack(track);
+          localParticipant.publishTrack(track, { priority: 'low' });
         }
       });
     }

@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
+    gridArea: 'participantList',
   },
   isVideoSwitchedOff: {
     '& video': {
@@ -48,8 +49,8 @@ export default function MainParticipantInfo({ participant, children }: MainParti
   const classes = useStyles();
 
   const publications = usePublications(participant);
-  const videoPublication = publications.find(p => p.trackName === 'camera');
-  const screenSharePublication = publications.find(p => p.trackName === 'screen');
+  const videoPublication = publications.find(p => p.trackName.includes('camera'));
+  const screenSharePublication = publications.find(p => p.trackName.includes('screen'));
   const isVideoEnabled = Boolean(videoPublication);
 
   const videoTrack = useTrack(screenSharePublication || videoPublication);

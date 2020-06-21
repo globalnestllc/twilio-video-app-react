@@ -1,8 +1,16 @@
 import React, { createContext, ReactNode } from 'react';
-import { ConnectOptions, Room, TwilioError, LocalAudioTrack, LocalVideoTrack } from 'twilio-video';
+import {
+  CreateLocalTrackOptions,
+  ConnectOptions,
+  LocalAudioTrack,
+  LocalVideoTrack,
+  Room,
+  TwilioError,
+} from 'twilio-video';
 import { Callback, ErrorCallback } from '../../types';
 import { SelectedParticipantProvider } from './useSelectedParticipant/useSelectedParticipant';
 
+import AttachVisibilityHandler from './AttachVisibilityHandler/AttachVisibilityHandler';
 import useHandleRoomDisconnectionErrors from './useHandleRoomDisconnectionErrors/useHandleRoomDisconnectionErrors';
 import useHandleOnDisconnect from './useHandleOnDisconnect/useHandleOnDisconnect';
 import useHandleTrackPublicationFailed from './useHandleTrackPublicationFailed/useHandleTrackPublicationFailed';
@@ -23,7 +31,9 @@ export interface IVideoContext {
   connect: (token: string) => Promise<void>;
   onError: ErrorCallback;
   onDisconnect: Callback;
-  getLocalVideoTrack: () => Promise<LocalVideoTrack>;
+  getLocalVideoTrack: (newOptions?: CreateLocalTrackOptions) => Promise<LocalVideoTrack>;
+  getLocalAudioTrack: (deviceId?: string) => Promise<LocalAudioTrack>;
+  isAcquiringLocalTracks: boolean;
 }
 
 export const VideoContext = createContext<IVideoContext>(null!);
@@ -41,7 +51,7 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     onError(error);
   };
 
-  const { localTracks, getLocalVideoTrack } = useLocalTracks();
+  const { localTracks, getLocalVideoTrack, getLocalAudioTrack, isAcquiringLocalTracks } = useLocalTracks();
   const { room, isConnecting, connect } = useRoom(localTracks, onErrorCallback, options);
 
   // Register onError and onDisconnect callback functions.
@@ -58,10 +68,17 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
         onError: onErrorCallback,
         onDisconnect,
         getLocalVideoTrack,
+        getLocalAudioTrack,
         connect,
+        isAcquiringLocalTracks,
       }}
     >
       <SelectedParticipantProvider room={room}>{children}</SelectedParticipantProvider>
+      {/*
+        The AttachVisibilityHandler component is using the useLocalVideoToggle hook
+        which must be used within the VideoContext Provider.
+      */}
+      <AttachVisibilityHandler />
     </VideoContext.Provider>
   );
 }

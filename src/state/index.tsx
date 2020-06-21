@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useReducer, useState } from 'react';
 import { TwilioError } from 'twilio-video';
 import useFirebaseAuth from './useFirebaseAuth/useFirebaseAuth';
 import usePasscodeAuth from './usePasscodeAuth/usePasscodeAuth';
 import { User } from 'firebase';
+import { settingsReducer, initialSettings, Settings, SettingsAction } from './settings/settingsReducer';
 
 export interface StateContextType {
   displayName: string;
@@ -15,6 +16,10 @@ export interface StateContextType {
   signOut?(): Promise<void>;
   isAuthReady?: boolean;
   isFetching: boolean;
+  settings: Settings;
+  dispatchSetting: React.Dispatch<SettingsAction>;
+  activeSinkId: string;
+  setActiveSinkId(sinkId: string): void;
 }
 
 export const StateContext = createContext<StateContextType>(null!);
@@ -32,12 +37,18 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   const [error, setError] = useState<TwilioError | null>(null);
   const [isFetching, setIsFetching] = useState(false);
   const [displayName, setDisplayName] = useState('');
+  const [settings, dispatchSetting] = useReducer(settingsReducer, initialSettings);
+  const [activeSinkId, setActiveSinkId] = useState('default');
 
   let contextValue = {
     displayName,
     error,
     setError,
     isFetching,
+    activeSinkId,
+    setActiveSinkId,
+    settings,
+    dispatchSetting,
   } as StateContextType;
 
   if (process.env.REACT_APP_SET_AUTH === 'firebase') {
