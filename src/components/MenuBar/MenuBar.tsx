@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react';
+import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -7,15 +7,21 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import TextField from '@material-ui/core/TextField';
 import ToggleFullscreenButton from '../ToggleFullScreenButton/ToggleFullScreenButton';
 import Toolbar from '@material-ui/core/Toolbar';
-import Menu from './Menu/Menu';
 
-import { useAppState } from '../../state';
 import { useParams } from 'react-router-dom';
+import { useAppState } from '../../state';
 import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
-import { Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import moment from 'moment';
 import 'moment-timezone';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import * as ApiServices from '../../Api/ApiServices';
+// import {joinVideoChannel} from "../../../../../store/actions/video";
+import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
+import Menu from './Menu/Menu';
+import useCountdown from './useCountdown';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -57,103 +63,98 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function MenuBar() {
+type VideoMode = 'free' | 'session';
+export default function MenuBar(props) {
   const classes = useStyles();
-  const { URLRoomName } = useParams();
-  const { uName } = useParams();
-  const { eName } = useParams();
-  const { vType } = useParams();
-  const { recording } = useParams();
-  const { end } = useParams();
-  const { zone } = useParams();
-  const { base } = useParams();
-  const { user, displayName, getToken, setUserName, isFetching } = useAppState();
-  const { isConnecting, connect } = useVideoContext();
+  const {
+    URLRoomName: _roomName,
+    uName: _userName,
+    eName: _eventName,
+    vType: _videoType,
+    recording,
+    end,
+    zone,
+    base,
+  } = useParams();
+
+  const { onCloseVideo, callee, callerId = 'empty-caller-id', mode = 'free' } = props;
+
+  console.log('MENUBAR:', _roomName, _userName, _eventName, _videoType, recording, end, zone, base);
+
+  const { user, displayName, getToken, setUserName, isFetching, showToast } = useAppState();
+  const { isConnecting, connect, room, localTracks } = useVideoContext();
   const roomState = useRoomState();
 
-  if (user?.displayName && displayName === '') {
-    setUserName(user.displayName);
-  }
   const [roomName, setRoomName] = useState<string>('');
   const [eventName, setEventmName] = useState<string>('');
   const [videoType, setVideoType] = useState<string>('');
   const [recordingType, setRecordingType] = useState<string>('');
   //Timer Code
 
-  const [second, setSecond] = useState(0);
-  const [minute, setMinute] = useState(0);
-  const [calldis, setCallDis] = useState<string>('false');
-  const [endTime, setEndTime] = useState<string>('');
-  const [timezone, setTimeZone] = useState('');
-  const [enable, setEnable] = useState('true');
+  const [joinButtonEnabled, setJoinButtonEnabled] = useState('true');
   const [msg, setMsg] = useState<string>('Meeting is over');
-  const { room } = useVideoContext();
+  const [uniqueUserName, setUniqueUserName] = useState<string>('');
 
-  const tick = () => {
-    const currentTime = moment.tz(new Date(), timezone).format('MM/DD/YYYY LT');
-    console.log(endTime + ' | ' + currentTime);
-    console.log(new Date(currentTime) > new Date(endTime));
-    if (second > 0) {
-      setSecond(second => second - 1);
-    }
-
-    if (second === 0) {
-      if (minute === 0) {
-        // console.log("sec : "+second+"  | Min : "+minute);
+  const timerCallback = (reason: string) => {
+    switch (reason) {
+      case 'complete':
         if (roomState === 'connected') {
           room.disconnect();
-          setEnable('false');
-          // window.close();
+          setJoinButtonEnabled('false');
+          setMsg('MEETING IS OVER');
+          window.close();
         }
-        if (new Date(currentTime) > new Date(endTime)) {
-          console.log('Came h e r e.. ');
-          // room.disconnect();
-          //window.close();
-        }
-      } else {
-        setMinute(minute => minute - 1);
-        setSecond(59);
-      }
+        break;
+      case 'last-2-minutes':
+        showToast('error', 'Last 2 minutes...');
+        break;
     }
   };
+  const { second, minute, timezone, remainingSeconds } = useCountdown(end, zone, timerCallback);
+
+  const { getUniqueName } = useParticipantDisplayName(null);
+  if (user?.displayName && displayName === '') {
+    setUserName(user.displayName);
+  }
 
   useEffect(() => {
-    if (URLRoomName) {
-      setRoomName(URLRoomName);
+    /* This is a workaround to be able to have users use the same name in the video call.
+        #Local
+        - Prefix callerId (email) to the user's selected display name.
+        - Use this value on token request as the ParticipantID
+        - Then remove the prefix on the UI.
+
+        #Remote
+        - Twilio passes the identity provided in token request to all participants.
+        - So, we need to remove the prefix from the remote Participant names as well.
+        - To remove/modify a participant in the room
+     */
+
+    setUniqueUserName(getUniqueName(callerId, displayName));
+  }, [displayName]);
+
+  useEffect(() => {
+    if (_roomName) {
+      setRoomName(_roomName);
     }
-    if (uName && displayName === '') {
-      setUserName(uName);
+    if (_userName && displayName === '') {
+      setUserName(_userName);
     }
-    if (eName) {
-      setEventmName(eName);
+
+    if (_eventName) {
+      setEventmName(_eventName);
     }
-    if (vType) {
-      setVideoType(vType);
+    if (_videoType) {
+      setVideoType(_videoType);
     }
     if (recording) {
       setRecordingType(recording);
     }
-    if (end && zone) {
-      setEndTime(end.replace(/-/g, '/'));
-      setTimeZone(zone.replace(/-/g, '/'));
-      if (endTime != '' && timezone != '' && calldis == 'false') {
-        setCallDis('true');
-        //console.log("Came here for end time 11:"+endTime+"  | zone: "+ timezone);
-        const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LTS'));
-        if (currentTime.getTime() < new Date(endTime).getTime()) {
-          let diff = (new Date(endTime).getTime() - currentTime.getTime()) / 1000;
-          setMinute(Math.abs(Math.floor(diff / 60)));
-          setSecond(Math.abs(diff % 60));
-        } else {
-          setMsg('MEETING IS OVER');
-          setEnable('false');
-        }
-      }
-    }
-    let timerID = setInterval(() => tick(), 1000);
-
-    return () => clearInterval(timerID);
-  }, [URLRoomName, uName, eName, vType, recording, second, minute, end, endTime]);
+    //
+    // let timerID = setInterval(() => tick(), 1000);
+    //
+    // return () => clearInterval(timerID);
+  }, [_roomName, _userName, _eventName, _videoType, recording, second, minute, end]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
@@ -167,28 +168,39 @@ export default function MenuBar() {
     event.preventDefault();
     // If this app is deployed as a twilio function, don't change the URL beacuse routing isn't supported.
     if (!window.location.origin.includes('twil.io')) {
-      window.history.replaceState(null, '', window.encodeURI(`/room/${roomName}`));
+      // window.history.replaceState(null, '', window.encodeURI(`/room/${roomName}`));
     }
-    const headers = new window.Headers();
-    const b = base;
-    let url = 'https://' + base + '.force.com';
-    url = url + '/services/apexrest/BLN_ASC_MM_ScheduleStatus?meetingid=' + roomName;
-    console.log(url);
-    fetch(url, { headers })
-      .then(res => res.json())
-      .then(data => {
-        // console.log("Data",data);
+    if (mode === 'free') {
+      console.log('getToken:', uniqueUserName, roomName, videoType, recordingType);
+      getToken(uniqueUserName, roomName, videoType, recordingType)
+        .then(token => connect(token))
+        .catch(error => {
+          console.error('Could not fetch the video token');
+        });
+      // dispatch(joinVideoChannel(roomName, callee));
+    } else {
+      let url = 'https://' + base + '.force.com/services/apexrest/BLN_ASC_MM_ScheduleStatus';
+      ApiServices.getScheduleStatus(url, roomName).then(response => {
+        let data = response.data;
         const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LT'));
         if (data.aptStatus.toLowerCase() == 'cancelled') {
           setMsg('Meeting is cancelled');
-          setEnable('false');
+          setJoinButtonEnabled('false');
         } else if (currentTime.getTime() < new Date(data.starttime.replace(/-/g, '/')).getTime()) {
           setMsg('Meeting has not started.');
-          setEnable('false');
+          setJoinButtonEnabled('false');
         } else {
-          getToken(displayName, roomName, videoType, recordingType).then(token => connect(token));
+          getToken(uniqueUserName, roomName, videoType, recordingType).then(token => connect(token));
         }
       });
+    }
+  };
+
+  const handleClose = () => {
+    room.disconnect?.();
+    localTracks.forEach(track => track.stop());
+    // setIsOpen(false);
+    onCloseVideo();
   };
 
   return (
@@ -207,7 +219,7 @@ export default function MenuBar() {
               />
             ) : (
               <Typography className={classes.displayName} variant="body1">
-                {user.displayName}
+                {displayName}
               </Typography>
             )}
             <TextField
@@ -218,7 +230,7 @@ export default function MenuBar() {
               onChange={handleRoomNameChange}
               margin="dense"
             />
-            {enable == 'true' ? (
+            {joinButtonEnabled == 'true' ? (
               <Button
                 type="submit"
                 color="primary"
@@ -236,11 +248,14 @@ export default function MenuBar() {
           </form>
         ) : (
           <h3>
-            {eventName} <span className={classes.marginL20}> </span>Time left : {minute}:
-            {second < 10 ? `0${second}` : second}
+            {_userName} <span className={classes.marginL20}> </span>
+            Time left : {minute}:{second < 10 ? `0${second}` : second}
           </h3>
         )}
         <ToggleFullscreenButton />
+        {/*<IconButton aria-label="close" onClick={handleClose}>*/}
+        {/*  <CloseIcon/>*/}
+        {/*</IconButton>*/}
         <Menu />
       </Toolbar>
     </AppBar>

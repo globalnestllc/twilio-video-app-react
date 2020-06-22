@@ -20,6 +20,9 @@ export interface StateContextType {
   dispatchSetting: React.Dispatch<SettingsAction>;
   activeSinkId: string;
   setActiveSinkId(sinkId: string): void;
+  showToast(severity: string, message: string): void;
+  hideToast(): void;
+  toast: { open: false; message: ''; severity: 'info' };
 }
 
 export const StateContext = createContext<StateContextType>(null!);
@@ -39,6 +42,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   const [displayName, setDisplayName] = useState('');
   const [settings, dispatchSetting] = useReducer(settingsReducer, initialSettings);
   const [activeSinkId, setActiveSinkId] = useState('default');
+  const [toast, setToast] = useState({ open: false, message: '', severity: '' });
 
   let contextValue = {
     displayName,
@@ -49,6 +53,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
     setActiveSinkId,
     settings,
     dispatchSetting,
+    toast,
   } as StateContextType;
 
   if (process.env.REACT_APP_SET_AUTH === 'firebase') {
@@ -73,6 +78,16 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
       },
     };
   }
+  const showToast = (severity: string, message: string) => {
+    setToast({
+      open: true,
+      message,
+      severity,
+    });
+  };
+  const hideToast = () => {
+    setToast({ ...toast, open: false });
+  };
 
   const getToken: StateContextType['getToken'] = (name, room, room_type, recording) => {
     setIsFetching(true);
@@ -94,7 +109,9 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   };
 
   return (
-    <StateContext.Provider value={{ ...contextValue, getToken, setUserName }}>{props.children}</StateContext.Provider>
+    <StateContext.Provider value={{ ...contextValue, getToken, setUserName, showToast, hideToast }}>
+      {props.children}
+    </StateContext.Provider>
   );
 }
 

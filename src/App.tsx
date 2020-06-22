@@ -8,6 +8,7 @@ import ReconnectingNotification from './components/ReconnectingNotification/Reco
 import Room from './components/Room/Room';
 
 import useRoomState from './hooks/useRoomState/useRoomState';
+import Toast from './components/Toast/Toast';
 
 const Container = styled('div')({
   display: 'flex',
@@ -31,6 +32,7 @@ export default function App() {
         <Controls />
       </Main>
       <ReconnectingNotification />
+      <Toast />
     </Container>
   );
 }

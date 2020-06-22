@@ -8,6 +8,7 @@ import useIsTrackSwitchedOff from '../../hooks/useIsTrackSwitchedOff/useIsTrackS
 import usePublications from '../../hooks/usePublications/usePublications';
 import useTrack from '../../hooks/useTrack/useTrack';
 import VideocamOff from '@material-ui/icons/VideocamOff';
+import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
 
 const useStyles = makeStyles({
   container: {
@@ -56,6 +57,7 @@ export default function MainParticipantInfo({ participant, children }: MainParti
   const videoTrack = useTrack(screenSharePublication || videoPublication);
   const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
 
+  const { displayName } = useParticipantDisplayName(participant);
   return (
     <div
       data-cy-main-participant
@@ -63,7 +65,7 @@ export default function MainParticipantInfo({ participant, children }: MainParti
     >
       <div className={classes.infoContainer}>
         <h4 className={classes.identity}>
-          {participant.identity}
+          {displayName}
           {!isVideoEnabled && <VideocamOff />}
         </h4>
       </div>

@@ -15,6 +15,7 @@ import useParticipantNetworkQualityLevel from '../../hooks/useParticipantNetwork
 import usePublications from '../../hooks/usePublications/usePublications';
 import useIsTrackSwitchedOff from '../../hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff';
 import useTrack from '../../hooks/useTrack/useTrack';
+import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -94,6 +95,7 @@ export default function ParticipantInfo({ participant, onClick, isSelected, chil
 
   const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack;
 
+  const { displayName } = useParticipantDisplayName(participant);
   const classes = useStyles();
 
   return (
@@ -108,7 +110,7 @@ export default function ParticipantInfo({ participant, onClick, isSelected, chil
         <div className={classes.infoRow}>
           <h4 className={classes.identity}>
             <ParticipantConnectionIndicator participant={participant} />
-            {participant.identity}
+            {displayName}
           </h4>
           <NetworkQualityLevel qualityLevel={networkQualityLevel} />
         </div>
