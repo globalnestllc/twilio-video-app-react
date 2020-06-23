@@ -150,11 +150,7 @@ export default function MenuBar(props) {
     if (recording) {
       setRecordingType(recording);
     }
-    //
-    // let timerID = setInterval(() => tick(), 1000);
-    //
-    // return () => clearInterval(timerID);
-  }, [_roomName, _userName, _eventName, _videoType, recording, second, minute, end]);
+  }, [_roomName, _userName, _eventName, _videoType, recording]);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setUserName(event.target.value);
