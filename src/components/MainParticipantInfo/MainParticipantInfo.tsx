@@ -50,9 +50,10 @@ export default function MainParticipantInfo({ participant, children }: MainParti
   const classes = useStyles();
 
   const publications = usePublications(participant);
-  const videoPublication = publications.find(p => p.trackName.includes('camera'));
-  const screenSharePublication = publications.find(p => p.trackName.includes('screen'));
+  const videoPublication = publications.find(p => p.trackName.toLowerCase().includes('camera'));
+  const screenSharePublication = publications.find(p => p.trackName.toLowerCase().includes('screen'));
   const isVideoEnabled = Boolean(videoPublication);
+  console.log('XXXX MAIN PARTICIPANT videoPublication:', isVideoEnabled, videoPublication, publications);
 
   const videoTrack = useTrack(screenSharePublication || videoPublication);
   const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
