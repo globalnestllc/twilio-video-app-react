@@ -67,7 +67,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
   const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
   const { setError } = useAppState();
 
-  const { vType: _videoType, recording, zone, base } = useParams();
+  const { vType: _videoType, recording = false, zone, base } = useParams();
 
   const handleJoin = () => {
     if (base) {
