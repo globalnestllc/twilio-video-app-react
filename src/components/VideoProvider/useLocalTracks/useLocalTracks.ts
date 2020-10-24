@@ -1,11 +1,18 @@
-import { useCallback, useEffect, useState } from 'react';
-
-import { ensureMediaPermissions } from '../../../utils';
+import { DEFAULT_VIDEO_CONSTRAINTS, SELECTED_AUDIO_INPUT_KEY, SELECTED_VIDEO_INPUT_KEY } from '../../../constants';
+import { useCallback, useState } from 'react';
 import Video, { LocalVideoTrack, LocalAudioTrack, CreateLocalTrackOptions } from 'twilio-video';
+import { useAudioInputDevices, useVideoInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
 
-export function useLocalAudioTrack() {
-  const [track, setTrack] = useState<LocalAudioTrack>();
-  const [isAcquiringLocalAudioTrack, setIsAcquiringLocalAudioTrack] = useState(false);
+export default function useLocalTracks() {
+  const [audioTrack, setAudioTrack] = useState<LocalAudioTrack>();
+  const [videoTrack, setVideoTrack] = useState<LocalVideoTrack>();
+  const [isAcquiringLocalTracks, setIsAcquiringLocalTracks] = useState(false);
+
+  const localAudioDevices = useAudioInputDevices();
+  const localVideoDevices = useVideoInputDevices();
+
+  const hasAudio = localAudioDevices.length > 0;
+  const hasVideo = localVideoDevices.length > 0;
 
   const getLocalAudioTrack = useCallback((deviceId?: string) => {
     const options: CreateLocalTrackOptions = {};
@@ -14,88 +21,82 @@ export function useLocalAudioTrack() {
       options.deviceId = { exact: deviceId };
     }
 
-    return ensureMediaPermissions().then(() =>
-      Video.createLocalAudioTrack(options).then(newTrack => {
-        setTrack(newTrack);
-        return newTrack;
-      })
-    );
+    return Video.createLocalAudioTrack(options).then(newTrack => {
+      setAudioTrack(newTrack);
+      return newTrack;
+    });
   }, []);
 
-  useEffect(() => {
-    // We get a new local audio track when the app loads.
-    setIsAcquiringLocalAudioTrack(true);
-    getLocalAudioTrack().finally(() => setIsAcquiringLocalAudioTrack(false));
-  }, [getLocalAudioTrack]);
-
-  useEffect(() => {
-    const handleStopped = () => setTrack(undefined);
-    if (track) {
-      track.on('stopped', handleStopped);
-      return () => {
-        track.off('stopped', handleStopped);
-      };
-    }
-  }, [track]);
-
-  return { audioTrack: track, getLocalAudioTrack, isAcquiringLocalAudioTrack };
-}
-
-export function useLocalVideoTrack() {
-  const [track, setTrack] = useState<LocalVideoTrack>();
-  const [isAcquiringLocalVideoTrack, setIsAcquiringLocalVideoTrack] = useState(false);
-
   const getLocalVideoTrack = useCallback((newOptions?: CreateLocalTrackOptions) => {
-    // In the DeviceSelector and FlipCameraButton components, a new video track is created,
-    // then the old track is unpublished and the new track is published. Unpublishing the old
-    // track and publishing the new track at the same time sometimes causes a conflict when the
-    // track name is 'camera', so here we append a timestamp to the track name to avoid the
-    // conflict.
     const options: CreateLocalTrackOptions = {
-      frameRate: 24,
-      height: 720,
-      width: 1280,
+      ...(DEFAULT_VIDEO_CONSTRAINTS as {}),
       name: `camera-${Date.now()}`,
       ...newOptions,
     };
 
-    return ensureMediaPermissions().then(() =>
-      Video.createLocalVideoTrack(options).then(newTrack => {
-        setTrack(newTrack);
-        return newTrack;
-      })
-    );
+    return Video.createLocalVideoTrack(options).then(newTrack => {
+      setVideoTrack(newTrack);
+      return newTrack;
+    });
   }, []);
 
-  useEffect(() => {
-    // We get a new local video track when the app loads.
-    setIsAcquiringLocalVideoTrack(true);
-    getLocalVideoTrack().finally(() => setIsAcquiringLocalVideoTrack(false));
-  }, [getLocalVideoTrack]);
-
-  useEffect(() => {
-    const handleStopped = () => setTrack(undefined);
-    if (track) {
-      track.on('stopped', handleStopped);
-      return () => {
-        track.off('stopped', handleStopped);
-      };
+  const removeLocalVideoTrack = useCallback(() => {
+    if (videoTrack) {
+      videoTrack.stop();
+      setVideoTrack(undefined);
     }
-  }, [track]);
+  }, [videoTrack]);
 
-  return { videoTrack: track, getLocalVideoTrack, isAcquiringLocalVideoTrack };
-}
+  const getAudioAndVideoTracks = useCallback(() => {
+    if (!hasAudio && !hasVideo) return Promise.resolve();
+    if (audioTrack || videoTrack) return Promise.resolve();
 
-export default function useLocalTracks() {
-  const { audioTrack, getLocalAudioTrack, isAcquiringLocalAudioTrack } = useLocalAudioTrack();
-  const { videoTrack, getLocalVideoTrack, isAcquiringLocalVideoTrack } = useLocalVideoTrack();
+    setIsAcquiringLocalTracks(true);
 
-  const isAcquiringLocalTracks = isAcquiringLocalAudioTrack || isAcquiringLocalVideoTrack;
+    const selectedAudioDeviceId = window.localStorage.getItem(SELECTED_AUDIO_INPUT_KEY);
+    const selectedVideoDeviceId = window.localStorage.getItem(SELECTED_VIDEO_INPUT_KEY);
+
+    const hasSelectedAudioDevice = localAudioDevices.some(
+      device => selectedAudioDeviceId && device.deviceId === selectedAudioDeviceId
+    );
+    const hasSelectedVideoDevice = localVideoDevices.some(
+      device => selectedVideoDeviceId && device.deviceId === selectedVideoDeviceId
+    );
+
+    const localTrackConstraints = {
+      video: hasVideo && {
+        ...(DEFAULT_VIDEO_CONSTRAINTS as {}),
+        name: `camera-${Date.now()}`,
+        ...(hasSelectedVideoDevice && { deviceId: { exact: selectedVideoDeviceId! } }),
+      },
+      audio: hasSelectedAudioDevice ? { deviceId: { exact: selectedAudioDeviceId! } } : hasAudio,
+    };
+
+    return Video.createLocalTracks(localTrackConstraints)
+      .then(tracks => {
+        const videoTrack = tracks.find(track => track.kind === 'video');
+        const audioTrack = tracks.find(track => track.kind === 'audio');
+        if (videoTrack) {
+          setVideoTrack(videoTrack as LocalVideoTrack);
+        }
+        if (audioTrack) {
+          setAudioTrack(audioTrack as LocalAudioTrack);
+        }
+      })
+      .finally(() => setIsAcquiringLocalTracks(false));
+  }, [hasAudio, hasVideo, audioTrack, videoTrack, localAudioDevices, localVideoDevices]);
 
   const localTracks = [audioTrack, videoTrack].filter(track => track !== undefined) as (
     | LocalAudioTrack
     | LocalVideoTrack
   )[];
 
-  return { localTracks, getLocalVideoTrack, getLocalAudioTrack, isAcquiringLocalTracks };
+  return {
+    localTracks,
+    getLocalVideoTrack,
+    getLocalAudioTrack,
+    isAcquiringLocalTracks,
+    removeLocalVideoTrack,
+    getAudioAndVideoTracks,
+  };
 }

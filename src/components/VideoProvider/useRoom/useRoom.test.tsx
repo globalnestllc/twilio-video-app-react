@@ -3,6 +3,7 @@ import EventEmitter from 'events';
 import { mockRoom } from '../../../__mocks__/twilio-video';
 import useRoom from './useRoom';
 import Video, { LocalTrack } from 'twilio-video';
+import * as utils from '../../../utils';
 
 const mockVideoConnect = Video.connect as jest.Mock<any>;
 
@@ -28,28 +29,13 @@ describe('the useRoom hook', () => {
     expect(result.current.isConnecting).toBe(false);
   });
 
-  it('should publish video tracks with low priority', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useRoom([{ kind: 'video' } as LocalTrack, { kind: 'audio' } as LocalTrack], () => {}, {})
-    );
+  it('should set the priority of video tracks to low', async () => {
+    const { result, waitForNextUpdate } = renderHook(() => useRoom([{ kind: 'video' } as LocalTrack], () => {}, {}));
     act(() => {
       result.current.connect('token');
     });
     await waitForNextUpdate();
-    expect(mockRoom.localParticipant.publishTrack).toHaveBeenCalledWith({ kind: 'video' }, { priority: 'low' });
-    expect(mockRoom.localParticipant.publishTrack).toHaveBeenCalledWith({ kind: 'audio' }, { priority: 'standard' });
-  });
-
-  it('should publish video tracks that are supplied in a rerender', async () => {
-    const { result, rerender, waitForNextUpdate } = renderHook(props => useRoom(props.tracks, () => {}, {}), {
-      initialProps: { tracks: [] as LocalTrack[] },
-    });
-    rerender({ tracks: [{ kind: 'video' } as LocalTrack] });
-    act(() => {
-      result.current.connect('token');
-    });
-    await waitForNextUpdate();
-    expect(mockRoom.localParticipant.publishTrack).toHaveBeenCalledWith({ kind: 'video' }, { priority: 'low' });
+    expect(mockRoom.localParticipant.videoTracks[0].setPriority).toHaveBeenCalledWith('low');
   });
 
   it('should return a room after connecting to a room', async () => {
@@ -102,5 +88,32 @@ describe('the useRoom hook', () => {
     result.current.room.emit('disconnected');
     await waitForNextUpdate();
     expect(result.current.room.state).toBe(undefined);
+  });
+
+  describe('when isMobile is true', () => {
+    // @ts-ignore
+    utils.isMobile = true;
+
+    it('should add a listener for the "pagehide" event when connected to a room', async () => {
+      jest.spyOn(window, 'addEventListener');
+      const { result, waitForNextUpdate } = renderHook(() => useRoom([], () => {}, {}));
+      act(() => {
+        result.current.connect('token');
+      });
+      await waitForNextUpdate();
+      expect(window.addEventListener).toHaveBeenCalledWith('pagehide', expect.any(Function));
+    });
+
+    it('should remove the listener for the "pagehide" event when the room is disconnected', async () => {
+      jest.spyOn(window, 'removeEventListener');
+      const { result, waitForNextUpdate } = renderHook(() => useRoom([], () => {}, {}));
+      act(() => {
+        result.current.connect('token');
+      });
+      await waitForNextUpdate();
+      result.current.room.emit('disconnected');
+      await waitForNextUpdate();
+      expect(window.removeEventListener).toHaveBeenCalledWith('pagehide', expect.any(Function));
+    });
   });
 });

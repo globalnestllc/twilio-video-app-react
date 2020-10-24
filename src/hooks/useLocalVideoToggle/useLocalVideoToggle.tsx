@@ -1,5 +1,5 @@
 import { LocalVideoTrack } from 'twilio-video';
-import { useCallback } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import useVideoContext from '../useVideoContext/useVideoContext';
 
 export default function useLocalVideoToggle() {
@@ -7,25 +7,30 @@ export default function useLocalVideoToggle() {
     room: { localParticipant },
     localTracks,
     getLocalVideoTrack,
+    removeLocalVideoTrack,
+    onError,
   } = useVideoContext();
   const videoTrack = localTracks.find(track => track.name.toLowerCase().includes('camera')) as LocalVideoTrack;
+  const [isPublishing, setIspublishing] = useState(false);
+  const previousDeviceIdRef = useRef<string>();
 
   const toggleVideoEnabled = useCallback(() => {
-    if (videoTrack) {
-      if (localParticipant) {
-        const localTrackPublication = localParticipant.unpublishTrack(videoTrack);
+    if (!isPublishing) {
+      if (videoTrack) {
+        previousDeviceIdRef.current = videoTrack.mediaStreamTrack.getSettings().deviceId;
+        const localTrackPublication = localParticipant?.unpublishTrack(videoTrack);
         // TODO: remove when SDK implements this event. See: https://issues.corp.twilio.com/browse/JSDK-2592
-        localParticipant.emit('trackUnpublished', localTrackPublication);
+        localParticipant?.emit('trackUnpublished', localTrackPublication);
+        removeLocalVideoTrack();
+      } else {
+        setIspublishing(true);
+        getLocalVideoTrack({ deviceId: { exact: previousDeviceIdRef.current } })
+          .then((track: LocalVideoTrack) => localParticipant?.publishTrack(track, { priority: 'low' }))
+          .catch(onError)
+          .finally(() => setIspublishing(false));
       }
-      videoTrack.stop();
-    } else {
-      getLocalVideoTrack().then((track: LocalVideoTrack) => {
-        if (localParticipant) {
-          localParticipant.publishTrack(track, { priority: 'low' });
-        }
-      });
     }
-  }, [videoTrack, localParticipant, getLocalVideoTrack]);
+  }, [videoTrack, localParticipant, getLocalVideoTrack, isPublishing, onError, removeLocalVideoTrack]);
 
   return [!!videoTrack, toggleVideoEnabled] as const;
 }

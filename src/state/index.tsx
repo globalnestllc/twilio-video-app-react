@@ -1,25 +1,28 @@
 import React, { createContext, useContext, useReducer, useState } from 'react';
+import { RoomType } from '../types';
 import { TwilioError } from 'twilio-video';
+import { settingsReducer, initialSettings, Settings, SettingsAction } from './settings/settingsReducer';
+import useActiveSinkId from './useActiveSinkId/useActiveSinkId';
 import useFirebaseAuth from './useFirebaseAuth/useFirebaseAuth';
 import usePasscodeAuth from './usePasscodeAuth/usePasscodeAuth';
 import { User } from 'firebase';
-import { settingsReducer, initialSettings, Settings, SettingsAction } from './settings/settingsReducer';
 
 export interface StateContextType {
   displayName: string;
   error: TwilioError | null;
   setError(error: TwilioError | null): void;
-  getToken(name: string, room: string, room_type: string, recording: string, passcode?: string): Promise<string>;
+  getToken(name: string, room: string, room_type?: string, recording?: boolean, passcode?: string): Promise<string>;
   setUserName(name: string): void;
   user?: User | null | { displayName: undefined; photoURL: undefined; passcode?: string };
   signIn?(passcode?: string): Promise<void>;
   signOut?(): Promise<void>;
   isAuthReady?: boolean;
   isFetching: boolean;
-  settings: Settings;
-  dispatchSetting: React.Dispatch<SettingsAction>;
   activeSinkId: string;
   setActiveSinkId(sinkId: string): void;
+  settings: Settings;
+  dispatchSetting: React.Dispatch<SettingsAction>;
+  roomType?: RoomType;
   showToast(severity: string, message: string): void;
   hideToast(): void;
   toast: { open: false; message: ''; severity: 'info' };
@@ -39,9 +42,10 @@ export const StateContext = createContext<StateContextType>(null!);
 export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   const [error, setError] = useState<TwilioError | null>(null);
   const [isFetching, setIsFetching] = useState(false);
-  const [displayName, setDisplayName] = useState('');
+  const [activeSinkId, setActiveSinkId] = useActiveSinkId();
   const [settings, dispatchSetting] = useReducer(settingsReducer, initialSettings);
-  const [activeSinkId, setActiveSinkId] = useState('default');
+
+  const [displayName, setDisplayName] = useState('');
   const [toast, setToast] = useState({ open: false, message: '', severity: '' });
 
   let contextValue = {
@@ -69,12 +73,24 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   } else {
     contextValue = {
       ...contextValue,
-      getToken: async (identity, unique_name, room_type, recording) => {
+      getToken: async (identity, unique_name, room_type = 'peer-to-peer', recording = false) => {
         const headers = new window.Headers();
         const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
-        const params = new window.URLSearchParams({ identity, unique_name, room_type, recording });
+        const params = new window.URLSearchParams({
+          identity,
+          unique_name,
+          room_type,
+          recording: recording.toString(),
+        });
+        let res = await fetch(`${endpoint}?${params}`, { headers });
 
-        return fetch(`${endpoint}?${params}`, { headers }).then(res => res.text());
+        let responseText = await res.text();
+        if (responseText === 'duplicate-identity') {
+          let error = new Error('This user name is being used, please pick another one.') as TwilioError;
+          setError(error);
+          throw error;
+        }
+        return responseText;
       },
     };
   }
