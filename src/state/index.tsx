@@ -92,7 +92,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
 
         let responseText = await res.text();
         if (responseText === 'duplicate-identity') {
-          let error = new Error('This user name is being used, please pick another one.') as TwilioError;
+          let error = new Error('This user name is being used, please pick another one and join.') as TwilioError;
           setError(error);
           throw error;
         }

@@ -16,6 +16,9 @@ const useStyles = makeStyles({
 });
 
 export default function({ children }: { children: React.ReactElement }) {
+  //Remove the browser check.
+  return children;
+
   const classes = useStyles();
 
   if (!Video.isSupported) {
@@ -54,6 +57,4 @@ export default function({ children }: { children: React.ReactElement }) {
       </Container>
     );
   }
-
-  return children;
 }
