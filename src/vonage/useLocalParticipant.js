@@ -1,23 +1,27 @@
 import React from 'react';
+import { publisherOptions } from './Config';
 
-export default function useLocalParticipant(props) {
+export default function useLocalParticipant(name) {
   const [publisher, setPublisher] = React.useState(null);
 
   React.useEffect(() => {
-    // @ts-ignore
-    let publisher = window.OT.initPublisher('#hiddenVideoContainer', { insertDefaultUI: true }, error => {
-      if (error) {
-        console.log(error);
-      } else {
-        setPublisher(publisher);
-      }
-    });
+    if (name) {
+      // @ts-ignore
+      let publisher = window.OT.initPublisher('#hiddenVideoContainer', { ...publisherOptions, name: name }, error => {
+        if (error) {
+          console.log(error);
+        } else {
+          setPublisher(publisher);
+        }
+      });
 
-    console.log('setPublisher', publisher);
-    return () => {
-      publisher.destroy();
-    };
-  }, []);
+      console.log('setPublisher', publisher);
+      return () => {
+        publisher.destroy();
+      };
+    }
+  }, [name]);
 
+  console.log('useLocalParticipant', name, publisher);
   return { publisher };
 }

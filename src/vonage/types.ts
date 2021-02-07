@@ -18,6 +18,8 @@ export interface OtCore {
 
 export interface Stream {
   name: 'string';
+  hasAudio: boolean;
+  hasVideo: boolean;
 }
 
 export interface Participant {

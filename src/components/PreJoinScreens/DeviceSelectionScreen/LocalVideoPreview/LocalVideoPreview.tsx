@@ -4,6 +4,7 @@ import { makeStyles, Theme, Typography } from '@material-ui/core';
 import VideoTrack from '../../../../vonage/VideoTrack';
 import AudioLevelIndicator from '../../../../vonage/AudioLevelIndicator';
 import useLocalParticipant from '../../../../vonage/useLocalParticipant';
+import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export default function LocalVideoPreview({ identity }: { identity: string }) {
   const classes = useStyles();
-  const { publisher } = useLocalParticipant();
+  const { localParticipant: publisher } = useVideoContext();
 
   return (
     <div className={classes.container}>

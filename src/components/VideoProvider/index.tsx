@@ -18,10 +18,9 @@ import useLocalTracks from './useLocalTracks/useLocalTracks';
 import useRoom from './useRoom/useRoom';
 import { Connection, OtCore, Participant } from '../../vonage/types';
 import { useAppState } from '../../state';
-import getOtCore from '../../vonage/useOtCore';
 import useLocalParticipant from '../../vonage/useLocalParticipant';
-import useRoomState from '../../hooks/useRoomState/useRoomState';
-import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
+import useSession from '../../vonage/useSession';
+import useScreenShare from '../../vonage/useScreenShare';
 
 /*
  *  The hooks used by the VideoProvider component are different than the hooks found in the 'hooks/' directory. The hooks
@@ -50,6 +49,7 @@ export interface IVideoContext {
   isVideoEnabled: boolean;
   isAudioEnabled: boolean;
   endCall: () => void;
+  startCall: () => void;
   isConnecting: boolean;
   isConnected: boolean;
   sharingScreen: boolean;
@@ -112,19 +112,11 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
   const [otCore, setOtCore] = React.useState(null);
   const [viewMode, setViewMode] = React.useState('collaborator' as ViewModeType);
   const [participantsOpen, setParticipantsOpen] = React.useState(false);
-  const [session, setSession] = React.useState(null);
+  const [sessionData, setSessionData] = React.useState({ sessionId: null, roomName: null });
 
-  const { roomState } = useVideoContext();
-  const { publisher: localParticipant } = useLocalParticipant();
-
-  // const [roomState, _setRoomState] = React.useState('disconnected');
-
-  // function setRoomState(state) {
-  //     console.log('Setting room state',state);
-  //     _setRoomState(state);
-  // }
-
+  const { session, roomState, subscribeToStream } = useSession(sessionData.sessionId);
   const { getToken, getSession, displayName, setUserName } = useAppState();
+  const { publisher: localParticipant } = useLocalParticipant(displayName);
 
   function removeParticipant(connection) {
     otCore.session.forceDisconnect(connection);
@@ -143,19 +135,13 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
   function handleEvent(event, state) {
     console.log('otcore Event', event, state);
     switch (event) {
-      case 'endScreenShare':
-        setIsSharingScreen(false);
-        break;
-      case 'startScreenShare':
-        setIsSharingScreen(true);
-        break;
       case 'subscribeToCamera':
       case 'subscribeToScreen':
-        let subscribers = state.subscribers;
-        [...Object.values(subscribers.camera), ...Object.values(subscribers.screen)].forEach(subscriber => {
-          // @ts-ignore
-          subscriber.setStyle('nameDisplayMode', 'off');
-        });
+        // let subscribers = state.subscribers;
+        // [...Object.values(subscribers.camera), ...Object.values(subscribers.screen)].forEach(subscriber => {
+        //     // @ts-ignore
+        //     subscriber.setStyle('nameDisplayMode', 'off')
+        // })
         break;
       case 'sessionConnected':
         // setRoomState('connected');
@@ -180,47 +166,57 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     }
   }
 
-  function setState(_state, event, callback) {
-    let state = otCore.state();
-    handleEvent(event, state);
+  function setState(event, callback) {
+    // let state = otCore.state();
+    handleEvent(event, null);
 
-    const { publishers, subscribers, active, meta, localAudioEnabled, localVideoEnabled } = state;
+    // let {publishers, subscribers, active, meta, localAudioEnabled, localVideoEnabled};
 
-    setSharingScreen(!!meta.publisher.screen);
-    setViewingSharedScreen(meta.subscriber.screen);
-    setScreenShareActive(viewingSharedScreen || sharingScreen);
-    setActiveCameraSubscribers(meta.subscriber.camera);
+    let _cameraPublishers = []; // Object.values(publishers.camera);
+    let _cameraSubscribers = []; // Object.values(subscribers.camera);
+    let _screenSubscribers = []; // Object.values(subscribers.screen);
+    let _screenPublishers = []; // Object.values(publishers.screen);
 
-    setConnections(otCore.session.connections.map(c => c).filter(connection => !connection.id.includes('.tokbox.com')));
-    setConnection(otCore.session.connection || {});
+    // @ts-ignore
+    window.OT.publishers.forEach(publisher => {
+      _cameraPublishers.push(publisher);
+    });
 
-    let _cameraPublishers = Object.values(publishers.camera);
-    let _cameraSubscribers = Object.values(subscribers.camera);
-    let _screenSubscribers = Object.values(subscribers.screen);
-    let _screenPublishers = Object.values(subscribers.screen);
+    // @ts-ignore
+    window.OT.subscribers.forEach(subscriber => {
+      _cameraSubscribers.push(subscriber);
+    });
 
+    // setSharingScreen(!!meta.publisher.screen);
+    // setViewingSharedScreen(meta.subscriber.screen);
+    // setScreenShareActive(viewingSharedScreen || sharingScreen);
+    // setActiveCameraSubscribers(meta.subscriber.camera);
+
+    if (session) {
+      setConnections(session.connections.map(c => c).filter(connection => !connection.id.includes('.tokbox.com')));
+      setConnection(session.connection || {});
+    }
+    console.log('Set state ', event, _cameraPublishers, _cameraSubscribers);
     setPublishers(_cameraPublishers);
     setSubscribers(_cameraSubscribers);
 
-    if (meta.publisher.screen) {
-      setScreenShareParticipant({ camera: _cameraPublishers[0], screen: _screenPublishers[0] });
-    } else if (meta.subscriber.screen) {
-      // Find the camera source of the screen sharing participant.
-      // @ts-ignore
-      let _screenShareParticipant = _cameraSubscribers.find(
-        subscriber => subscriber.stream.connection.id === _screenSubscribers[0].stream.connection.id
-      );
-      setScreenShareParticipant({ camera: _screenShareParticipant, screen: _screenSubscribers[0] });
-    } else {
-      setScreenShareParticipant({ camera: null, screen: null });
-    }
+    // if (meta.publisher.screen) {
+    //     setScreenShareParticipant({camera: _cameraPublishers[0], screen: _screenPublishers[0]});
+    // } else if (meta.subscriber.screen) {
+    //     // Find the camera source of the screen sharing participant.
+    //     // @ts-ignore
+    //     let _screenShareParticipant = _cameraSubscribers.find(subscriber => subscriber.stream.connection.id === _screenSubscribers[0].stream.connection.id)
+    //     setScreenShareParticipant({camera: _screenShareParticipant, screen: _screenSubscribers[0]});
+    // } else {
+    //     setScreenShareParticipant({camera: null, screen: null});
+    // }
   }
 
   React.useEffect(() => {
     // console.log('otcore Event1 publishers', publishers)
 
     function setOtCoreState(state, event, callback) {
-      setState(state, event, callback);
+      setState(event, callback);
     }
 
     publishers.forEach(publisher => publisher.on('streamCreated', setOtCoreState));
@@ -229,57 +225,77 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     return () => {
       publishers.forEach(publisher => publisher.off('streamCreated', setOtCoreState));
       publishers.forEach(publisher => publisher.off('streamDestroyed', setOtCoreState));
+      publishers.forEach(publisher => publisher.off('mediaStopped', setOtCoreState));
     };
   }, [publishers]);
 
   React.useEffect(() => {
-    if (otCore) {
-      const setOtCoreState = ({ publishers, subscribers, meta }, event, callback) => {
-        setState({ publishers, subscribers, meta }, event, callback);
+    if (session) {
+      const setOtCoreState = (event, callback) => {
+        setState(event, callback);
       };
 
-      events.forEach(event => otCore.on(event, setOtCoreState));
+      events.forEach(event => session.on(event, setOtCoreState));
       return () => {
-        events.forEach(event => otCore.off(event, setOtCoreState));
+        events.forEach(event => session.off(event, setOtCoreState));
       };
     }
-  }, [otCore]);
+  }, [session]);
 
   React.useEffect(() => {
-    if (otCore && displayName) {
-      console.log('otcore connect1', otCore, displayName);
-      otCore.connect().then(() => {
-        console.log('otCore connected');
-        let publisherStyle = {
-          nameDisplayMode: 'off',
-          audioLevelDisplayMode: 'off',
-          archiveStatusDisplayMode: 'on',
-          buttonDisplayMode: 'on',
-        };
+    if (session && displayName) {
+      setIsConnecting(true);
 
-        otCore
-          .startCall({ style: publisherStyle, name: displayName })
-          .then(r => {
+      getToken(displayName, sessionData.roomName).then(token => {
+        session.connect(token, error => {
+          if (error) {
+            console.log('Error connecting session:', error.message);
+            setIsConnecting(false);
+          } else {
             setIsConnected(true);
             setIsConnecting(false);
-            console.log('otCore.startCall() success', r);
-            setState(r, 'callStarted', null);
-          })
-          .catch(r => {
-            setIsConnecting(false);
-            setIsConnected(false);
-            console.log('otCore.startCall() error', r);
-            setState(r, 'errorStartingCall', null);
-          });
+            startCall();
+            // You have connected to the session. You could publish a stream now.
+          }
+        });
       });
     }
+  }, [session]);
 
-    return () => {
-      if (otCore) {
-        endCall();
-      }
-    };
-  }, [otCore]);
+  // React.useEffect(() => {
+  //     if (otCore && displayName) {
+  //         console.log('otcore connect1', otCore, displayName)
+  //         otCore.connect().then(() => {
+  //             console.log('otCore connected');
+  //             let publisherStyle = {
+  //                 nameDisplayMode: 'off',
+  //                 audioLevelDisplayMode: 'off',
+  //                 archiveStatusDisplayMode: 'on',
+  //                 buttonDisplayMode: 'on'
+  //             };
+  //
+  //             otCore.startCall({style: publisherStyle, name: displayName})
+  //                 .then(r => {
+  //                     setIsConnected(true);
+  //                     setIsConnecting(false);
+  //                     console.log('otCore.startCall() success', r)
+  //                     setState(r, 'callStarted', null);
+  //                 })
+  //                 .catch(r => {
+  //                     setIsConnecting(false);
+  //                     setIsConnected(false);
+  //                     console.log('otCore.startCall() error', r)
+  //                     setState(r, 'errorStartingCall', null);
+  //                 })
+  //         });
+  //     }
+  //
+  //     return () => {
+  //         if (otCore) {
+  //             endCall();
+  //         }
+  //     }
+  // }, [otCore])
 
   const onErrorCallback = (error: TwilioError) => {
     console.log(`ERROR: ${error.message}`, error);
@@ -305,30 +321,20 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
   const [isAudioEnabled, setAudioEnabled] = React.useState(true);
   const [isConnecting, setIsConnecting] = React.useState(false);
   const [isConnected, setIsConnected] = React.useState(false);
-  const [isSharingScreen, setIsSharingScreen] = React.useState(false);
 
   function toggleVideoEnabled() {
     console.log('toggling video to ', !isVideoEnabled);
-    otCore.toggleLocalVideo(!isVideoEnabled);
+    localParticipant.publishVideo(!isVideoEnabled);
     setVideoEnabled(!isVideoEnabled);
   }
 
   function toggleAudioEnabled() {
-    otCore.toggleLocalAudio(!isAudioEnabled);
+    console.log('toggling audio to ', !isAudioEnabled);
+    localParticipant.publishAudio(!isAudioEnabled);
     setAudioEnabled(!isAudioEnabled);
   }
 
-  function toggleScreenShare() {
-    try {
-      if (isSharingScreen) {
-        otCore.screenSharing.end();
-      } else {
-        otCore.screenSharing.start();
-      }
-    } catch (e) {
-      return isSharingScreen;
-    }
-  }
+  let { toggleScreenShare, isSharingScreen } = useScreenShare(session);
 
   function endCall() {
     if (!isConnected) {
@@ -338,6 +344,23 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     otCore.session.disconnect();
     setIsConnecting(false);
     setIsConnected(false);
+  }
+
+  function startCall() {
+    if (session) {
+      const _subscribeToStream = stream => {
+        subscribeToStream(stream);
+      };
+      // Subscribe to initial streams
+      session.streams.forEach(_subscribeToStream);
+      session.publish(localParticipant, error => {
+        if (error) {
+          console.log('Error publishing', error);
+        } else {
+          console.log('Susccess publishing');
+        }
+      });
+    }
   }
 
   async function connect(roomName: string | null = null, name: string) {
@@ -352,12 +375,13 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     console.log('otCore startCall() yeah');
     setIsConnecting(true);
 
-    let { sessionId } = await getSession(roomName);
+    let sessionData = await getSession(roomName);
+    // let token = await getToken(name, roomName)
+    // console.log('tokennnnn:',token)
+    setSessionData(sessionData);
 
-    let token = await getToken(name, roomName);
-    console.log('tokennnnn:', token);
-    let otCore = getOtCore(sessionId, token, name);
-    setOtCore(otCore);
+    // let otCore = getOtCore(sessionId, token,name);
+    // setOtCore(otCore);
   }
 
   return (
@@ -369,6 +393,7 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
         activeCameraSubscribers,
         connections,
         endCall,
+        startCall,
         toggleVideoEnabled,
         toggleAudioEnabled,
         isVideoEnabled,

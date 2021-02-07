@@ -159,7 +159,7 @@ export default function ParticipantInfo({
   // const isScreenShareEnabled = publications.find(p => p.trackName.toLowerCase().includes('screen'));
 
   const { screenShareParticipant } = useVideoContext();
-  let isScreenShareEnabled = screenShareParticipant.camera === participant;
+  let isScreenShareEnabled = screenShareParticipant?.camera === participant;
 
   // const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
   // const isParticipantReconnecting = useParticipantIsReconnecting(participant);

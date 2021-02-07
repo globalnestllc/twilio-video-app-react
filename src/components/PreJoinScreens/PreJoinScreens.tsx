@@ -16,7 +16,7 @@ export enum Steps {
 }
 
 export default function PreJoinScreens() {
-  const { user } = useAppState();
+  const { user, setUserName } = useAppState();
   const { getAudioAndVideoTracks } = useVideoContext();
   const [step, setStep] = useState(Steps.roomNameStep);
 
@@ -64,6 +64,7 @@ export default function PreJoinScreens() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setUserName(name);
     setStep(Steps.deviceSelectionStep);
   };
 

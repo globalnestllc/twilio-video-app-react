@@ -3,14 +3,15 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import MicIcon from '../../../icons/MicIcon';
 import MicOffIcon from '../../../icons/MicOffIcon';
-
-import useLocalAudioToggle from '../../../hooks/useLocalAudioToggle/useLocalAudioToggle';
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
 export default function ToggleAudioButton(props: { disabled?: boolean; className?: string }) {
-  const { isAudioEnabled, toggleAudioEnabled } = useVideoContext();
-  const { localTracks } = useVideoContext();
-  const hasAudioTrack = localTracks.some(track => track.kind === 'audio');
+  const { isAudioEnabled, toggleAudioEnabled, localParticipant } = useVideoContext();
+
+  // When it's not published the stream property is null.
+  // const hasAudioTrack = localParticipant?.stream?.hasAudio;
+  const hasAudioTrack = localParticipant;
+  console.log('hasAudioTrack', localParticipant);
 
   return (
     <Button

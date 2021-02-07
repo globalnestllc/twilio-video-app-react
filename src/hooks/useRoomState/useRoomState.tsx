@@ -32,5 +32,5 @@ export default function useRoomState(session) {
     }
   }, [session]);
 
-  return roomState;
+  return { roomState };
 }
