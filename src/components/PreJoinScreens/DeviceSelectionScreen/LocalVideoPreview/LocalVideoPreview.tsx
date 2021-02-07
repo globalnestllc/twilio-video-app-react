@@ -1,10 +1,9 @@
 import React from 'react';
 import AvatarIcon from '../../../../icons/AvatarIcon';
 import { makeStyles, Theme, Typography } from '@material-ui/core';
-import LocalAudioLevelIndicator from '../../../LocalAudioLevelIndicator/LocalAudioLevelIndicator';
-import { LocalVideoTrack } from 'twilio-video';
-import VideoTrack from '../../../VideoTrack/VideoTrack';
-import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';
+import VideoTrack from '../../../../vonage/VideoTrack';
+import AudioLevelIndicator from '../../../../vonage/AudioLevelIndicator';
+import useLocalParticipant from '../../../../vonage/useLocalParticipant';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -55,15 +54,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export default function LocalVideoPreview({ identity }: { identity: string }) {
   const classes = useStyles();
-  const { localTracks } = useVideoContext();
-
-  const videoTrack = localTracks.find(track => track.name.includes('camera')) as LocalVideoTrack;
+  const { publisher } = useLocalParticipant();
 
   return (
     <div className={classes.container}>
       <div className={classes.innerContainer}>
-        {videoTrack ? (
-          <VideoTrack track={videoTrack} isLocal />
+        {!!publisher ? (
+          <VideoTrack publisher={publisher} />
         ) : (
           <div className={classes.avatarContainer}>
             <AvatarIcon />
@@ -73,7 +70,7 @@ export default function LocalVideoPreview({ identity }: { identity: string }) {
 
       <div className={classes.identityContainer}>
         <span className={classes.identity}>
-          <LocalAudioLevelIndicator />
+          <AudioLevelIndicator participant={publisher} />
           <Typography variant="body1" color="inherit" component="span">
             {identity}
           </Typography>

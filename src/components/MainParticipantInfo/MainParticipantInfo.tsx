@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, Theme } from '@material-ui/core/styles';
-import { LocalAudioTrack, LocalVideoTrack, Participant, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
+import { LocalAudioTrack, LocalVideoTrack, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
 
 import AvatarIcon from '../../icons/AvatarIcon';
 import Typography from '@material-ui/core/Typography';
@@ -15,6 +15,7 @@ import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/use
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import useParticipantIsReconnecting from '../../hooks/useParticipantIsReconnecting/useParticipantIsReconnecting';
 import AudioLevelIndicator from '../AudioLevelIndicator/AudioLevelIndicator';
+import { Participant } from '../../vonage/types';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -81,27 +82,29 @@ interface MainParticipantInfoProps {
 export default function MainParticipantInfo({ participant, children }: MainParticipantInfoProps) {
   const classes = useStyles();
   const {
-    room: { localParticipant },
+    localParticipant,
+    screenShareParticipant,
+    viewingSharedScreen: isRemoteParticipantScreenSharing,
+    sharingScreen,
   } = useVideoContext();
   const isLocal = localParticipant === participant;
 
-  const screenShareParticipant = useScreenShareParticipant();
-  const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
+  // const publications = usePublications(participant);
+  // const videoPublication = publications.find(p => p.trackName.toLowerCase().includes('camera'));
+  // const screenSharePublication = publications.find(p => p.trackName.toLowerCase().includes('screen'));
+  //
+  // const videoTrack = useTrack(screenSharePublication || videoPublication);
+  // const isVideoEnabled = Boolean(videoTrack);
 
-  const publications = usePublications(participant);
-  const videoPublication = publications.find(p => p.trackName.toLowerCase().includes('camera'));
-  const screenSharePublication = publications.find(p => p.trackName.toLowerCase().includes('screen'));
+  // const audioPublication = publications.find(p => p.kind === 'audio');
+  // const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
+  //
+  // const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
+  // // const isParticipantReconnecting = useParticipantIsReconnecting(participant);
 
-  const videoTrack = useTrack(screenSharePublication || videoPublication);
-  const isVideoEnabled = Boolean(videoTrack);
+  const { isVideoEnabled } = useVideoContext();
 
-  const audioPublication = publications.find(p => p.kind === 'audio');
-  const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
-
-  const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
-  const isParticipantReconnecting = useParticipantIsReconnecting(participant);
-
-  const { displayName } = useParticipantDisplayName(participant);
+  const displayName = participant.stream?.name;
   return (
     <div
       data-cy-main-participant
@@ -112,26 +115,21 @@ export default function MainParticipantInfo({ participant, children }: MainParti
     >
       <div className={classes.infoContainer}>
         <div className={classes.identity}>
-          <AudioLevelIndicator audioTrack={audioTrack} />
           <Typography variant="body1" color="inherit">
             {displayName}
             {isLocal && ' (You)'}
-            {screenSharePublication && ' - Screen'}
+            {sharingScreen && ' - Screen'}
           </Typography>
         </div>
       </div>
-      {(!isVideoEnabled || isVideoSwitchedOff) && (
-        <div className={classes.avatarContainer}>
-          <AvatarIcon />
-        </div>
-      )}
-      {isParticipantReconnecting && (
-        <div className={classes.reconnectingContainer}>
-          <Typography variant="body1" style={{ color: 'white' }}>
-            Reconnecting...
-          </Typography>
-        </div>
-      )}
+
+      {/*{isParticipantReconnecting && (*/}
+      {/*  <div className={classes.reconnectingContainer}>*/}
+      {/*    <Typography variant="body1" style={{ color: 'white' }}>*/}
+      {/*      Reconnecting...*/}
+      {/*    </Typography>*/}
+      {/*  </div>*/}
+      {/*)}*/}
       {children}
     </div>
   );

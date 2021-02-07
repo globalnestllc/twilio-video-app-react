@@ -53,13 +53,13 @@ export default function PreJoinScreens() {
   }, [_roomName, _userName]);
 
   useEffect(() => {
-    if (step === Steps.deviceSelectionStep && !mediaError) {
-      getAudioAndVideoTracks().catch(error => {
-        console.log('Error acquiring local media:');
-        console.dir(error);
-        setMediaError(error);
-      });
-    }
+    // if (step === Steps.deviceSelectionStep && !mediaError) {
+    //   getAudioAndVideoTracks().catch(error => {
+    //     console.log('Error acquiring local media:');
+    //     console.dir(error);
+    //     setMediaError(error);
+    //   });
+    // }
   }, [getAudioAndVideoTracks, step, mediaError]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

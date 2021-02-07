@@ -1,36 +1,31 @@
-import { LocalVideoTrack } from 'twilio-video';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback } from 'react';
 import useVideoContext from '../useVideoContext/useVideoContext';
 
 export default function useLocalVideoToggle() {
-  const {
-    room: { localParticipant },
-    localTracks,
-    getLocalVideoTrack,
-    removeLocalVideoTrack,
-    onError,
-  } = useVideoContext();
-  const videoTrack = localTracks.find(track => track.name.toLowerCase().includes('camera')) as LocalVideoTrack;
-  const [isPublishing, setIspublishing] = useState(false);
-  const previousDeviceIdRef = useRef<string>();
+  const { isVideoEnabled, toggleVideoEnabled } = useVideoContext();
 
-  const toggleVideoEnabled = useCallback(() => {
-    if (!isPublishing) {
-      if (videoTrack) {
-        previousDeviceIdRef.current = videoTrack.mediaStreamTrack.getSettings().deviceId;
-        const localTrackPublication = localParticipant?.unpublishTrack(videoTrack);
-        // TODO: remove when SDK implements this event. See: https://issues.corp.twilio.com/browse/JSDK-2592
-        localParticipant?.emit('trackUnpublished', localTrackPublication);
-        removeLocalVideoTrack();
-      } else {
-        setIspublishing(true);
-        getLocalVideoTrack({ deviceId: { exact: previousDeviceIdRef.current } })
-          .then((track: LocalVideoTrack) => localParticipant?.publishTrack(track, { priority: 'low' }))
-          .catch(onError)
-          .finally(() => setIspublishing(false));
-      }
-    }
-  }, [videoTrack, localParticipant, getLocalVideoTrack, isPublishing, onError, removeLocalVideoTrack]);
+  // let publishers = otCore.state().publishers
+  //
+  // // @ts-ignore
+  // let isEnabled = Object.keys(publishers.camera).reduce((enabled, camera) => {
+  //     // @ts-ignore
+  //     camera.on("streamCreated", function(event) {
+  //         console.log("Publisher started streaming.");
+  //     })
+  //     // @ts-ignore
+  //     camera.on("streamDestroyed", function(event) {
+  //         event.preventDefault();
+  //         console.log("Publisher stopped streaming.");
+  //     });
+  //
+  //     // @ts-ignore
+  //     return !!camera.getVideoSource().track || enabled
+  // }, false);
+  // console.log("Canera enabled:",isEnabled)
 
-  return [!!videoTrack, toggleVideoEnabled] as const;
+  // const toggleVideoEnabled = useCallback(() => {
+  //     otCore.toggleLocalVideo(!isEnabled);
+  // }, [isEnabled]);
+  //
+  return [isVideoEnabled, toggleVideoEnabled] as const;
 }

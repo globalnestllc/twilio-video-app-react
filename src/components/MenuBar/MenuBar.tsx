@@ -68,7 +68,7 @@ export default function MenuBar(props) {
   const { end, zone } = useParams();
 
   const { isSharingScreen, toggleScreenShare, room, localTracks } = useVideoContext();
-  const roomState = useRoomState();
+  const { roomState } = useVideoContext();
   const isReconnecting = roomState === 'reconnecting';
 
   const handleClose = () => {

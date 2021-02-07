@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { LocalAudioTrack, LocalVideoTrack, Participant, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
+import { LocalAudioTrack, LocalVideoTrack, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
 
 import AudioLevelIndicator from '../AudioLevelIndicator/AudioLevelIndicator';
 import AvatarIcon from '../../icons/AvatarIcon';
@@ -15,6 +15,8 @@ import usePublications from '../../hooks/usePublications/usePublications';
 import useTrack from '../../hooks/useTrack/useTrack';
 import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
 import useParticipantIsReconnecting from '../../hooks/useParticipantIsReconnecting/useParticipantIsReconnecting';
+import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
+import { Participant } from '../../vonage/types';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -153,20 +155,15 @@ export default function ParticipantInfo({
   isLocalParticipant,
   hideParticipant,
 }: ParticipantInfoProps) {
-  const publications = usePublications(participant);
+  // const publications = usePublications(participant);
+  // const isScreenShareEnabled = publications.find(p => p.trackName.toLowerCase().includes('screen'));
 
-  const audioPublication = publications.find(p => p.kind === 'audio');
-  const videoPublication = publications.find(p => p.trackName.toLowerCase().includes('camera'));
+  const { screenShareParticipant } = useVideoContext();
+  let isScreenShareEnabled = screenShareParticipant.camera === participant;
 
-  const isVideoEnabled = Boolean(videoPublication);
-  const isScreenShareEnabled = publications.find(p => p.trackName.toLowerCase().includes('screen'));
-
-  const videoTrack = useTrack(videoPublication);
-  const isVideoSwitchedOff = useIsTrackSwitchedOff(videoTrack as LocalVideoTrack | RemoteVideoTrack);
-
-  const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
-  const isParticipantReconnecting = useParticipantIsReconnecting(participant);
-  const { displayName } = useParticipantDisplayName(participant);
+  // const audioTrack = useTrack(audioPublication) as LocalAudioTrack | RemoteAudioTrack | undefined;
+  // const isParticipantReconnecting = useParticipantIsReconnecting(participant);
+  // const { displayName } = useParticipantDisplayName(participant);
 
   const classes = useStyles();
 
@@ -177,12 +174,12 @@ export default function ParticipantInfo({
         [classes.cursorPointer]: Boolean(onClick),
       })}
       onClick={onClick}
-      data-cy-participant={participant.identity}
+      // data-cy-participant={participant.identity}
     >
       <div className={classes.infoContainer}>
-        <div className={classes.networkQualityContainer}>
-          <NetworkQualityLevel participant={participant} />
-        </div>
+        {/*<div className={classes.networkQualityContainer}>*/}
+        {/*<NetworkQualityLevel participant={participant} />*/}
+        {/*</div>*/}
         <div className={classes.infoRowBottom}>
           {isScreenShareEnabled && (
             <span className={classes.screenShareIconContainer}>
@@ -190,28 +187,23 @@ export default function ParticipantInfo({
             </span>
           )}
           <span className={classes.identity}>
-            <AudioLevelIndicator audioTrack={audioTrack} />
             <Typography variant="body1" className={classes.typeography} component="span">
-              {displayName}
+              {participant.stream?.name}
               {isLocalParticipant && ' (You)'}
             </Typography>
           </span>
         </div>
+
         <div>{isSelected && <PinIcon />}</div>
       </div>
       <div className={classes.innerContainer}>
-        {(!isVideoEnabled || isVideoSwitchedOff) && (
-          <div className={classes.avatarContainer}>
-            <AvatarIcon />
-          </div>
-        )}
-        {isParticipantReconnecting && (
-          <div className={classes.reconnectingContainer}>
-            <Typography variant="body1" className={classes.typeography}>
-              Reconnecting...
-            </Typography>
-          </div>
-        )}
+        {/*{isParticipantReconnecting && (*/}
+        {/*  <div className={classes.reconnectingContainer}>*/}
+        {/*    <Typography variant="body1" className={classes.typeography}>*/}
+        {/*      Reconnecting...*/}
+        {/*    </Typography>*/}
+        {/*  </div>*/}
+        {/*)}*/}
         {children}
       </div>
     </div>

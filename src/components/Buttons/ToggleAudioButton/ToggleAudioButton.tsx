@@ -8,7 +8,7 @@ import useLocalAudioToggle from '../../../hooks/useLocalAudioToggle/useLocalAudi
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
 export default function ToggleAudioButton(props: { disabled?: boolean; className?: string }) {
-  const [isAudioEnabled, toggleAudioEnabled] = useLocalAudioToggle();
+  const { isAudioEnabled, toggleAudioEnabled } = useVideoContext();
   const { localTracks } = useVideoContext();
   const hasAudioTrack = localTracks.some(track => track.kind === 'audio');
 

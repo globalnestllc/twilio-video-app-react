@@ -7,6 +7,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     brand: string;
     footerHeight: number;
     mobileTopBarHeight: number;
+    topBarHeight: number;
     mobileFooterHeight: number;
     sidebarMobilePadding: number;
     participantBorderWidth: number;
@@ -19,6 +20,7 @@ declare module '@material-ui/core/styles/createMuiTheme' {
     brand: string;
     footerHeight: number;
     mobileTopBarHeight: number;
+    topBarHeight: number;
     mobileFooterHeight: number;
     sidebarMobilePadding: number;
     participantBorderWidth: number;
@@ -121,4 +123,5 @@ export default createMuiTheme({
   sidebarMobilePadding: 8,
   participantBorderWidth: 2,
   mobileTopBarHeight: 52,
+  topBarHeight: 56,
 });

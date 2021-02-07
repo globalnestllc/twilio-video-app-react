@@ -1,12 +1,12 @@
 import React from 'react';
-import { DEFAULT_VIDEO_CONSTRAINTS, SELECTED_VIDEO_INPUT_KEY } from '../../../constants';
-import { FormControl, MenuItem, Typography, Select } from '@material-ui/core';
+import { FormControl, MenuItem, Select, Typography } from '@material-ui/core';
 import { LocalVideoTrack } from 'twilio-video';
 import { makeStyles } from '@material-ui/core/styles';
-import VideoTrack from '../../VideoTrack/VideoTrack';
-import useMediaStreamTrack from '../../../hooks/useMediaStreamTrack/useMediaStreamTrack';
+
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 import { useVideoInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
+import VideoTrack from '../../../vonage/VideoTrack';
+import useMediaStreamTrack from '../../../vonage/useMediaStreamTrack';
 
 const useStyles = makeStyles({
   preview: {
@@ -22,25 +22,14 @@ const useStyles = makeStyles({
 export default function VideoInputList() {
   const classes = useStyles();
   const videoInputDevices = useVideoInputDevices();
-  const { localTracks } = useVideoContext();
-
-  const localVideoTrack = localTracks.find(track => track.kind === 'video') as LocalVideoTrack;
-  const mediaStreamTrack = useMediaStreamTrack(localVideoTrack);
-  const localVideoInputDeviceId = mediaStreamTrack?.getSettings().deviceId;
-
-  function replaceTrack(newDeviceId: string) {
-    window.localStorage.setItem(SELECTED_VIDEO_INPUT_KEY, newDeviceId);
-    localVideoTrack.restart({
-      ...(DEFAULT_VIDEO_CONSTRAINTS as {}),
-      deviceId: { exact: newDeviceId },
-    });
-  }
+  const { localParticipant } = useVideoContext();
+  const { mediaStreamTrack, localDeviceId, replaceTrack } = useMediaStreamTrack(localParticipant, 'video');
 
   return (
     <div>
-      {localVideoTrack && (
+      {mediaStreamTrack && (
         <div className={classes.preview}>
-          <VideoTrack isLocal track={localVideoTrack} />
+          <VideoTrack isSelected publisher={localParticipant} />
         </div>
       )}
       {videoInputDevices.length > 1 ? (
@@ -48,11 +37,7 @@ export default function VideoInputList() {
           <Typography variant="subtitle2" gutterBottom>
             Video Input
           </Typography>
-          <Select
-            onChange={e => replaceTrack(e.target.value as string)}
-            value={localVideoInputDeviceId || ''}
-            variant="outlined"
-          >
+          <Select onChange={e => replaceTrack(e.target.value as string)} value={localDeviceId || ''} variant="outlined">
             {videoInputDevices.map(device => (
               <MenuItem value={device.deviceId} key={device.deviceId}>
                 {device.label}
@@ -65,7 +50,7 @@ export default function VideoInputList() {
           <Typography variant="subtitle2" gutterBottom>
             Video Input
           </Typography>
-          <Typography>{localVideoTrack?.mediaStreamTrack.label || 'No Local Video'}</Typography>
+          <Typography>{mediaStreamTrack?.label || 'No Local Video'}</Typography>
         </>
       )}
     </div>

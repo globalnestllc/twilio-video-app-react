@@ -14,6 +14,7 @@ import { inputLabels, Settings } from '../../../state/settings/settingsReducer';
 import { RenderDimensions } from '../../../state/settings/renderDimensions';
 import { useAppState } from '../../../state';
 import useRoomState from '../../../hooks/useRoomState/useRoomState';
+import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
 const useStyles = makeStyles({
   formControl: {
@@ -39,7 +40,7 @@ const RenderDimensionItems = RenderDimensions.map(({ label, value }) => (
 export default function ConnectionOptions({ className, hidden }: { className?: string; hidden?: boolean }) {
   const classes = useStyles();
   const { settings, dispatchSetting } = useAppState();
-  const roomState = useRoomState();
+  const { roomState } = useVideoContext();
   const isDisabled = roomState !== 'disconnected';
 
   const handleChange = useCallback(

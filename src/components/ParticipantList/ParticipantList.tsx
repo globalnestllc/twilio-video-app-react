@@ -1,12 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
 import Participant from '../Participant/Participant';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import useMainParticipant from '../../hooks/useMainParticipant/useMainParticipant';
-import useParticipants from '../../hooks/useParticipants/useParticipants';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
+import VideoTrack from '../../vonage/VideoTrack';
+import useMainParticipant from '../../hooks/useMainParticipant/useMainParticipant';
 import useSelectedParticipant from '../VideoProvider/useSelectedParticipant/useSelectedParticipant';
-import useScreenShareParticipant from '../../hooks/useScreenShareParticipant/useScreenShareParticipant';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,36 +36,50 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function ParticipantList() {
   const classes = useStyles();
-  const {
-    room: { localParticipant },
-  } = useVideoContext();
-  const participants = useParticipants();
-  const [selectedParticipant, setSelectedParticipant] = useSelectedParticipant();
-  const screenShareParticipant = useScreenShareParticipant();
+  // const {
+  //   room: { localParticipant },
+  // } = useVideoContext();
+  // const participants = useParticipants();
+  const { selectedParticipant, setSelectedParticipant } = useSelectedParticipant();
+  // const screenShareParticipant = useScreenShareParticipant();
   const mainParticipant = useMainParticipant();
-  const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
+  // const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
 
-  if (participants.length === 0) return null; // Don't render this component if there are no remote participants.
+  const { localParticipant, publishers, subscribers, viewingSharedScreen } = useVideoContext();
+  // if (activeCameraSubscribers === 0) return null; // Don't render this component if there are no remote participants.
+
+  // @ts-ignore
+  // let participants = connections.map(c => c).filter(connection => !connection.id.includes(".tokbox.com"))
+  let participants = [...publishers, ...subscribers];
+  // @ts-ignore
+  console.log('Selected: participant list', participants);
 
   return (
     <aside
       className={clsx(classes.container, {
-        [classes.transparentBackground]: !isRemoteParticipantScreenSharing,
+        [classes.transparentBackground]: !viewingSharedScreen,
       })}
     >
       <div className={classes.scrollContainer}>
-        <Participant participant={localParticipant} isLocalParticipant={true} />
         {participants.map(participant => {
           const isSelected = participant === selectedParticipant;
-          const hideParticipant =
-            participant === mainParticipant && participant !== screenShareParticipant && !isSelected;
+          const hideParticipant = participant === mainParticipant && !isSelected; //&& participant !== screenShareParticipant ;
+          const isLocalParticipant = participant === localParticipant;
+
+          console.log('Selected: participant list hide?', hideParticipant, participant);
+          if (hideParticipant) {
+            return null;
+          }
+
           return (
             <Participant
-              key={participant.sid}
+              key={participant.id}
               participant={participant}
-              isSelected={participant === selectedParticipant}
-              onClick={() => setSelectedParticipant(participant)}
-              hideParticipant={hideParticipant}
+              isLocalParticipant={isLocalParticipant}
+              isSelected={isSelected}
+              onClick={() => {
+                setSelectedParticipant(participant);
+              }}
             />
           );
         })}

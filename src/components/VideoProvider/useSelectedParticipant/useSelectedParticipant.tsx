@@ -7,7 +7,16 @@ export const selectedParticipantContext = createContext<selectedParticipantConte
 
 export default function useSelectedParticipant() {
   const [selectedParticipant, setSelectedParticipant] = useContext(selectedParticipantContext);
-  return [selectedParticipant, setSelectedParticipant] as const;
+  return { selectedParticipant, setSelectedParticipant } as const;
+  //
+  // const [selectedParticipant, _setSelectedParticipant] = useState<Participant | null>(null);
+  //
+  // const setSelectedParticipant = (participant) =>{
+  //     _setSelectedParticipant(prevParticipant => (prevParticipant === participant ? null : participant));
+  //     console.log('selectedParticipant0',selectedParticipant,'->',participant)
+  // }
+  //
+  // return {selectedParticipant, setSelectedParticipant};
 }
 
 type SelectedParticipantProviderProps = {

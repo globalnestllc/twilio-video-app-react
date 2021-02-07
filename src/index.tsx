@@ -15,6 +15,7 @@ import './types';
 import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
+import AppWrapper from './AppWrapper';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -24,7 +25,7 @@ const VideoApp = () => {
     <UnsupportedBrowserWarning>
       <VideoProvider options={connectionOptions} onError={setError}>
         <ErrorDialog dismissError={() => setError(null)} error={error} />
-        <App />
+        <AppWrapper />
       </VideoProvider>
     </UnsupportedBrowserWarning>
   );
@@ -39,21 +40,11 @@ ReactDOM.render(
           <PrivateRoute exact path="/">
             <VideoApp />
           </PrivateRoute>
-          <PrivateRoute path="/room/:URLRoomName/:uName/:eName/:vType/:recording/:end/:zone/:base">
-            <VideoApp />
-          </PrivateRoute>
-          <PrivateRoute path="/room/:URLRoomName/:uName/:vType/:recording/:end/:zone">
-            <VideoApp />
-          </PrivateRoute>
-
           {/* For demoing and testing the application*/}
           <PrivateRoute path="/demo/room/:URLRoomName/:uName">
             <VideoApp />
           </PrivateRoute>
 
-          <Route path="/login">
-            <LoginPage />
-          </Route>
           <Redirect to="/" />
         </Switch>
       </AppStateProvider>

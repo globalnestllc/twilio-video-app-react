@@ -1,11 +1,12 @@
 import React, { createContext, useContext, useReducer, useState } from 'react';
 import { RoomType } from '../types';
 import { TwilioError } from 'twilio-video';
-import { settingsReducer, initialSettings, Settings, SettingsAction } from './settings/settingsReducer';
+import { initialSettings, Settings, SettingsAction, settingsReducer } from './settings/settingsReducer';
 import useActiveSinkId from './useActiveSinkId/useActiveSinkId';
 import useFirebaseAuth from './useFirebaseAuth/useFirebaseAuth';
 import usePasscodeAuth from './usePasscodeAuth/usePasscodeAuth';
 import { User } from 'firebase';
+import { getSession as getSessionService, getToken as getTokenService } from '../Api/ApiServices';
 
 export interface StateContextType {
   displayName: string;
@@ -18,6 +19,8 @@ export interface StateContextType {
     recording?: boolean | string,
     passcode?: string
   ): Promise<string>;
+
+  getSession(room?: string, room_type?: string, recording?: boolean | string): Promise<any>;
   setUserName(name: string): void;
   user?: User | null | { displayName: undefined; photoURL: undefined; passcode?: string };
   signIn?(passcode?: string): Promise<void>;
@@ -79,24 +82,19 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   } else {
     contextValue = {
       ...contextValue,
-      getToken: async (identity, unique_name, room_type = 'peer-to-peer', recording = false) => {
-        const headers = new window.Headers();
-        const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
-        const params = new window.URLSearchParams({
-          identity,
-          unique_name,
-          room_type,
-          recording: recording.toString(),
-        });
-        let res = await fetch(`${endpoint}?${params}`, { headers });
 
-        let responseText = await res.text();
-        if (responseText === 'duplicate-identity') {
-          let error = new Error('This user name is being used, please pick another one and join.') as TwilioError;
-          setError(error);
-          throw error;
-        }
-        return responseText;
+      getToken: async (identity, unique_name, room_type = 'peer-to-peer', recording = false) => {
+        // @ts-ignore
+        let response = await getTokenService(unique_name, { name: identity, email: localStorage.email });
+        // @ts-ignore
+        return response.token;
+      },
+      getSession: async (unique_name, room_type = 'peer-to-peer', recording = false) => {
+        console.log('got session1:');
+        let response = await getSessionService(unique_name, room_type, recording);
+        console.log('got session:', response.session_id);
+        // @ts-ignore
+        return { sessionId: response.session_id, roomName: response.slug };
       },
     };
   }
@@ -111,6 +109,19 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
     setToast({ ...toast, open: false });
   };
 
+  const getSession: StateContextType['getSession'] = (room, room_type, recording) => {
+    return contextValue
+      .getSession(room, room_type, recording)
+      .then(res => {
+        setIsFetching(false);
+        return res;
+      })
+      .catch(err => {
+        setError(err);
+        setIsFetching(false);
+        return Promise.reject(err);
+      });
+  };
   const getToken: StateContextType['getToken'] = (name, room, room_type, recording) => {
     setIsFetching(true);
     return contextValue
@@ -131,7 +142,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
   };
 
   return (
-    <StateContext.Provider value={{ ...contextValue, getToken, setUserName, showToast, hideToast }}>
+    <StateContext.Provider value={{ ...contextValue, getToken, getSession, setUserName, showToast, hideToast }}>
       {props.children}
     </StateContext.Provider>
   );

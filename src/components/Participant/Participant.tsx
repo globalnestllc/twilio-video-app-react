@@ -1,7 +1,7 @@
 import React from 'react';
 import ParticipantInfo from '../ParticipantInfo/ParticipantInfo';
-import ParticipantTracks from '../ParticipantTracks/ParticipantTracks';
-import { Participant as IParticipant } from 'twilio-video';
+import VideoTrack from '../../vonage/VideoTrack';
+import { Participant as IParticipant } from '../../vonage/types';
 
 interface ParticipantProps {
   participant: IParticipant;
@@ -16,8 +16,6 @@ interface ParticipantProps {
 
 export default function Participant({
   participant,
-  videoOnly,
-  enableScreenShare,
   onClick,
   isSelected,
   isLocalParticipant,
@@ -31,12 +29,7 @@ export default function Participant({
       isLocalParticipant={isLocalParticipant}
       hideParticipant={hideParticipant}
     >
-      <ParticipantTracks
-        participant={participant}
-        videoOnly={videoOnly}
-        enableScreenShare={enableScreenShare}
-        isLocalParticipant={isLocalParticipant}
-      />
+      <VideoTrack publisher={participant} isSelected={isSelected} />
     </ParticipantInfo>
   );
 }

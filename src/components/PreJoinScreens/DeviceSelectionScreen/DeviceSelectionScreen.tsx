@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Typography, Grid, Button, Theme, Hidden } from '@material-ui/core';
+import { Button, Grid, Hidden, makeStyles, Theme, Typography } from '@material-ui/core';
 import LocalVideoPreview from './LocalVideoPreview/LocalVideoPreview';
 import SettingsMenu from './SettingsMenu/SettingsMenu';
 import { Steps } from '../PreJoinScreens';
@@ -11,6 +11,8 @@ import { useParams } from 'react-router-dom';
 import * as ApiServices from '../../../Api/ApiServices';
 import moment from 'moment';
 import { TwilioError } from 'twilio-video';
+import NetworkTest, { ErrorNames } from 'opentok-network-test-js';
+import useNetworkTest from '../../../vonage/useNetworkTest';
 
 const useStyles = makeStyles((theme: Theme) => ({
   gutterBottom: {
@@ -62,10 +64,11 @@ interface DeviceSelectionScreenProps {
 
 export default function DeviceSelectionScreen({ name, roomName, setStep }: DeviceSelectionScreenProps) {
   const classes = useStyles();
-  const { getToken, isFetching } = useAppState();
+  const { getToken, isFetching, setError } = useAppState();
   const { connect, isAcquiringLocalTracks, isConnecting } = useVideoContext();
   const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
-  const { setError } = useAppState();
+  console.log('isConnecting', isConnecting);
+  // const {} = useNetworkTest(name);
 
   const { vType: _videoType, recording = false, zone, base } = useParams();
 
@@ -86,28 +89,36 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
         } else if (currentTime.getTime() < new Date(data.starttime.replace(/-/g, '/')).getTime()) {
           setError(new Error('Meeting has not started yet.') as TwilioError);
         } else {
-          getToken(name, roomName, _videoType, recording)
-            .then(token => connect(token))
-            .catch(error => console.log('Error fetching token: ', error));
+          connect(roomName, name)
+            .then(r => console.log('Connected to room'))
+            .catch(err => console.log('Error connecting room', err));
+          // getToken(name, roomName, _videoType, recording)
+          //     .then(token => connect(token,name))
+          //     .catch(error => console.log('Error fetching token: ', error));
         }
       });
     } else {
-      getToken(name, roomName, _videoType, recording)
-        .then(token => connect(token))
-        .catch(error => console.log('Error fetching token: ', error));
+      connect(roomName, name)
+        .then(r => console.log('Connected to room'))
+        .catch(err => console.log('Error connecting room', err));
+
+      // getToken(name, roomName, _videoType, recording)
+      //     .then(token => connect(token,name))
+      //     .catch(error => console.log('Error fetching token: ', error));
     }
   };
 
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join {roomName}
+        Join {roomName.substr(0, 10)}
       </Typography>
 
       <Grid container justify="center">
         <Grid item md={7} sm={12} xs={12}>
           <div className={classes.localPreviewContainer}>
             <LocalVideoPreview identity={name} />
+            {/*<div id={"localVideoPreview"} style={{width:"100%",height:'100%'}}/>*/}
           </div>
           <div className={classes.mobileButtonBar}>
             <Hidden mdUp>
