@@ -8,7 +8,9 @@ import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 import { useVideoInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
 
 export default function FlipCameraButton() {
-  const { localTracks } = useVideoContext();
+  // const { localTracks } = useVideoContext();
+  let localTracks = [];
+
   const [supportsFacingMode, setSupportsFacingMode] = useState<Boolean | null>(null);
   const videoTrack = localTracks.find(track => track.name.includes('camera')) as LocalVideoTrack;
   const mediaStreamTrack = useMediaStreamTrack(videoTrack);

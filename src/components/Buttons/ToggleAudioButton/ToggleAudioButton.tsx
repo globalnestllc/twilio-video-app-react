@@ -11,7 +11,6 @@ export default function ToggleAudioButton(props: { disabled?: boolean; className
   // When it's not published the stream property is null.
   // const hasAudioTrack = localParticipant?.stream?.hasAudio;
   const hasAudioTrack = localParticipant;
-  console.log('hasAudioTrack', localParticipant);
 
   return (
     <Button

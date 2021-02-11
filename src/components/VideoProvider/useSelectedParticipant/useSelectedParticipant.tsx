@@ -20,27 +20,27 @@ export default function useSelectedParticipant() {
 }
 
 type SelectedParticipantProviderProps = {
-  room: Room;
+  // room: Room;
   children: React.ReactNode;
 };
 
-export function SelectedParticipantProvider({ room, children }: SelectedParticipantProviderProps) {
+export function SelectedParticipantProvider({ children }: SelectedParticipantProviderProps) {
   const [selectedParticipant, _setSelectedParticipant] = useState<Participant | null>(null);
   const setSelectedParticipant = (participant: Participant) =>
     _setSelectedParticipant(prevParticipant => (prevParticipant === participant ? null : participant));
 
-  useEffect(() => {
-    const onDisconnect = () => _setSelectedParticipant(null);
-    const handleParticipantDisconnected = (participant: Participant) =>
-      _setSelectedParticipant(prevParticipant => (prevParticipant === participant ? null : prevParticipant));
-
-    room.on('disconnected', onDisconnect);
-    room.on('participantDisconnected', handleParticipantDisconnected);
-    return () => {
-      room.off('disconnected', onDisconnect);
-      room.off('participantDisconnected', handleParticipantDisconnected);
-    };
-  }, [room]);
+  // useEffect(() => {
+  //   const onDisconnect = () => _setSelectedParticipant(null);
+  //   const handleParticipantDisconnected = (participant: Participant) =>
+  //     _setSelectedParticipant(prevParticipant => (prevParticipant === participant ? null : prevParticipant));
+  //
+  //   room.on('disconnected', onDisconnect);
+  //   room.on('participantDisconnected', handleParticipantDisconnected);
+  //   return () => {
+  //     room.off('disconnected', onDisconnect);
+  //     room.off('participantDisconnected', handleParticipantDisconnected);
+  //   };
+  // }, [room]);
 
   return (
     <selectedParticipantContext.Provider value={[selectedParticipant, setSelectedParticipant]}>

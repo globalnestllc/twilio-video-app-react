@@ -5,7 +5,6 @@ export default function useMainParticipant() {
   const { selectedParticipant } = useSelectedParticipant();
   // const screenShareParticipant = useScreenShareParticipant();
   // const dominantSpeaker = useDominantSpeaker();
-  console.log('selectedParticipant1', selectedParticipant);
   const { publishers, subscribers, viewingSharedScreen, screenShareParticipant } = useVideoContext();
   const participants = [...publishers, ...subscribers];
   const localParticipant = publishers?.[0];
@@ -16,7 +15,7 @@ export default function useMainParticipant() {
   // variables will change the how the main speaker is determined.
   // return selectedParticipant || remoteScreenShareParticipant || dominantSpeaker || participants[0] || localParticipant;
 
-  let remoteScreenShareParticipant = viewingSharedScreen && screenShareParticipant.screen;
+  let remoteScreenShareParticipant = viewingSharedScreen && screenShareParticipant?.screen;
 
   return selectedParticipant || remoteScreenShareParticipant || subscribers?.[0] || localParticipant;
 }

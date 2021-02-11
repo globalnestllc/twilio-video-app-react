@@ -90,9 +90,7 @@ export default function AppStateProvider(props: React.PropsWithChildren<{}>) {
         return response.token;
       },
       getSession: async (unique_name, room_type = 'peer-to-peer', recording = false) => {
-        console.log('got session1:');
         let response = await getSessionService(unique_name, room_type, recording);
-        console.log('got session:', response.session_id);
         // @ts-ignore
         return { sessionId: response.session_id, roomName: response.slug };
       },

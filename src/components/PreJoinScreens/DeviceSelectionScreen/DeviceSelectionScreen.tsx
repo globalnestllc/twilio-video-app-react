@@ -64,11 +64,9 @@ interface DeviceSelectionScreenProps {
 
 export default function DeviceSelectionScreen({ name, roomName, setStep }: DeviceSelectionScreenProps) {
   const classes = useStyles();
-  const { getToken, isFetching, setError } = useAppState();
-  const { connect, isAcquiringLocalTracks, isConnecting, startCall } = useVideoContext();
-  const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
-  console.log('isConnecting', isConnecting);
-  // const {} = useNetworkTest(name);
+  const { isFetching, setError } = useAppState();
+  const { connect, localParticipant } = useVideoContext();
+  const disableButtons = isFetching || !localParticipant; // || isAcquiringLocalTracks || isConnecting;
 
   const { vType: _videoType, recording = false, zone, base } = useParams();
 

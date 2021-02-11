@@ -25,7 +25,6 @@ export default function VideoTrack({ publisher, isSelected }: VideoTrackProps) {
 
   useEffect(() => {
     // @ts-ignore
-    console.log(activeSinkId, publisher?.videoElement()?.sinkId);
     publisher?.videoElement()?.setSinkId(activeSinkId);
   }, [activeSinkId]);
 
@@ -39,7 +38,6 @@ export default function VideoTrack({ publisher, isSelected }: VideoTrackProps) {
     }
 
     if (isSelected) {
-      console.log('create new ms;', videoEl);
       // @ts-ignore
       let videoTrack = publisher.videoElement().srcObject.getVideoTracks()[0];
       let ms = new MediaStream();
@@ -51,13 +49,11 @@ export default function VideoTrack({ publisher, isSelected }: VideoTrackProps) {
       videoEl.setAttribute('playsinline', 'true');
       videoEl.setAttribute('autoplay', 'true');
       videoEl.setAttribute('style', 'width:100%;height:100%');
-      console.log('create new ms', videoEl);
     }
     el.append(videoEl);
 
     return () => {
       if (videoEl) {
-        console.log('create new remove', videoEl);
         // videoEl.remove()
       }
     };

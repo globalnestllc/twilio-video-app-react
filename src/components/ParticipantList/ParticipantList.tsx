@@ -46,14 +46,12 @@ export default function ParticipantList() {
   // const isRemoteParticipantScreenSharing = screenShareParticipant && screenShareParticipant !== localParticipant;
 
   const { localParticipant, publishers, subscribers, viewingSharedScreen } = useVideoContext();
-  // if (activeCameraSubscribers === 0) return null; // Don't render this component if there are no remote participants.
 
   // @ts-ignore
   // let participants = connections.map(c => c).filter(connection => !connection.id.includes(".tokbox.com"))
   let participants = [...publishers, ...subscribers];
+  console.log('all participants', participants);
   // @ts-ignore
-  console.log('Selected: participant list', participants);
-
   return (
     <aside
       className={clsx(classes.container, {
@@ -66,7 +64,6 @@ export default function ParticipantList() {
           const hideParticipant = participant === mainParticipant && !isSelected; //&& participant !== screenShareParticipant ;
           const isLocalParticipant = participant === localParticipant;
 
-          console.log('Selected: participant list hide?', hideParticipant, participant);
           if (hideParticipant) {
             return null;
           }

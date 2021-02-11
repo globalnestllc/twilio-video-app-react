@@ -8,9 +8,7 @@ import ReconnectingNotification from './components/ReconnectingNotification/Reco
 import Room from './components/Room/Room';
 
 import useHeight from './hooks/useHeight/useHeight';
-import useRoomState from './hooks/useRoomState/useRoomState';
 import './vonage/override-style.scss';
-import VideoTopBar from './VideoTopBar';
 import useVideoContext from './hooks/useVideoContext/useVideoContext';
 
 const Container = styled('div')({
@@ -45,12 +43,12 @@ export default function App(props) {
 
   return (
     <Container style={{ height, width: '100%' }}>
+      <HiddenVideoContainer id={'hiddenVideoContainer'} />
       {roomState === 'disconnected' ? (
         <PreJoinScreens />
       ) : (
         <Main>
           {/*<VideoTopBar {...props} />*/}
-          <HiddenVideoContainer id={'hiddenVideoContainer'} />
           <ReconnectingNotification />
           <MobileTopMenuBar />
           <Room />

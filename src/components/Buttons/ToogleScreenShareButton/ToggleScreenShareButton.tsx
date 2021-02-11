@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import ScreenShareIcon from '../../../icons/ScreenShareIcon';
 import Tooltip from '@material-ui/core/Tooltip';
 
-import useScreenShareParticipant from '../../../hooks/useScreenShareParticipant/useScreenShareParticipant';
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
 export const SCREEN_SHARE_TEXT = 'Share Screen';
@@ -29,8 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function ToggleScreenShareButton(props: { disabled?: boolean }) {
   const classes = useStyles();
-  const screenShareParticipant = useScreenShareParticipant();
-  const { toggleScreenShare } = useVideoContext();
+  const { toggleScreenShare, screenShareParticipant } = useVideoContext();
   const disableScreenShareButton = Boolean(screenShareParticipant);
   const isScreenShareSupported = navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia;
   const isDisabled = props.disabled || disableScreenShareButton || !isScreenShareSupported;

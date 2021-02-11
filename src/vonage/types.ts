@@ -16,6 +16,11 @@ export interface OtCore {
   off: OtEventHandler;
 }
 
+export interface SessionProps {
+  roomName: string;
+  sessionId: string;
+}
+
 export interface Stream {
   name: 'string';
   hasAudio: boolean;

@@ -4,6 +4,7 @@ export const publisherOptions = {
   insertDefaultUI: true,
   height: '100%',
   width: '100%',
+  insertMode: 'append',
 };
 export const subscriberOptions = {
   showControls: false,
@@ -11,4 +12,8 @@ export const subscriberOptions = {
   insertDefaultUI: true,
   height: '100%',
   width: '100%',
+  insertMode: 'append',
 };
+
+export const initialVideoContainer = 'hiddenVideoContainer';
+export const apiKey = '47099484';

@@ -11,13 +11,10 @@ export default function useCountdown(end, zone) {
   };
 
   React.useEffect(() => {
-    console.log('TTTT effect', end, zone);
-
     if (end && zone && end !== '' && zone !== '') {
       zone = zone.replace(/-/g, '/');
       setTimeZone(zone);
       let endTimeNum = new Date(end.replace(/-/g, '/')).getTime();
-      console.log('TTTT setEndTime', end, zone, endTimeNum);
       setEndTime(endTimeNum);
       // setCallDis('true');
     }
@@ -36,10 +33,8 @@ export default function useCountdown(end, zone) {
   }, [remainingSeconds, endTime]);
 
   const tick = () => {
-    console.log('TTTT tick endTime', endTime);
     if (endTime) {
       const currentTime = new Date(moment.tz(new Date(), timezone).format('MM/DD/YYYY LTS')).getTime();
-      console.log('TTTT tick', endTime, currentTime);
 
       let diff = (endTime - currentTime) / 1000;
       setRemainingSeconds(diff);
@@ -53,8 +48,6 @@ export default function useCountdown(end, zone) {
       minute = Math.abs(Math.floor(remainingSeconds / 60));
       second = Math.abs(remainingSeconds % 60);
     }
-
-    console.log('TTTT remaining ', minute + ':' + second, '=== ', remainingSeconds);
     return { second, minute };
   };
 

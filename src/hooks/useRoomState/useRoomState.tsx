@@ -17,18 +17,20 @@ export default function useRoomState(session) {
       const setReconnecting = e => setRoomState('reconnecting', e);
       const setReconnected = e => setRoomState('connected', e);
 
-      console.log('session Set room state register');
+      setRoomState(session.session.currentState, 'initial');
+
       session.on('sessionConnected', setConnected);
       session.on('sessionDisconnected', setDisconnected);
       session.on('sessionReconnected', setReconnected);
       session.on('sessionReconnecting', setReconnecting);
       return () => {
-        console.log('session Set room state Un-register');
         session.off('sessionConnected', setConnected);
         session.off('sessionDisconnected', setDisconnected);
         session.off('sessionReconnected', setReconnected);
         session.off('sessionReconnecting', setReconnecting);
       };
+    } else {
+      setState('disconnected');
     }
   }, [session]);
 

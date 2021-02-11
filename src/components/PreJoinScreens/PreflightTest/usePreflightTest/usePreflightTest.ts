@@ -5,20 +5,20 @@ import { useEffect, useState, useRef } from 'react';
 import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';
 
 export default function usePreflightTest(publisherToken?: string, subscriberToken?: string) {
-  const { isConnecting } = useVideoContext();
+  // const { isConnecting } = useVideoContext();
   const [testReport, setTestReport] = useState<PreflightTestReport>();
   const [testFailure, setTestFailure] = useState<Error>();
   const [isTestRunning, setIsTestRunning] = useState(false);
   const preflightTestRef = useRef<PreflightTest>();
 
   // This will stop the preflight test when the user connects to a room
-  useEffect(() => {
-    if (isConnecting) {
-      preflightTestRef.current?.stop();
-      preflightTestRef.current?.removeAllListeners('completed');
-      preflightTestRef.current?.removeAllListeners('failed');
-    }
-  }, [isConnecting]);
+  // useEffect(() => {
+  //   if (isConnecting) {
+  //     preflightTestRef.current?.stop();
+  //     preflightTestRef.current?.removeAllListeners('completed');
+  //     preflightTestRef.current?.removeAllListeners('failed');
+  //   }
+  // }, [isConnecting]);
 
   // This will stop the preflight test when the component is unmounted.
   useEffect(() => {

@@ -20,7 +20,7 @@ export default function MainParticipant() {
   if (!mainParticipant) {
     return null;
   }
-  console.log('mainParticipant', mainParticipant);
+
   return (
     /* audio is disabled for this participant component because this participant's audio
        is already being rendered in the <ParticipantStrip /> component.  */

@@ -14,6 +14,7 @@ import clsx from 'clsx';
 import useVideoContext from './hooks/useVideoContext/useVideoContext';
 import ParticipantList from './Customizations/ParticipantList';
 import ToggleParticipantsOpen from './components/Buttons/ToggleParticipantsOpen';
+import VideoParticipants from './Customizations/VideoParticipants';
 
 const drawerWidth = 340;
 const useStyles = makeStyles(theme => ({
@@ -68,19 +69,13 @@ function AppWrapper(props) {
 
   const classes = useStyles();
 
-  const { isConnecting, isSharingScreen, participantsOpen, setParticipantsOpen } = useVideoContext();
+  const { isSharingScreen, participantsOpen, setParticipantsOpen } = useVideoContext();
 
   React.useEffect(() => {
     if (isSharingScreen) {
       setParticipantsOpen(false);
     }
   }, [isSharingScreen]);
-
-  React.useEffect(() => {
-    if (isConnecting) {
-      setParticipantsOpen(true);
-    }
-  }, [isConnecting]);
 
   const handleChatOpen = () => {};
 
@@ -147,7 +142,8 @@ function AppWrapper(props) {
               {/*</IconButton>*/}
             </div>
             <Divider />
-            <ParticipantList />
+            {/*<ParticipantList />*/}
+            <VideoParticipants />
             {/*<AttendeeList header="Participants" actions={{group: 'in-call', permissions}}*/}
             {/*              attendees={attendees} onAttendeeSelected={props.attendeeSelected}*/}
             {/*              style={{maxHeight: '100%', flexGrow: 1}}*/}

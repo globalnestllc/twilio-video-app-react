@@ -4,7 +4,6 @@ import ParticipantTracks from '../ParticipantTracks/ParticipantTracks';
 import { shallow } from 'enzyme';
 import useMainParticipant from '../../hooks/useMainParticipant/useMainParticipant';
 import useSelectedParticipant from '../VideoProvider/useSelectedParticipant/useSelectedParticipant';
-import useScreenShareParticipant from '../../hooks/useScreenShareParticipant/useScreenShareParticipant';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 
 jest.mock('../../hooks/useMainParticipant/useMainParticipant');
@@ -14,7 +13,6 @@ jest.mock('../../hooks/useVideoContext/useVideoContext');
 
 const mockuseMainParticipant = useMainParticipant as jest.Mock<any>;
 const mockUseSelectedParticipant = useSelectedParticipant as jest.Mock<any>;
-const mockUseScreenShareParticipant = useScreenShareParticipant as jest.Mock<any>;
 const mockUseVideoContext = useVideoContext as jest.Mock<any>;
 
 const mockLocalParticipant = {};
@@ -30,7 +28,6 @@ describe('the MainParticipant component', () => {
     const mockParticipant = {};
     mockuseMainParticipant.mockImplementationOnce(() => mockParticipant);
     mockUseSelectedParticipant.mockImplementationOnce(() => [mockParticipant]);
-    mockUseScreenShareParticipant.mockImplementationOnce(() => ({}));
     const wrapper = shallow(<MainParticipant />);
     expect(wrapper.find(ParticipantTracks).prop('videoPriority')).toBe('high');
   });
@@ -39,7 +36,6 @@ describe('the MainParticipant component', () => {
     const mockParticipant = {};
     mockuseMainParticipant.mockImplementationOnce(() => mockParticipant);
     mockUseSelectedParticipant.mockImplementationOnce(() => [{}]);
-    mockUseScreenShareParticipant.mockImplementationOnce(() => mockParticipant);
     const wrapper = shallow(<MainParticipant />);
     expect(wrapper.find(ParticipantTracks).prop('videoPriority')).toBe('high');
   });
@@ -48,7 +44,6 @@ describe('the MainParticipant component', () => {
     const mockParticipant = {};
     mockuseMainParticipant.mockImplementation(() => mockParticipant);
     mockUseSelectedParticipant.mockImplementation(() => [{}]);
-    mockUseScreenShareParticipant.mockImplementation(() => mockParticipant);
     mockUseVideoContext.mockImplementation(() => ({
       room: {
         localParticipant: mockParticipant,
@@ -74,7 +69,6 @@ describe('the MainParticipant component', () => {
     const mockParticipant = {};
     mockuseMainParticipant.mockImplementationOnce(() => mockParticipant);
     mockUseSelectedParticipant.mockImplementationOnce(() => [{}]);
-    mockUseScreenShareParticipant.mockImplementationOnce(() => ({}));
     const wrapper = shallow(<MainParticipant />);
     expect(wrapper.find(ParticipantTracks).prop('videoPriority')).toBe(null);
   });

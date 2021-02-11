@@ -1,20 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, Theme } from '@material-ui/core/styles';
-import { LocalAudioTrack, LocalVideoTrack, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
-
-import AvatarIcon from '../../icons/AvatarIcon';
 import Typography from '@material-ui/core/Typography';
-
-import useIsTrackSwitchedOff from '../../hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff';
-import usePublications from '../../hooks/usePublications/usePublications';
-import useScreenShareParticipant from '../../hooks/useScreenShareParticipant/useScreenShareParticipant';
-import useTrack from '../../hooks/useTrack/useTrack';
-import VideocamOff from '@material-ui/icons/VideocamOff';
-import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
-import useParticipantIsReconnecting from '../../hooks/useParticipantIsReconnecting/useParticipantIsReconnecting';
-import AudioLevelIndicator from '../AudioLevelIndicator/AudioLevelIndicator';
 import { Participant } from '../../vonage/types';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -85,7 +73,7 @@ export default function MainParticipantInfo({ participant, children }: MainParti
     localParticipant,
     screenShareParticipant,
     viewingSharedScreen: isRemoteParticipantScreenSharing,
-    sharingScreen,
+    isSharingScreen,
   } = useVideoContext();
   const isLocal = localParticipant === participant;
 
@@ -118,7 +106,7 @@ export default function MainParticipantInfo({ participant, children }: MainParti
           <Typography variant="body1" color="inherit">
             {displayName}
             {isLocal && ' (You)'}
-            {sharingScreen && ' - Screen'}
+            {isSharingScreen && ' - Screen'}
           </Typography>
         </div>
       </div>

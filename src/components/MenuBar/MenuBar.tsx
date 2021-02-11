@@ -67,15 +67,11 @@ export default function MenuBar(props) {
   const classes = useStyles();
   const { end, zone } = useParams();
 
-  const { isSharingScreen, toggleScreenShare, room, localTracks } = useVideoContext();
-  const { roomState } = useVideoContext();
+  const { isSharingScreen, toggleScreenShare } = useVideoContext();
+  const { roomState, sessionData } = useVideoContext();
   const isReconnecting = roomState === 'reconnecting';
 
-  const handleClose = () => {
-    room.disconnect?.();
-    localTracks.forEach(track => track.stop());
-    // onCloseVideo();
-  };
+  const handleClose = () => {};
 
   return (
     <>
@@ -91,7 +87,7 @@ export default function MenuBar(props) {
         <Grid container justify="space-around" alignItems="center">
           <Hidden smDown>
             <Grid style={{ flex: 1 }}>
-              <Typography variant="body1">{room.name}</Typography>
+              <Typography variant="body1">{sessionData.roomName}</Typography>
             </Grid>
           </Hidden>
           <Grid item>

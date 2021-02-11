@@ -124,12 +124,11 @@ function ParticipantItem(props) {
 export default function ParticipantList(props) {
   const { connections, connection: myConnection, removeParticipant } = useVideoContext();
   const amIAdmin = myConnection.permissions?.forceDisconnect;
-
+  console.log('pl connections', connections);
   return (
     <List>
       {connections.map(connection => {
         let isMyself = connection === myConnection;
-        console.log('connection.data', connection.data);
         let data = connection.data ? JSON.parse(connection.data) : {};
         const { name = '', email, imageUrl } = data;
         const isAdmin = connection.permissions?.forceDisconnect;

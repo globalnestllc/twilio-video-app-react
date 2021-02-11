@@ -4,7 +4,6 @@ import useVideoContext from '../hooks/useVideoContext/useVideoContext';
 import { useAppState } from '../state';
 
 export default function useNetworkTest(name) {
-  const { connect } = useVideoContext();
   const { getToken, getSession } = useAppState();
   const [networkTest, setNetworkTest] = React.useState(null);
 

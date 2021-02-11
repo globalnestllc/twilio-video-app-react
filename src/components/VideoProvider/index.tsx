@@ -1,22 +1,10 @@
 import React, { createContext, ReactNode } from 'react';
-import {
-  ConnectOptions,
-  CreateLocalTrackOptions,
-  LocalAudioTrack,
-  LocalVideoTrack,
-  Room,
-  TwilioError,
-} from 'twilio-video';
+import { ConnectOptions, TwilioError } from 'twilio-video';
 import { Callback, ErrorCallback } from '../../types';
 import { SelectedParticipantProvider } from './useSelectedParticipant/useSelectedParticipant';
 
 import AttachVisibilityHandler from './AttachVisibilityHandler/AttachVisibilityHandler';
-import useHandleRoomDisconnectionErrors from './useHandleRoomDisconnectionErrors/useHandleRoomDisconnectionErrors';
-import useHandleOnDisconnect from './useHandleOnDisconnect/useHandleOnDisconnect';
-import useHandleTrackPublicationFailed from './useHandleTrackPublicationFailed/useHandleTrackPublicationFailed';
-import useLocalTracks from './useLocalTracks/useLocalTracks';
-import useRoom from './useRoom/useRoom';
-import { Connection, OtCore, Participant } from '../../vonage/types';
+import { Connection, Participant, SessionProps } from '../../vonage/types';
 import { useAppState } from '../../state';
 import useLocalParticipant from '../../vonage/useLocalParticipant';
 import useSession from '../../vonage/useSession';
@@ -32,37 +20,25 @@ import useScreenShare from '../../vonage/useScreenShare';
 type ViewModeType = 'grid' | 'collaborator';
 
 export interface IVideoContext {
-  room: Room;
-  localTracks: (LocalAudioTrack | LocalVideoTrack)[];
   connect: (roomName: string, name: string) => Promise<void>;
   onError: ErrorCallback;
   onDisconnect: Callback;
-  getLocalVideoTrack: (newOptions?: CreateLocalTrackOptions) => Promise<LocalVideoTrack>;
-  getLocalAudioTrack: (deviceId?: string) => Promise<LocalAudioTrack>;
-  isAcquiringLocalTracks: boolean;
-  removeLocalVideoTrack: () => void;
   isSharingScreen: boolean;
   toggleScreenShare: () => void;
-  getAudioAndVideoTracks: () => Promise<void>;
   toggleVideoEnabled: () => void;
   toggleAudioEnabled: () => void;
   isVideoEnabled: boolean;
   isAudioEnabled: boolean;
   endCall: () => void;
-  startCall: () => void;
-  isConnecting: boolean;
-  isConnected: boolean;
-  sharingScreen: boolean;
+  startCall: any; //() => void;
   viewingSharedScreen: boolean;
   screenShareActive: boolean;
-  activeCameraSubscribers: number;
   connections: object;
   connection: Connection;
   publishers: any[];
   subscribers: any[];
   localParticipant: Participant;
   screenShareParticipant: { camera: Participant; screen: Participant };
-  otCore: OtCore;
   displayName: string;
   roomState: string;
 
@@ -71,6 +47,8 @@ export interface IVideoContext {
   participantsOpen: boolean;
   setParticipantsOpen: (value: boolean | ((boolean) => boolean)) => void;
   removeParticipant: (any) => void;
+  sessionData: SessionProps;
+  session: object;
 }
 
 export const VideoContext = createContext<IVideoContext>(null!);
@@ -89,37 +67,45 @@ const events = [
   'unsubscribeFromScreen',
   'startScreenShare',
   'endScreenShare',
-  'connectionCreated',
-  'connectionDestroyed',
-  'sessionConnected',
-  'sessionDisconnected',
   'sessionReconnected',
   'sessionReconnecting',
   'streamCreated',
+  'streamDestroyed',
   'streamPropertyChanged',
 ];
 
 export function VideoProvider({ options, children, onError = () => {}, onDisconnect = () => {} }: VideoProviderProps) {
-  const [sharingScreen, setSharingScreen] = React.useState(false);
-  const [viewingSharedScreen, setViewingSharedScreen] = React.useState(false);
-  const [screenShareActive, setScreenShareActive] = React.useState(false);
-  const [activeCameraSubscribers, setActiveCameraSubscribers] = React.useState(0);
-  const [connections, setConnections] = React.useState([]);
-  const [connection, setConnection] = React.useState({ id: null });
-  const [publishers, setPublishers] = React.useState([]);
-  const [subscribers, setSubscribers] = React.useState([]);
-  const [screenShareParticipant, setScreenShareParticipant] = React.useState(null);
-  const [otCore, setOtCore] = React.useState(null);
   const [viewMode, setViewMode] = React.useState('collaborator' as ViewModeType);
   const [participantsOpen, setParticipantsOpen] = React.useState(false);
-  const [sessionData, setSessionData] = React.useState({ sessionId: null, roomName: null });
 
-  const { session, roomState, subscribeToStream } = useSession(sessionData.sessionId);
-  const { getToken, getSession, displayName, setUserName } = useAppState();
-  const { publisher: localParticipant } = useLocalParticipant(displayName);
+  const {
+    viewingSharedScreen,
+    screenShareActive,
+    screenShareParticipant, //screen share
+    connect,
+    subscribers,
+    publishers,
+    roomState,
+    sessionData,
+    connection,
+    connections,
+    vonageSession,
+  } = useSession();
+
+  const { displayName } = useAppState();
+
+  const {
+    publisher: localParticipant,
+    toggleAudioEnabled,
+    toggleVideoEnabled,
+    isVideoEnabled,
+    isAudioEnabled,
+  } = useLocalParticipant(displayName);
+
+  let { toggleScreenShare, isSharingScreen } = useScreenShare(vonageSession);
 
   function removeParticipant(connection) {
-    otCore.session.forceDisconnect(connection);
+    vonageSession.forceDisconnect(connection);
   }
 
   function toggleViewMode() {
@@ -132,303 +118,60 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     });
   }
 
-  function handleEvent(event, state) {
-    console.log('otcore Event', event, state);
-    switch (event) {
-      case 'subscribeToCamera':
-      case 'subscribeToScreen':
-        // let subscribers = state.subscribers;
-        // [...Object.values(subscribers.camera), ...Object.values(subscribers.screen)].forEach(subscriber => {
-        //     // @ts-ignore
-        //     subscriber.setStyle('nameDisplayMode', 'off')
-        // })
-        break;
-      case 'sessionConnected':
-        // setRoomState('connected');
-        setIsConnected(true);
-        setIsConnecting(false);
-        break;
-      case 'sessionDisconnected':
-        // setRoomState('disconnected')
-        setIsConnected(false);
-        setIsConnecting(false);
-        break;
-      case 'sessionReconnected':
-        // setRoomState('connected')
-        setIsConnected(true);
-        setIsConnecting(false);
-        break;
-      case 'sessionReconnecting':
-        // setRoomState('reconnecting')
-        setIsConnected(false);
-        setIsConnecting(true);
-        break;
-    }
-  }
-
-  function setState(event, callback) {
-    // let state = otCore.state();
-    handleEvent(event, null);
-
-    // let {publishers, subscribers, active, meta, localAudioEnabled, localVideoEnabled};
-
-    let _cameraPublishers = []; // Object.values(publishers.camera);
-    let _cameraSubscribers = []; // Object.values(subscribers.camera);
-    let _screenSubscribers = []; // Object.values(subscribers.screen);
-    let _screenPublishers = []; // Object.values(publishers.screen);
-
-    // @ts-ignore
-    window.OT.publishers.forEach(publisher => {
-      _cameraPublishers.push(publisher);
-    });
-
-    // @ts-ignore
-    window.OT.subscribers.forEach(subscriber => {
-      _cameraSubscribers.push(subscriber);
-    });
-
-    // setSharingScreen(!!meta.publisher.screen);
-    // setViewingSharedScreen(meta.subscriber.screen);
-    // setScreenShareActive(viewingSharedScreen || sharingScreen);
-    // setActiveCameraSubscribers(meta.subscriber.camera);
-
-    if (session) {
-      setConnections(session.connections.map(c => c).filter(connection => !connection.id.includes('.tokbox.com')));
-      setConnection(session.connection || {});
-    }
-    console.log('Set state ', event, _cameraPublishers, _cameraSubscribers);
-    setPublishers(_cameraPublishers);
-    setSubscribers(_cameraSubscribers);
-
-    // if (meta.publisher.screen) {
-    //     setScreenShareParticipant({camera: _cameraPublishers[0], screen: _screenPublishers[0]});
-    // } else if (meta.subscriber.screen) {
-    //     // Find the camera source of the screen sharing participant.
-    //     // @ts-ignore
-    //     let _screenShareParticipant = _cameraSubscribers.find(subscriber => subscriber.stream.connection.id === _screenSubscribers[0].stream.connection.id)
-    //     setScreenShareParticipant({camera: _screenShareParticipant, screen: _screenSubscribers[0]});
-    // } else {
-    //     setScreenShareParticipant({camera: null, screen: null});
-    // }
-  }
-
-  React.useEffect(() => {
-    // console.log('otcore Event1 publishers', publishers)
-
-    function setOtCoreState(state, event, callback) {
-      setState(event, callback);
-    }
-
-    publishers.forEach(publisher => publisher.on('streamCreated', setOtCoreState));
-    publishers.forEach(publisher => publisher.on('streamDestroyed', setOtCoreState));
-    publishers.forEach(publisher => publisher.on('mediaStopped', setOtCoreState));
-    return () => {
-      publishers.forEach(publisher => publisher.off('streamCreated', setOtCoreState));
-      publishers.forEach(publisher => publisher.off('streamDestroyed', setOtCoreState));
-      publishers.forEach(publisher => publisher.off('mediaStopped', setOtCoreState));
-    };
-  }, [publishers]);
-
-  React.useEffect(() => {
-    if (session) {
-      const setOtCoreState = (event, callback) => {
-        setState(event, callback);
-      };
-
-      events.forEach(event => session.on(event, setOtCoreState));
-      return () => {
-        events.forEach(event => session.off(event, setOtCoreState));
-      };
-    }
-  }, [session]);
-
-  React.useEffect(() => {
-    if (session && displayName) {
-      setIsConnecting(true);
-
-      getToken(displayName, sessionData.roomName).then(token => {
-        session.connect(token, error => {
-          if (error) {
-            console.log('Error connecting session:', error.message);
-            setIsConnecting(false);
-          } else {
-            setIsConnected(true);
-            setIsConnecting(false);
-            startCall();
-            // You have connected to the session. You could publish a stream now.
-          }
-        });
-      });
-    }
-  }, [session]);
-
-  // React.useEffect(() => {
-  //     if (otCore && displayName) {
-  //         console.log('otcore connect1', otCore, displayName)
-  //         otCore.connect().then(() => {
-  //             console.log('otCore connected');
-  //             let publisherStyle = {
-  //                 nameDisplayMode: 'off',
-  //                 audioLevelDisplayMode: 'off',
-  //                 archiveStatusDisplayMode: 'on',
-  //                 buttonDisplayMode: 'on'
-  //             };
-  //
-  //             otCore.startCall({style: publisherStyle, name: displayName})
-  //                 .then(r => {
-  //                     setIsConnected(true);
-  //                     setIsConnecting(false);
-  //                     console.log('otCore.startCall() success', r)
-  //                     setState(r, 'callStarted', null);
-  //                 })
-  //                 .catch(r => {
-  //                     setIsConnecting(false);
-  //                     setIsConnected(false);
-  //                     console.log('otCore.startCall() error', r)
-  //                     setState(r, 'errorStartingCall', null);
-  //                 })
-  //         });
-  //     }
-  //
-  //     return () => {
-  //         if (otCore) {
-  //             endCall();
-  //         }
-  //     }
-  // }, [otCore])
-
   const onErrorCallback = (error: TwilioError) => {
     console.log(`ERROR: ${error.message}`, error);
     onError(error);
   };
 
-  const {
-    localTracks,
-    getLocalVideoTrack,
-    getLocalAudioTrack,
-    isAcquiringLocalTracks,
-    removeLocalVideoTrack,
-    getAudioAndVideoTracks,
-  } = useLocalTracks();
-  const { room } = useRoom(localTracks, onErrorCallback, options);
-
-  // Register onError and onDisconnect callback functions.
-  useHandleRoomDisconnectionErrors(room, onError);
-  useHandleTrackPublicationFailed(room, onError);
-  useHandleOnDisconnect(room, onDisconnect);
-
-  const [isVideoEnabled, setVideoEnabled] = React.useState(true);
-  const [isAudioEnabled, setAudioEnabled] = React.useState(true);
-  const [isConnecting, setIsConnecting] = React.useState(false);
-  const [isConnected, setIsConnected] = React.useState(false);
-
-  function toggleVideoEnabled() {
-    console.log('toggling video to ', !isVideoEnabled);
-    localParticipant.publishVideo(!isVideoEnabled);
-    setVideoEnabled(!isVideoEnabled);
-  }
-
-  function toggleAudioEnabled() {
-    console.log('toggling audio to ', !isAudioEnabled);
-    localParticipant.publishAudio(!isAudioEnabled);
-    setAudioEnabled(!isAudioEnabled);
-  }
-
-  let { toggleScreenShare, isSharingScreen } = useScreenShare(session);
-
   function endCall() {
-    if (!isConnected) {
-      return;
-    }
-    otCore.endCall();
-    otCore.session.disconnect();
-    setIsConnecting(false);
-    setIsConnected(false);
+    vonageSession?.disconnect();
   }
 
-  function startCall() {
-    if (session) {
-      const _subscribeToStream = stream => {
-        subscribeToStream(stream);
-      };
-      // Subscribe to initial streams
-      session.streams.forEach(_subscribeToStream);
-      session.publish(localParticipant, error => {
-        if (error) {
-          console.log('Error publishing', error);
-        } else {
-          console.log('Susccess publishing');
-        }
-      });
-    }
-  }
+  async function startCall(a, b) {}
 
-  async function connect(roomName: string | null = null, name: string) {
-    console.log('otCore startCall()');
-    if (isConnecting || isConnected) {
-      console.log('otCore startCall() return');
-      return;
-    }
+  const connectAndStartCall = (roomName, name) => {
+    return connect(roomName, name).then(session => {
+      session.publishLocal(localParticipant);
+    });
+  };
 
-    setUserName(name);
+  let contextValue = {
+    viewingSharedScreen,
+    screenShareActive,
+    connections,
+    endCall,
+    startCall,
+    toggleVideoEnabled,
+    toggleAudioEnabled,
+    isVideoEnabled,
+    isAudioEnabled,
 
-    console.log('otCore startCall() yeah');
-    setIsConnecting(true);
-
-    let sessionData = await getSession(roomName);
-    // let token = await getToken(name, roomName)
-    // console.log('tokennnnn:',token)
-    setSessionData(sessionData);
-
-    // let otCore = getOtCore(sessionId, token,name);
-    // setOtCore(otCore);
-  }
+    connection,
+    publishers,
+    subscribers,
+    localParticipant,
+    screenShareParticipant,
+    displayName,
+    viewMode,
+    toggleViewMode,
+    participantsOpen,
+    setParticipantsOpen,
+    removeParticipant,
+    roomState,
+    onError: onErrorCallback,
+    onDisconnect,
+    connect: connectAndStartCall,
+    isSharingScreen,
+    toggleScreenShare,
+    sessionData,
+  };
+  // @ts-ignore
+  window.contextValue = contextValue;
 
   return (
-    <VideoContext.Provider
-      value={{
-        sharingScreen,
-        viewingSharedScreen,
-        screenShareActive,
-        activeCameraSubscribers,
-        connections,
-        endCall,
-        startCall,
-        toggleVideoEnabled,
-        toggleAudioEnabled,
-        isVideoEnabled,
-        isAudioEnabled,
-        isConnected,
-        connection,
-        publishers,
-        subscribers,
-        localParticipant,
-        screenShareParticipant,
-        otCore,
-        displayName,
-        viewMode,
-        toggleViewMode,
-        participantsOpen,
-        setParticipantsOpen,
-        removeParticipant,
-        roomState,
-
-        room,
-        localTracks,
-        isConnecting,
-        onError: onErrorCallback,
-        onDisconnect,
-        getLocalVideoTrack,
-        getLocalAudioTrack,
-        connect,
-        isAcquiringLocalTracks,
-        removeLocalVideoTrack,
-        isSharingScreen,
-        toggleScreenShare,
-        getAudioAndVideoTracks,
-      }}
-    >
-      <SelectedParticipantProvider room={room}>{children}</SelectedParticipantProvider>
+    // @ts-ignore>
+    <VideoContext.Provider value={contextValue}>
+      <SelectedParticipantProvider>{children}</SelectedParticipantProvider>
       {/*
         The AttachVisibilityHandler component is using the useLocalVideoToggle hook
         which must be used within the VideoContext Provider.

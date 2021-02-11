@@ -62,8 +62,7 @@ export default function getOtCore(sessionId, token, name) {
   otCoreOptions.name = name;
 
   let otCore = new AccCore(otCoreOptions);
-  console.log('new otcore', otCore);
-  window.otCore1 = otCore;
+  window.otCore = otCore;
   return otCore;
 }
 

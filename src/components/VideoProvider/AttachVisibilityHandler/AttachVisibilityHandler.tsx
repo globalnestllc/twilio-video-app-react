@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import useLocalVideoToggle from '../../../hooks/useLocalVideoToggle/useLocalVideoToggle';
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
-/* 
+/*
   This component adds a visibilitychange handler to the document when
   the user is using a mobile device. When the handler detects that
   the browser has been backgrounded, it unpublishes the users local
@@ -14,7 +14,7 @@ import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 */
 
 export default function AttachVisibilityHandler() {
-  const { room } = useVideoContext();
+  const { session } = useVideoContext();
   const [isVideoEnabled, toggleVideoEnabled] = useLocalVideoToggle();
   const shouldRepublishVideoOnForeground = useRef(false);
 
@@ -38,7 +38,7 @@ export default function AttachVisibilityHandler() {
         document.removeEventListener('visibilitychange', handleVisibilityChange);
       };
     }
-  }, [isVideoEnabled, room, toggleVideoEnabled]);
+  }, [isVideoEnabled, session, toggleVideoEnabled]);
 
   return null;
 }
