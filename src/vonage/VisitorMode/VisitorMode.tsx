@@ -1,20 +1,17 @@
 import React from 'react';
 import { styled, Theme } from '@material-ui/core/styles';
 
-import MenuBar from './components/MenuBar/MenuBar';
-import MobileTopMenuBar from './components/MobileTopMenuBar/MobileTopMenuBar';
-import PreJoinScreens from './components/PreJoinScreens/PreJoinScreens';
-import ReconnectingNotification from './components/ReconnectingNotification/ReconnectingNotification';
-import Room from './components/Room/Room';
-
-import useHeight from './hooks/useHeight/useHeight';
-import './vonage/override-style.scss';
-import useVideoContext from './hooks/useVideoContext/useVideoContext';
-import BroadcastRoom from './components/BroadcastRoom/BroadcastRoom';
+import useHeight from '../../hooks/useHeight/useHeight';
+import '../override-style.scss';
+import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { useParams } from 'react-router-dom';
+import ParticipantList from '../../Customizations/ParticipantList';
+import ParticipantGrid from '../ParticipantGrid/ParticipantGrid';
 
 const Container = styled('div')({
   display: 'grid',
-  gridTemplateRows: '1fr auto',
+  gridTemplateColumns: '1fr auto',
 });
 
 const Main = styled('main')(({ theme }: { theme: Theme }) => ({
@@ -32,9 +29,9 @@ const HiddenVideoContainer = styled('div')(({ theme }: { theme: Theme }) => ({
   display: 'none',
 }));
 
-export default function App(props) {
-  const { roomState, broadcast, broadcastLayout } = useVideoContext();
-  console.log('Broadcast status' + broadcast);
+export default function VisitorMode(props) {
+  const { roomState, connect, localParticipant } = useVideoContext();
+  const { URLRoomName: _roomName } = useParams();
   // Here we would like the height of the main container to be the height of the viewport.
   // On some mobile browsers, 'height: 100vh' sets the height equal to that of the screen,
   // not the viewport. This looks bad when the mobile browsers location bar is open.
@@ -42,19 +39,34 @@ export default function App(props) {
   // will look good on mobile browsers even after the location bar opens or closes.
   const height = useHeight();
 
+  React.useEffect(() => {
+    connect(_roomName, 'Visitors|' + Math.random().toString(), true)
+      .then(r => console.log('Connected to room'))
+      .catch(err => console.log('Error connecting room', err));
+  }, []);
+
+  const previewReady = localParticipant && roomState !== 'disconnected';
+
   return (
     <Container style={{ height, width: '100%' }}>
       <HiddenVideoContainer id={'hiddenVideoContainer'} />
-      {roomState === 'disconnected' ? (
-        <PreJoinScreens />
+      {previewReady ? (
+        <React.Fragment>
+          <ParticipantGrid layoutType={'vertical'} />
+          <ParticipantList />
+        </React.Fragment>
       ) : (
-        <Main>
-          <ReconnectingNotification />
-          <MobileTopMenuBar />
-          {broadcast && <BroadcastRoom layoutOption={broadcastLayout} />}
-          {!broadcast && <Room />}
-          <MenuBar />
-        </Main>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <CircularProgress />
+        </div>
       )}
     </Container>
   );

@@ -11,6 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import indigo from '@material-ui/core/colors/indigo';
 import { ActionButton } from '@eventdex/common';
 import CloseIcon from '@material-ui/icons/Close';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 const useStyles = makeStyles(theme => ({
   // root: theme => ({
@@ -125,26 +126,76 @@ export default function ParticipantList(props) {
   const { connections, connection: myConnection, removeParticipant } = useVideoContext();
   const amIAdmin = myConnection.permissions?.forceDisconnect;
   console.log('pl connections', connections);
+
+  let groups = { Participants: [] };
+  connections.map(connection => {
+    let data = connection.data ? JSON.parse(connection.data) : {};
+    let { name = '', email, imageUrl } = data;
+    let nameParts = name.split('|');
+
+    let groupName = 'Participants';
+    if (nameParts.length > 1) {
+      groupName = nameParts[0];
+      groups[groupName] = groups[groupName] || [];
+      name = nameParts[1];
+    }
+    groups[groupName].push({ name, imageUrl, email, connection });
+  });
+
   return (
     <List>
-      {connections.map(connection => {
-        let isMyself = connection === myConnection;
-        let data = connection.data ? JSON.parse(connection.data) : {};
-        const { name = '', email, imageUrl } = data;
-        const isAdmin = connection.permissions?.forceDisconnect;
-
+      {Object.keys(groups).map(key => {
+        let group = groups[key];
+        if (group.length === 0) {
+          return null;
+        }
         return (
-          <ParticipantItem
-            key={connection.id}
-            connection={connection}
-            removeButtonOn={amIAdmin && !isMyself}
-            onRemove={removeParticipant}
-            name={name}
-            isAdmin={isAdmin}
-            imageUrl={imageUrl}
-          />
+          <React.Fragment>
+            <ListSubheader>{key}</ListSubheader>
+            {group.map(participant => {
+              const { name, connection, imageUrl, email } = participant;
+              let isMyself = connection === myConnection;
+              let data = connection.data ? JSON.parse(connection.data) : {};
+              // const {name = '', email, imageUrl} = data;
+              const isAdmin = connection.permissions?.forceDisconnect;
+
+              return (
+                <ParticipantItem
+                  key={connection.id}
+                  connection={connection}
+                  removeButtonOn={amIAdmin && !isMyself}
+                  onRemove={removeParticipant}
+                  name={name}
+                  isAdmin={isAdmin}
+                  imageUrl={imageUrl}
+                />
+              );
+            })}
+          </React.Fragment>
         );
       })}
+      {
+        //connections.map(connection =>
+        // {
+        //     let isMyself = connection === myConnection;
+        //     let data = connection.data ? JSON.parse(connection.data) : {};
+        //     const {name = '', email, imageUrl} = data;
+        //     const isAdmin = connection.permissions?.forceDisconnect;
+        //
+        //     return (
+        //         <ParticipantItem
+        //             key={connection.id}
+        //             connection={connection}
+        //             removeButtonOn={amIAdmin && !isMyself}
+        //             onRemove={removeParticipant}
+        //             name={name}
+        //             isAdmin={isAdmin}
+        //             imageUrl={imageUrl}
+        //         />
+        //     );
+        // }
+        //)
+      }
     </List>
   );
 }

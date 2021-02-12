@@ -1,4 +1,4 @@
-import { settingsReducer, initialSettings } from './settingsReducer';
+import { initialSettings, settingsReducer } from './settingsReducer';
 import { getResolution } from './renderDimensions';
 
 describe('the settingsReducer', () => {

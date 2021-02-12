@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { render, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import useFullScreenToggle from '../../../hooks/useFullScreenToggle/useFullScreenToggle';
 
 import ToggleFullscreenButton from './ToggleFullScreenButton';

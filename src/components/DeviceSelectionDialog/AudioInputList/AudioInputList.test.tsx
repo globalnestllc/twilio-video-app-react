@@ -1,6 +1,6 @@
 import React from 'react';
 import AudioInputList from './AudioInputList';
-import { DEFAULT_VIDEO_CONSTRAINTS, SELECTED_AUDIO_INPUT_KEY } from '../../../constants';
+import { SELECTED_AUDIO_INPUT_KEY } from '../../../constants';
 import { Select, Typography } from '@material-ui/core';
 import { shallow } from 'enzyme';
 import { useAudioInputDevices } from '../../../hooks/deviceHooks/deviceHooks';

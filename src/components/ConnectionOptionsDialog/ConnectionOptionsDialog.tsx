@@ -19,7 +19,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { inputLabels, Settings } from '../../state/settings/settingsReducer';
 import { RenderDimensions } from '../../state/settings/renderDimensions';
 import { useAppState } from '../../state';
-import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 
 const useStyles = makeStyles((theme: Theme) => ({

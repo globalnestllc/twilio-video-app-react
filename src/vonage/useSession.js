@@ -141,7 +141,7 @@ export default function useSession() {
     return media;
   }, [Object.values(state?.publishers?.camera || {}), state?.subscribers?.camera]);
 
-  const connect = async (roomName, name) => {
+  const connect = async (roomName, name, isVisitor = false) => {
     try {
       setUserName(name);
       let sessionData = await getSession(roomName);

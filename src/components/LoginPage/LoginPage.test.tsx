@@ -2,7 +2,7 @@ import React from 'react';
 import LoginPage from './LoginPage';
 import { act, fireEvent, render, waitForElement } from '@testing-library/react';
 import { useAppState } from '../../state';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => {
   return {

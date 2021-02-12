@@ -1,26 +1,16 @@
 import React from 'react';
 import clsx from 'clsx';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { LocalAudioTrack, LocalVideoTrack, RemoteAudioTrack, RemoteVideoTrack } from 'twilio-video';
-
-import AudioLevelIndicator from '../AudioLevelIndicator/AudioLevelIndicator';
-import AvatarIcon from '../../icons/AvatarIcon';
-import NetworkQualityLevel from '../NetworkQualityLevel/NetworkQualityLevel';
 import PinIcon from './PinIcon/PinIcon';
 import ScreenShareIcon from '../../icons/ScreenShareIcon';
 import Typography from '@material-ui/core/Typography';
-
-import useIsTrackSwitchedOff from '../../hooks/useIsTrackSwitchedOff/useIsTrackSwitchedOff';
-import usePublications from '../../hooks/usePublications/usePublications';
-import useTrack from '../../hooks/useTrack/useTrack';
-import useParticipantDisplayName from '../../hooks/useParticipantDisplayName/useParticipantDisplayName';
-import useParticipantIsReconnecting from '../../hooks/useParticipantIsReconnecting/useParticipantIsReconnecting';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import { Participant } from '../../vonage/types';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
+      width: '100%',
       position: 'relative',
       display: 'flex',
       alignItems: 'center',

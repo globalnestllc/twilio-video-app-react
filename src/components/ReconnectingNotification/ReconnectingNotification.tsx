@@ -1,6 +1,5 @@
 import React from 'react';
 import Snackbar from '../Snackbar/Snackbar';
-import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 
 export default function ReconnectingNotification() {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormControl, MenuItem, Select, Typography } from '@material-ui/core';
-import { LocalVideoTrack } from 'twilio-video';
 import { makeStyles } from '@material-ui/core/styles';
 
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';

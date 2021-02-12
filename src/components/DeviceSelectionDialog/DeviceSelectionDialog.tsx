@@ -3,14 +3,14 @@ import React from 'react';
 import AudioInputList from './AudioInputList/AudioInputList';
 import AudioOutputList from './AudioOutputList/AudioOutputList';
 import {
-  DialogContent,
-  Typography,
-  Divider,
+  Button,
   Dialog,
   DialogActions,
-  Button,
-  Theme,
+  DialogContent,
   DialogTitle,
+  Divider,
+  Theme,
+  Typography,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import VideoInputList from './VideoInputList/VideoInputList';

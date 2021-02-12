@@ -1,6 +1,6 @@
 import React from 'react';
 import Video from 'twilio-video';
-import { Container, Link, Typography, Paper, Grid } from '@material-ui/core';
+import { Container, Grid, Link, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({

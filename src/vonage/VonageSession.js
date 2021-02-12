@@ -22,6 +22,7 @@ export default class VonageSession extends OpenTokSDK {
   constructor(sessionId, token, name, onStateUpdated) {
     super({ apiKey, sessionId, token });
     this.publishLocal = this.publishLocal.bind(this);
+    this.startCall = this.startCall.bind(this);
 
     this.name = name;
     this.onStateUpdated = onStateUpdated;

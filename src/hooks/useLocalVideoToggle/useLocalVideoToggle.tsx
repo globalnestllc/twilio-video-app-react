@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import useVideoContext from '../useVideoContext/useVideoContext';
 
 export default function useLocalVideoToggle() {

@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Participant from '../Participant/Participant';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
-import VideoTrack from '../../vonage/VideoTrack';
 import useMainParticipant from '../../hooks/useMainParticipant/useMainParticipant';
 import useSelectedParticipant from '../VideoProvider/useSelectedParticipant/useSelectedParticipant';
 

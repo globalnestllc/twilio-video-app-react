@@ -21,7 +21,7 @@ import useBroadCast from '../../vonage/useBroadCast';
 type ViewModeType = 'grid' | 'collaborator';
 
 export interface IVideoContext {
-  connect: (roomName: string, name: string) => Promise<void>;
+  connect: (roomName: string, name: string, isVisitor?: boolean) => Promise<void>;
   onError: ErrorCallback;
   onDisconnect: Callback;
   isSharingScreen: boolean;
@@ -135,9 +135,11 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
 
   async function startCall(a, b) {}
 
-  const connectAndStartCall = (roomName, name) => {
+  const connectAndStartCall = (roomName, name, visitor = false) => {
     return connect(roomName, name).then(session => {
-      session.publishLocal(localParticipant);
+      if (!visitor) {
+        session.publishLocal(localParticipant);
+      }
     });
   };
   // let broadcastLayout,broadcast = false;

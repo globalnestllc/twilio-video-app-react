@@ -4,7 +4,6 @@ import { DEFAULT_VIDEO_CONSTRAINTS } from '../../../constants';
 import FlipCameraIcon from './FlipCameraIcon';
 import { LocalVideoTrack } from 'twilio-video';
 import useMediaStreamTrack from '../../../hooks/useMediaStreamTrack/useMediaStreamTrack';
-import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 import { useVideoInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
 
 export default function FlipCameraButton() {

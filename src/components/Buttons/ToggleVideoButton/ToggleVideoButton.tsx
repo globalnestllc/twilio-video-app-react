@@ -5,7 +5,6 @@ import VideoOffIcon from '../../../icons/VideoOffIcon';
 import VideoOnIcon from '../../../icons/VideoOnIcon';
 
 import { useHasVideoInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
-import useLocalVideoToggle from '../../../hooks/useLocalVideoToggle/useLocalVideoToggle';
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';
 
 export default function ToggleVideoButton(props: { disabled?: boolean; className?: string }) {

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import AboutDialog from '../../AboutDialog/AboutDialog';
 import Button from '@material-ui/core/Button';
 import DeviceSelectionDialog from '../../DeviceSelectionDialog/DeviceSelectionDialog';

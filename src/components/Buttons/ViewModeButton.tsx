@@ -1,8 +1,7 @@
 import React from 'react';
-import clsx from 'clsx';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-import { Button, Tooltip } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';

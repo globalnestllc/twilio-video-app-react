@@ -1,8 +1,7 @@
-import { PreflightTestReport, PreflightTest } from '../../../../types';
+import { PreflightTest, PreflightTestReport } from '../../../../types';
 import { TEST_DURATION } from '../PreflightTest';
 import Video from 'twilio-video';
-import { useEffect, useState, useRef } from 'react';
-import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';
+import { useEffect, useRef, useState } from 'react';
 
 export default function usePreflightTest(publisherToken?: string, subscriberToken?: string) {
   // const { isConnecting } = useVideoContext();

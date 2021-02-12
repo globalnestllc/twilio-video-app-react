@@ -5,7 +5,6 @@ import EndCallButton from '../Buttons/EndCallButton/EndCallButton';
 import FlipCameraButton from './FlipCameraButton/FlipCameraButton';
 
 import { useParams } from 'react-router-dom';
-import useRoomState from '../../hooks/useRoomState/useRoomState';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import { Grid, Hidden, Typography } from '@material-ui/core';
 import ToggleAudioButton from '../Buttons/ToggleAudioButton/ToggleAudioButton';

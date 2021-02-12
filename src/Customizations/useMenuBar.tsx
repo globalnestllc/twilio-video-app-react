@@ -1,5 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react';
-import useRoomState from '../hooks/useRoomState/useRoomState';
+import React, { useState } from 'react';
 import useVideoContext from '../hooks/useVideoContext/useVideoContext';
 import HeaderContent from './HeaderContent';
 // import {toast} from "react-toastify";

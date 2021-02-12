@@ -2,19 +2,13 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import App from './App';
 import './types';
-import { Divider, Paper, Slide, Tooltip } from '@material-ui/core';
+import { Divider, Paper, Slide } from '@material-ui/core';
 import './index.scss';
-import IconButton from '@material-ui/core/IconButton/IconButton';
-import PeopleIcon from '@material-ui/icons/People';
-import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ViewComfyIcon from '@material-ui/icons/ViewComfy';
-import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
-import clsx from 'clsx';
 import useVideoContext from './hooks/useVideoContext/useVideoContext';
-import ParticipantList from './Customizations/ParticipantList';
 import ToggleParticipantsOpen from './components/Buttons/ToggleParticipantsOpen';
 import VideoParticipants from './Customizations/VideoParticipants';
+import VisitorMode from './vonage/VisitorMode/VisitorMode';
+import { useParams } from 'react-router-dom';
 
 const drawerWidth = 340;
 const useStyles = makeStyles(theme => ({
@@ -81,45 +75,6 @@ function AppWrapper(props) {
 
   let gridMode = viewMode === 'grid';
 
-  //Additional toolbar buttons in appbar
-
-  function ToolbarButtons(props) {
-    // return (
-    // <>
-    //     <Tooltip title={gridMode ? "Speaker mode" : "Gallery mode"}>
-    //         <IconButton
-    //             aria-label="toggle view mode"
-    //             // onClick={() => dispatch(toggleViewMode())}
-    //         >
-    //             {gridMode ? <ViewCarouselIcon/> : <ViewComfyIcon/>}
-    //         </IconButton>
-    //     </Tooltip>
-    //
-    //     {/*{channel &&*/}
-    //     <Tooltip title="Open chat">
-    //         <IconButton
-    //             aria-label="open chat"
-    //             onClick={handleChatOpen}
-    //         >
-    //             <ChatBubbleIcon/>
-    //         </IconButton>
-    //     </Tooltip>
-    //     {/*}*/}
-    //
-    //     <Tooltip title="Participants">
-    //         <IconButton
-    //             aria-label="open drawer"
-    //             onClick={handleParticipantsOpen}
-    //             className={clsx(participantsOpen && classes.hide)}
-    //         >
-    //             <PeopleIcon/>
-    //         </IconButton>
-    //     </Tooltip>
-    //
-    // </>
-    // )
-  }
-
   // let appProps = {...props};
   // if (channel) {
   //     appProps = {};
@@ -128,9 +83,10 @@ function AppWrapper(props) {
   //     _.merge(appProps, props, channel.attributes);
   // }
 
+  const { visitor: visitorMode } = useParams();
   return (
     <Paper className={classes.videoWrapper}>
-      <App />
+      {visitorMode ? <VisitorMode /> : <App />}
 
       <div className={classes.contentShift} style={participantsOpen ? { width: drawerWidth } : { width: 0 }}>
         <Slide direction="left" in={participantsOpen}>

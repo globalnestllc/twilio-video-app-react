@@ -11,8 +11,6 @@ import { useParams } from 'react-router-dom';
 import * as ApiServices from '../../../Api/ApiServices';
 import moment from 'moment';
 import { TwilioError } from 'twilio-video';
-import NetworkTest, { ErrorNames } from 'opentok-network-test-js';
-import useNetworkTest from '../../../vonage/useNetworkTest';
 
 const useStyles = makeStyles((theme: Theme) => ({
   gutterBottom: {

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { FormControl, Grid, MenuItem, Select, Typography } from '@material-ui/core';
-import { SELECTED_AUDIO_INPUT_KEY } from '../../../constants';
 import { useAudioInputDevices } from '../../../hooks/deviceHooks/deviceHooks';
 
 import useVideoContext from '../../../hooks/useVideoContext/useVideoContext';

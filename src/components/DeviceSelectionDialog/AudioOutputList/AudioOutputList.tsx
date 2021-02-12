@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, MenuItem, Typography, Select } from '@material-ui/core';
+import { FormControl, MenuItem, Select, Typography } from '@material-ui/core';
 import { useAppState } from '../../../state';
 import { useAudioOutputDevices } from '../../../hooks/deviceHooks/deviceHooks';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import NetworkTest from 'opentok-network-test-js';
-import useVideoContext from '../hooks/useVideoContext/useVideoContext';
 import { useAppState } from '../state';
 
 export default function useNetworkTest(name) {

@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useAppState } from '../../../../state';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useGetPreflightTokens() {
   const { getToken } = useAppState();

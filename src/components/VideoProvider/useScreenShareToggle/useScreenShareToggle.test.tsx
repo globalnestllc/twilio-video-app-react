@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 import useScreenShareToggle from './useScreenShareToggle';
 import { EventEmitter } from 'events';
 import { ErrorCallback } from '../../../types';
