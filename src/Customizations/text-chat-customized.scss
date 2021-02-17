@@ -1,8 +1,29 @@
 #chat-panel {
   .ots-text-chat-container {
-    background: red;
+    // background: red;
     //height: auto;
     //...
     //...
   }
+}
+
+.ots-text-chat .ots-messages-holder .ots-messages-alert {
+  padding: 10px;
+}
+.ots-text-chat {
+  margin-top: 0px;
+}
+.ots-text-chat .ots-messages-holder {
+  height: 63.3vh;
+}
+.makeStyles-timeCounter-77 {
+  max-width: 250px;
+}
+@media (min-width: 600px) {
+  .makeStyles-drawerHeader-5 {
+    min-height: 0px;
+  }
+}
+.makeStyles-drawerHeader-5 {
+  min-height: 0px;
 }
