@@ -10,6 +10,7 @@ import Room from './components/Room/Room';
 import useHeight from './hooks/useHeight/useHeight';
 import './vonage/override-style.scss';
 import useVideoContext from './hooks/useVideoContext/useVideoContext';
+import BroadcastRoom from './components/BroadcastRoom/BroadcastRoom';
 
 const Container = styled('div')({
   display: 'grid',
@@ -32,8 +33,8 @@ const HiddenVideoContainer = styled('div')(({ theme }: { theme: Theme }) => ({
 }));
 
 export default function App(props) {
-  const { roomState } = useVideoContext();
-
+  const { roomState, broadcast, broadcastLayout } = useVideoContext();
+  console.log('Broadcast status' + broadcast);
   // Here we would like the height of the main container to be the height of the viewport.
   // On some mobile browsers, 'height: 100vh' sets the height equal to that of the screen,
   // not the viewport. This looks bad when the mobile browsers location bar is open.
@@ -51,7 +52,8 @@ export default function App(props) {
           {/*<VideoTopBar {...props} />*/}
           <ReconnectingNotification />
           <MobileTopMenuBar />
-          <Room />
+          {broadcast && <BroadcastRoom layoutOption={broadcastLayout} />}
+          {!broadcast && <Room />}
           <MenuBar />
         </Main>
       )}

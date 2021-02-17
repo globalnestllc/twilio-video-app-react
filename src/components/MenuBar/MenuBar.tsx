@@ -13,6 +13,7 @@ import ToggleVideoButton from '../Buttons/ToggleVideoButton/ToggleVideoButton';
 import ToggleScreenShareButton from '../Buttons/ToogleScreenShareButton/ToggleScreenShareButton';
 import Menu from './Menu/Menu';
 import CountDown from '../../Customizations/CountDown';
+import StartBroadCast from '../Buttons/StartBroadCast/StartBroadCast';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -102,6 +103,7 @@ export default function MenuBar(props) {
             <Grid style={{ flex: 1 }}>
               <Grid container justify="flex-end">
                 <Menu />
+                <StartBroadCast />
                 <EndCallButton />
               </Grid>
             </Grid>

@@ -17,7 +17,7 @@ const _getNewSession = roomName => {
   }
 
   return axios
-    .post(`https://evendex-stack.herokuapp.com/meet/vonage/`, options)
+    .post(`https://virtual-server.eventdex.com/meet/vonage/`, options)
     .then(response => {
       return response.data;
     })
@@ -33,7 +33,7 @@ export const getSession = (roomName = null, roomType, recordingOn) => {
   }
 
   return axios
-    .get(`https://evendex-stack.herokuapp.com/meet/vonage/${roomName}`)
+    .get(`https://virtual-server.eventdex.com/meet/vonage/${roomName}`)
     .then(response => {
       return response.data;
     })
@@ -47,7 +47,7 @@ export const getSession = (roomName = null, roomType, recordingOn) => {
 
 export const getToken = (roomName, data = { default: true }, role = 'moderator') => {
   return axios
-    .post(`https://evendex-stack.herokuapp.com/meet/vonage/${roomName}/get_token/`, {
+    .post(`https://virtual-server.eventdex.com/meet/vonage/${roomName}/get_token/`, {
       data: JSON.stringify(data),
       role,
     })

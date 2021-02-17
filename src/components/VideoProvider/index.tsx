@@ -9,6 +9,7 @@ import { useAppState } from '../../state';
 import useLocalParticipant from '../../vonage/useLocalParticipant';
 import useSession from '../../vonage/useSession';
 import useScreenShare from '../../vonage/useScreenShare';
+import useBroadCast from '../../vonage/useBroadCast';
 
 /*
  *  The hooks used by the VideoProvider component are different than the hooks found in the 'hooks/' directory. The hooks
@@ -49,6 +50,10 @@ export interface IVideoContext {
   removeParticipant: (any) => void;
   sessionData: SessionProps;
   session: object;
+  broadcastLayout: string;
+  broadcast: boolean;
+  startBroadCast: () => void;
+  stopBroadcast: () => void;
 }
 
 export const VideoContext = createContext<IVideoContext>(null!);
@@ -103,6 +108,7 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
   } = useLocalParticipant(displayName);
 
   let { toggleScreenShare, isSharingScreen } = useScreenShare(vonageSession);
+  let { broadcast, startBroadCast, stopBroadcast, broadcastLayout } = useBroadCast(vonageSession);
 
   function removeParticipant(connection) {
     vonageSession.forceDisconnect(connection);
@@ -134,7 +140,16 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
       session.publishLocal(localParticipant);
     });
   };
+  // let broadcastLayout,broadcast = false;
 
+  // const startBroadCast = () => {
+  //   console.log('came here ...start broadcasting ');
+  //   broadcastLayout = 'bestFit';
+  //   broadcast= true;
+  // }
+  // const stopBroadcast = () =>{
+  //   broadcast = false;
+  // }
   let contextValue = {
     viewingSharedScreen,
     screenShareActive,
@@ -164,6 +179,10 @@ export function VideoProvider({ options, children, onError = () => {}, onDisconn
     isSharingScreen,
     toggleScreenShare,
     sessionData,
+    broadcastLayout,
+    broadcast,
+    startBroadCast,
+    stopBroadcast,
   };
   // @ts-ignore
   window.contextValue = contextValue;

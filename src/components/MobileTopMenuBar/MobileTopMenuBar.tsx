@@ -8,6 +8,7 @@ import ViewModeButton from '../Buttons/ViewModeButton';
 import ToggleFullscreenButton from '../Buttons/ToggleFullScreenButton/ToggleFullScreenButton';
 import CloseIcon from '@material-ui/icons/Close';
 import ToggleParticipantsOpen from '../Buttons/ToggleParticipantsOpen';
+import BroadCastLayout from '../MenuBar/BroadCastLayout/BroadCastLayout';
 
 const useStyles = makeStyles((theme: Theme) => ({
   container: {
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 export default function MobileTopMenuBar(props) {
   const classes = useStyles();
-  const { participantsOpen, sessionData } = useVideoContext();
+  const { participantsOpen, sessionData, broadcast } = useVideoContext();
 
   return (
     <Grid container alignItems="center" justify="space-between" className={classes.container}>
@@ -63,7 +64,8 @@ export default function MobileTopMenuBar(props) {
           <CloseIcon />
         </IconButton>
 
-        {participantsOpen || <ViewModeButton />}
+        {!participantsOpen && !broadcast && <ViewModeButton />}
+        {broadcast && !participantsOpen && <BroadCastLayout />}
         <ToggleParticipantsOpen hideWhenOpen={true} />
 
         {/*/!*{channel &&*!/*/}
