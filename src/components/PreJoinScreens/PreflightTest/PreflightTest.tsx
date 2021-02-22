@@ -1,6 +1,7 @@
 import React from 'react';
 import usePreflightTest from './usePreflightTest/usePreflightTest';
-import { Grid, makeStyles, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import useGetPreflightTokens from './useGetPreflightTokens/useGetPreflightTokens';
 import getNetworkCondition from './getNetworkCondition/getNetworkCondition';
 import ProgressIndicator from './ProgressIndicator/ProgressIndicator';

@@ -4,10 +4,11 @@
   "private": true,
   "license": "Apache-2.0",
   "dependencies": {
-    "@emotion/react": "^11.1.4",
+    "@emotion/react": "^11.1.5",
     "@eventdex/assets": "^0.1.9",
     "@eventdex/common": "^0.1.224",
     "@eventdex/core": "^0.1.244",
+    "@eventdex/video":"qa3",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.41",
@@ -54,7 +55,11 @@
     "strip-color": "^0.1.0",
     "twilio": "^3.39.3",
     "twilio-video": "2.9.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "less": "^3.12.2",
+    "less-loader": "^5.0.0",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "circular-dependency-plugin": "^5.2.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -76,7 +81,11 @@
     "puppeteer": "^5.3.1",
     "react-test-renderer": "^16.12.0",
     "start-server-and-test": "^1.10.8",
-    "ts-jest": "^24.3.0"
+    "ts-jest": "^24.3.0",
+    "inspectpack": "^4.5.2",
+    "customize-cra": "^0.9.1",
+    "react-app-rewired": "^2.1.5",
+    "babel-plugin-import": "^1.13.0"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
@@ -89,6 +98,7 @@
     "dev": "react-scripts start",
     "build-old": "react-scripts build",
     "build": "node ./scripts/build.js",
+    "startDev": "react-app-rewired start",
     "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{ts,tsx}",

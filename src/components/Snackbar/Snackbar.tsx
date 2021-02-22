@@ -2,7 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import CloseIcon from '@material-ui/icons/Close';
 import ErrorIcon from '../../icons/ErrorIcon';
-import { IconButton, makeStyles, Theme, Typography } from '@material-ui/core';
+import { IconButton, Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import MUISnackbar from '@material-ui/core/Snackbar';
 import WarningIcon from '../../icons/WarningIcon';
 

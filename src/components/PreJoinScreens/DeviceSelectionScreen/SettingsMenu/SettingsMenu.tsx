@@ -4,8 +4,8 @@ import MenuContainer from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, Theme, useMediaQuery } from '@material-ui/core';
-
+import { Theme, useMediaQuery } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import AboutDialog from '../../../AboutDialog/AboutDialog';
 import ConnectionOptionsDialog from '../../../ConnectionOptionsDialog/ConnectionOptionsDialog';
 import DeviceSelectionDialog from '../../../DeviceSelectionDialog/DeviceSelectionDialog';

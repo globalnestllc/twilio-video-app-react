@@ -1,6 +1,7 @@
 import React from 'react';
 import AvatarIcon from '../../../../icons/AvatarIcon';
-import { makeStyles, Theme, Typography } from '@material-ui/core';
+import { Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import VideoTrack from '../../../../vonage/VideoTrack';
 import AudioLevelIndicator from '../../../../vonage/AudioLevelIndicator';
 import useVideoContext from '../../../../hooks/useVideoContext/useVideoContext';

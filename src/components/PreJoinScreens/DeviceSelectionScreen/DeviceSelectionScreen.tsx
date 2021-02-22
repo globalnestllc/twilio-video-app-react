@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Grid, Hidden, makeStyles, Theme, Typography } from '@material-ui/core';
+import { Button, Grid, Hidden, Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import LocalVideoPreview from './LocalVideoPreview/LocalVideoPreview';
 import SettingsMenu from './SettingsMenu/SettingsMenu';
 import { Steps } from '../PreJoinScreens';

@@ -1,4 +1,5 @@
-import { Grid, makeStyles, Theme, Typography } from '@material-ui/core';
+import { Grid, Theme, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 import useVideoContext from '../../hooks/useVideoContext/useVideoContext';
 import EndCallButton from '../Buttons/EndCallButton/EndCallButton';
