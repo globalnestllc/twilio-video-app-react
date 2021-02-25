@@ -3,53 +3,59 @@ import ReactDOM from 'react-dom';
 
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import AppStateProvider, { useAppState } from './state';
-import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
-import ErrorDialog from './components/ErrorDialog/ErrorDialog';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { BrowserRouter as Router, Route, Redirect, Switch, useParams } from 'react-router-dom';
 import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 import AppWrapper from './AppWrapper';
+import VideoModule, { VonageVideo, StandaloneVideoApp } from '@eventdex/video';
+import store from './store/store';
+import { Provider, useSelector, useDispatch } from 'react-redux';
+//============
+import { registerModule } from '@eventdex/core';
+
+import { initializeContext } from '@eventdex/core/context';
+import history from './history';
+
+let hostApp = {
+  abbreviation: 'vv',
+  name: 'Video call vonage',
+};
+
+// const AppLazy = React.lazy(() => import('./EventdexModules'));
+
+initializeContext(store, history, hostApp);
+registerModule(VideoModule);
+
+interface RoomName {
+  roomName: string;
+}
 
 const VideoApp = () => {
-  const { error, setError } = useAppState();
-  const connectionOptions = useConnectionOptions();
-
-  return (
-    <UnsupportedBrowserWarning>
-      <VideoProvider options={connectionOptions} onError={setError}>
-        <ErrorDialog dismissError={() => setError(null)} error={error} />
-        <AppWrapper />
-      </VideoProvider>
-    </UnsupportedBrowserWarning>
-  );
+  const { roomName } = useParams<RoomName>();
+  const room = { name: roomName };
+  return <VonageVideo isOpen={true} room={room} />;
 };
 
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <Router>
-      <AppStateProvider>
+  <Provider store={store}>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
         <Switch>
-          <PrivateRoute exact path="/">
+          <Route exact path="/">
             <VideoApp />
-          </PrivateRoute>
-          {/* For demoing and testing the application*/}
-          <PrivateRoute exact={false} path="/demo/room/:URLRoomName/:uName/:visitor?">
+          </Route>
+          <Route exact={false} path="/:roomName">
             <VideoApp />
-          </PrivateRoute>
-
-          <PrivateRoute exact={false} path="/:URLRoomName">
-            <VideoApp />
-          </PrivateRoute>
+          </Route>
 
           <Redirect to="/" />
         </Switch>
-      </AppStateProvider>
-    </Router>
-  </MuiThemeProvider>,
+      </Router>
+    </MuiThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
