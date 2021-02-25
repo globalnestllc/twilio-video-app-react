@@ -1449,10 +1449,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.225.tgz#abb226015f2a5ea7028dd9c63336c5e554c82bfb"
   integrity sha512-dknPQoY7GqOHaMA3AERxSlw0h/ymXFn/na+LYJ9Fo6QsVcgusFJvRJC2dQe3uSBIidyicDLSxyEo0QPzijZzQQ==
 
-"@eventdex/video@0.1.231":
-  version "0.1.231"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.231.tgz#7b5fce415298569b031a29573360331ff9337aa9"
-  integrity sha512-ZlR7GiyYNjgpJ7SaP+9n0ZxBtN7WbEuS11nbIl815+5NviwfhOYOS51QyeMDU1pwSRTgWZB1d6wd4BJ03tgbow==
+"@eventdex/video@0.1.232":
+  version "0.1.232"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.232.tgz#36e345fc37b94b8223262eccf12e53a1869c7233"
+  integrity sha512-AY0MDu1MPt9LwpBdYj0rM8JzljhqUMrPAdJr8WvzklE0cV6DelGDlQhWCgnPtgyuO+j2oXgykRprqR0VdTmKqA==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
@@ -9704,7 +9704,7 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-memoize-one@^5.1.1:
+"memoize-one@>=3.1.1 <6", memoize-one@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
   integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
@@ -10347,6 +10347,11 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+
+normalizr@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/normalizr/-/normalizr-3.6.1.tgz#d367ab840e031ff382141b8d81ce279292ff69fe"
+  integrity sha512-8iEmqXmPtll8PwbEFrbPoDxVw7MKnNvt3PZzR2Xvq9nggEEOgBlNICPXYzyZ4w4AkHUzCU998mdatER3n2VaMA==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -12456,6 +12461,14 @@ react-transition-group@^4.4.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-window@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/react-window/-/react-window-1.8.6.tgz#d011950ac643a994118632665aad0c6382e2a112"
+  integrity sha512-8VwEEYyjz6DCnGBsd+MgkD0KJ2/OXFULyDtorIiTz+QzwoP94tBoA7CnbtyXMm+cCeAUER5KJcPtWl9cpKbOBg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    memoize-one ">=3.1.1 <6"
 
 react@^16.12.0:
   version "16.14.0"
