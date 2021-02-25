@@ -5,11 +5,6 @@ import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route, Redirect, Switch, useParams } from 'react-router-dom';
 import theme from './theme';
-import './types';
-import { VideoProvider } from './components/VideoProvider';
-import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
-import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
-import AppWrapper from './AppWrapper';
 import VideoModule, { VonageVideo, StandaloneVideoApp } from '@eventdex/video';
 import store from './store/store';
 import { Provider, useSelector, useDispatch } from 'react-redux';
@@ -51,7 +46,6 @@ ReactDOM.render(
           <Route exact={false} path="/:roomName">
             <VideoApp />
           </Route>
-
           <Redirect to="/" />
         </Switch>
       </Router>

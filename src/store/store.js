@@ -1,12 +1,9 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-// import {staticReducers} from './reducers/rootReducer'
 import rootSaga from './saga';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import staticReducers from './reducer';
 import { combineReducers } from 'redux';
-
-// import {combineReducers} from 'redux'
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware({
@@ -64,13 +61,12 @@ function createSagaInjector(runSaga, rootSaga) {
   return injectSaga;
 }
 
-// const store = configureAppStore();
-// sagaMiddleware.run(rootSaga);
 function createReducer(asyncReducers) {
   return combineReducers({
     ...staticReducers,
     ...asyncReducers,
   });
 }
+
 const store = configureAppStore();
 export default store;
