@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Route, Redirect, Switch, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect, Switch, useParams, useLocation } from 'react-router-dom';
 import theme from './theme';
 import VideoModule, { VonageVideo, StandaloneVideoApp } from '@eventdex/video';
 import store from './store/store';
@@ -27,11 +27,15 @@ registerModule(VideoModule);
 interface RoomName {
   roomName: string;
 }
-
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 const VideoApp = () => {
   const { roomName } = useParams<RoomName>();
   const room = { name: roomName };
-  return <VonageVideo isOpen={true} room={room} />;
+  let query = useQuery();
+  const user = { name: query.get('uname') };
+  return <VonageVideo isOpen={true} room={room} user={user} />;
 };
 
 ReactDOM.render(
