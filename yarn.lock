@@ -1391,10 +1391,10 @@
   dependencies:
     material-ui-chip-input "^1.1.0"
 
-"@eventdex/chat@^0.1.297":
-  version "0.1.297"
-  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.297.tgz#0b267f807c51ebe2e98e9ca56baab6a72bf12c47"
-  integrity sha512-D5y54Kb+XN0L/PfU4NEkOiYn5lxUs0m4E0z1FWiyE+p/vWSaVyN0upTUWjRVw1YSfog3XM0FeZsfWHEOMcsy8A==
+"@eventdex/chat@^0.1.298":
+  version "0.1.298"
+  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.298.tgz#1d2d5093bc1b54859552955f4a03fbd9e76274a0"
+  integrity sha512-E9GQ7emuya1eVhJQLbbKmTjvAve+5r3Wip2ofVPr82KlExqpGlG7CELB/e0+QO1AELex2nrQo5/wvU+zVELhSw==
 
 "@eventdex/common@0.1.243":
   version "0.1.243"
