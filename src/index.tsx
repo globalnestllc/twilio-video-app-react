@@ -47,6 +47,8 @@ const VideoApp = () => {
         room={room}
         user={user}
         // isAdmin={isAdmin}
+        // modal
+        // contained
       />
       <ToastContainer
         style={{ position: 'absolute', zIndex: 10000, width: 'fit-content', minWidth: 320 }}
