@@ -16,7 +16,7 @@
     "@eventdex/lounge": "0.1.247",
     "@eventdex/schedule": "^0.1.242",
     "@eventdex/utils": "0.1.234",
-    "@eventdex/video": "0.1.247",
+    "@eventdex/video": "0.1.248",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.41",
