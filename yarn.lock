@@ -1379,10 +1379,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@eventdex/assets@^0.1.12":
-  version "0.1.12"
-  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.12.tgz#f0965aea4dc7055ab461314a5cefbb28f498a15e"
-  integrity sha512-qSi7iBtsF1jwyilL7yPMWhhEtdO0M2jCc0olcQJrOQZL1lJvan1j1l1tRcoZxgrWrNUe700bTgUoTdGkuEMbOQ==
+"@eventdex/assets@^0.1.13":
+  version "0.1.13"
+  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.13.tgz#b44fac113c852eafac30f806780653393a797048"
+  integrity sha512-XAFhl8x+AZapy/Vnc+oyPw5LnoEjsD5Ffl4qoD+P7OuOQSxZuHN7WGzShyiuiogGYmd1+PZb5jWtCpEZNzNY+g==
 
 "@eventdex/auth@0.1.258":
   version "0.1.258"
