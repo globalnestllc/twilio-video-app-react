@@ -46,7 +46,7 @@ const VideoApp = () => {
         isOpen={true}
         room={room}
         user={user}
-        // isAdmin={isAdmin}
+        isAdmin={isAdmin}
         // modal
         // contained
       />
