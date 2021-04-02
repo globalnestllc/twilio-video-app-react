@@ -1396,10 +1396,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.307.tgz#a68ee4ea41e1f1c9854268c712dd74a6a5f2225d"
   integrity sha512-a3Kyv2R8MWfvYyBeEK7X6Ay3pdTJoNLMSC3BtT3aJWhp9Wo3oVaEmcS0beG44gj6Tzd/4sRRpYPF6kaRcHEGqw==
 
-"@eventdex/common@0.1.256":
-  version "0.1.256"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.256.tgz#b1d829b3bc31a98a5872d248c54ac2bacb4cd5ac"
-  integrity sha512-0+nZ7ZtpvneHm2wQjAw8FC9za2ctR010FH2Ccm8O9ObiumSXLoY8dESmVzJae6VMepqVALvmcuwFC1UiTGPE+g==
+"@eventdex/common@0.1.257":
+  version "0.1.257"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.257.tgz#f82ce7799bd105de1afe13515ee54f6efe78ca02"
+  integrity sha512-6Gd+YqgjpJ3Lv3cuSY2B1zqqFbMvfKJQ2+ONCp2CGAiRONpQf0M+b6y8l8REpy4AKUzaf0o4SMwF79dNWIe76Q==
   dependencies:
     react-papaparse "^3.9.0"
 
@@ -1408,17 +1408,17 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.276.tgz#65135885c37fd9cf28c53f6d60fcaea7a9fbec6b"
   integrity sha512-PB3w4pRpCRrCgQn5KkpoWwg/BICky7je8ga4OdSuJ6GDK94A3BTimcpE8p6S0mnXauxG8IRgpjtKjSITlXpOFw==
 
-"@eventdex/event@0.1.295":
-  version "0.1.295"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.295.tgz#ea3d4bef2c6693d77cf706124db211d4e28b0e5a"
-  integrity sha512-G35QnBwT9uL4D8FjSzvW9dFtTP4vbiHELdwkRwB6bsytHbUzjVu+Jwc7Z3qymXxgY+RQ6p/GhyEnkyvvM0u78A==
+"@eventdex/event@0.1.296":
+  version "0.1.296"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.296.tgz#6b4808300f772b2708a73751c5a7b89b7103a513"
+  integrity sha512-/hAOHIjUpjE9BYIp5QH6o+lh9WgEjZBNz7rOUc3tATDnNTl1C1bff7kEFwxsGSn9NpQjvA+Ts323oZLJHtTbAA==
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/leads@^0.1.244":
-  version "0.1.244"
-  resolved "http://3.89.41.88:4873/@eventdex%2fleads/-/leads-0.1.244.tgz#bfe65b954a4d905809cda105d57a0ef6292844b0"
-  integrity sha512-1G0R6Hi5vjtKIh4wLsKSZlBF5Exqe4ZpUAV7yTvp6BUxIXS8gH5OsBZI/jE+lTmJEymi/R/1jYr5CuXwfGcvsA==
+"@eventdex/leads@^0.1.245":
+  version "0.1.245"
+  resolved "http://3.89.41.88:4873/@eventdex%2fleads/-/leads-0.1.245.tgz#51acc4aa0f7dd6702e489daf26069227e13632db"
+  integrity sha512-vVszSAt5Iqgt02wtdWS3UE/zu/6za+SGp7w9xC7CAqQokwLXV1APgJVINOuWUnXQSj+lz3wLrvAhmjtYNedJ3Q==
 
 "@eventdex/liveStream@^0.1.184":
   version "0.1.184"
@@ -1446,10 +1446,10 @@
   dependencies:
     react-rnd "^10.2.1"
 
-"@eventdex/schedule@^0.1.257":
-  version "0.1.257"
-  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.257.tgz#b94421b5f2dbade9dac868267a7b39682ef19f31"
-  integrity sha512-KLp2kL8wZiAkHzsV6KlByoA0VjwAj7QxQSJGgSbE7sR9p6jdfXgCXmMM7k5XAztAA/vIKEtPg4hxnVqYcVS4Mw==
+"@eventdex/schedule@^0.1.258":
+  version "0.1.258"
+  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.258.tgz#bfc572bc36d2190c28918ba949dece9de8710180"
+  integrity sha512-nS/XLyMUUlIS23tkJmSReEOdNQ+i6SAsnoSukyz/LW3ebkIOB957ijTDhw1FTnri6BS3Tvh9h//BEBPCB4IfNQ==
   dependencies:
     react-rnd "^10.2.1"
 
@@ -1458,10 +1458,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.240.tgz#0fdc9ba7f8cdb7b8d1fcc497176c0192a2655000"
   integrity sha512-kZDV2WHsL74VWhSM+zthYDsEXL0TTmRK5pOGey7ZFT4NMl1dpu10yBvvPVUK8FfK3Nvc/tvXBnxz4ETmSN2tOA==
 
-"@eventdex/video@0.1.284":
-  version "0.1.284"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.284.tgz#014fc0869fcb45de4cc74f0d955d2aa62d7f5d95"
-  integrity sha512-zXcR/45+lbcgJeHr/7OPuZw+iMr6UwLhemqlTeBaAusEV51mzhULRvoWse22SQl5u6ttuTh/69emHR5HHXf31Q==
+"@eventdex/video@0.1.285":
+  version "0.1.285"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.285.tgz#3502e71707ba7166a8fea6e15ad934c8c9ee20f7"
+  integrity sha512-BqFazLRTbHZ3sMIJ/UPgn7sci63h0NdATOfTPAZJBRjaTrPpsoPE9lDg+mR4PGoxsFBEaBKipxnWcaYnZKB/wg==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
