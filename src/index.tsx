@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
 import { CssBaseline } from '@material-ui/core';
@@ -15,13 +15,15 @@ import { initializeContext } from '@eventdex/core/context';
 import history from './history';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import EventdexModules from './EventdexModules';
+import CircleBackdrop from '@eventdex/common/src/components/CircleBackdrop';
 
 let hostApp = {
   abbreviation: 'vv',
   name: 'Video call vonage',
 };
 
-// const AppLazy = React.lazy(() => import('./EventdexModules'));
+const AppLazy = React.lazy(() => import('./EventdexModules'));
 
 initializeContext(store, history, hostApp);
 registerModule(VideoModule);
@@ -42,6 +44,20 @@ const VideoApp = () => {
   const isAdmin = query.get('admin');
   return (
     <React.Fragment>
+      <Suspense
+        fallback={
+          <CircleBackdrop
+            color={'primary'}
+            backgroundColor={'#fff7'}
+            open={true}
+            loadingText={'Loading video call...'}
+            size={100}
+          />
+        }
+      >
+        <AppLazy />
+      </Suspense>
+
       <VonageVideo
         isOpen={true}
         room={room}

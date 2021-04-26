@@ -1415,11 +1415,6 @@
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/leads@^0.1.248":
-  version "0.1.248"
-  resolved "http://3.89.41.88:4873/@eventdex%2fleads/-/leads-0.1.248.tgz#b3e443d8673949fbc3a8bf836771a00ba2e48ef9"
-  integrity sha512-xQbmn0AMvzQtr+0mx9nFxatIZnu8cQQ+EZV2A2103atOVSzUAl/ikxsmwx0EPyEBI2fcZwWKTPHUzc9aGcxh8A==
-
 "@eventdex/liveStream@^0.1.184":
   version "0.1.184"
   resolved "http://3.89.41.88:4873/@eventdex%2fliveStream/-/liveStream-0.1.184.tgz#867fe685276fc71acc961a2ee71de0eeb2e4c0d9"
@@ -1445,6 +1440,13 @@
   integrity sha512-FmOXkrLX34oByBWOPGQTkF//RcmDFXuaEe84tOiNQKZZaWtSOPmPTrtVfEgnJReYDAS8ty/VlbMRgixk+g0Gmg==
   dependencies:
     react-rnd "^10.2.1"
+
+"@eventdex/player@^0.1.239":
+  version "0.1.239"
+  resolved "http://3.89.41.88:4873/@eventdex%2fplayer/-/player-0.1.239.tgz#91519f412670e9fd91d52ed3b351062094e9ca76"
+  integrity sha512-tz5gfCKnqYhryxEQHzRBCY/0YOJTYZ/LXyayj22LT51o2u4FwY7fkvXIGDBQkTC820DP8d8FHh6D36cGaCZTRA==
+  dependencies:
+    react-player "^2.5.0"
 
 "@eventdex/schedule@^0.1.263":
   version "0.1.263"
@@ -12374,7 +12376,7 @@ react-phone-input-material-ui@^2.13.11:
     lodash.startswith "^4.2.1"
     prop-types "^15.7.2"
 
-react-player@^2.9.0:
+react-player@^2.5.0, react-player@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.9.0.tgz#ef7fe7073434087565f00ff219824e1e02c4b046"
   integrity sha512-jNUkTfMmUhwPPAktAdIqiBcVUKsFKrVGH6Ocutj6535CNfM91yrvWxHg6fvIX8Y/fjYUPoejddwh7qboNV9vGA==
