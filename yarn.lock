@@ -1396,22 +1396,22 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.310.tgz#9494091fd7b2222ab1772954413f9bb8f236d740"
   integrity sha512-0NlPNiQBv7w1Z26uD4AClSH5jvO7Yhp2WzwoBGBWssApDpMGu9/ib5DvF0a1FJYNk7BG8LyW1jZ00KoBK4AOGw==
 
-"@eventdex/common@0.1.278":
-  version "0.1.278"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.278.tgz#ec8dc441682639b24814a63c57899a367786b579"
-  integrity sha512-zT8nlaqoWmEqv1kUx9tnRx0/H0f5Vi7ZOMUkaVbziOTAqqbNjQAPSeMGWn7i39YlndvrePsHn/Ha0tPIwxp89g==
+"@eventdex/common@0.1.279":
+  version "0.1.279"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.279.tgz#4d0a32a4ce933ab1d79fb508b5f9cc2ed74da8d1"
+  integrity sha512-VLED/GisqpTBHECAZV264H8MLnK2vo3Vm/T7cCLHtzN+q5e/3v/6W7PEEh77+9pwtT0ZGEwD+7Y8/KIlns530g==
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.280":
-  version "0.1.280"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.280.tgz#d429c6674c1bf62fe20bbea205b14cb665778fad"
-  integrity sha512-DHKjm2m8xXzC9GUKwGgSHthsyBUmKST5jIhEasjkeYYHqQ0zlJNJo0PlEn7iVuAP+aY8vVMagaXkQWkzPwPdBw==
+"@eventdex/core@0.1.281":
+  version "0.1.281"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.281.tgz#c25fab300b4f9dd2f310ba32db96e148586aeaad"
+  integrity sha512-HzbMFBAGbnOCwBN1+1dHnp5tjnc1LVTVvhGM4jk9AgKzO3KRpOCb4S2a5xHyj7zdu9Nf268210XDIK3qrX5kFg==
 
-"@eventdex/event@0.1.314":
-  version "0.1.314"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.314.tgz#d8277c187eb1238abaefc6f5d39c73ded78fa591"
-  integrity sha512-JfZGqVFd8WG5qCdaeHg0JYJC/OZBe1cRWIz6k5Ya9ps2JriQDpAeHutay6KG8Gt30KyDm8+7apUHDhmHTF18lQ==
+"@eventdex/event@0.1.315":
+  version "0.1.315"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.315.tgz#849a6acb944c19e5d3e228880a5ca44a493e5ec5"
+  integrity sha512-unDNQdd3a6rjiuZK6swzJOXaoMgji5+nprI1+jD4OrHNobLXITarNySC47S+rR9S2gv27xNiW9/6RLXuXAahxA==
   dependencies:
     react-joyride "^2.3.0"
 
@@ -1429,10 +1429,10 @@
     less-loader "^5.0.0"
     react-tooltip "^4.2.10"
 
-"@eventdex/lounge@0.1.266":
-  version "0.1.266"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.266.tgz#c7aa84d18108426dcf5b85fb9fa235eafa76b7c7"
-  integrity sha512-jxijXwcwNZ7bDAXAVU4CuInfykLlg6q+a1VznldtZ+zgCRPUutRBJxbAoR5X6sqs9Mhj3Ajze7Ohv4VvHwisOA==
+"@eventdex/lounge@0.1.267":
+  version "0.1.267"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.267.tgz#cd938ed6523788ece308ebfb832077d930f3c2f3"
+  integrity sha512-FhaeHmoOELYgdA7vJF4oW9kXV+On27GPi4TfL+EXeZrS003XosCxhGVk9C+3DFL0AlPPSlmQy6nG016LudAuvQ==
 
 "@eventdex/manageappt@0.0.39":
   version "0.0.39"
@@ -9241,6 +9241,13 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+linkify-it@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-3.0.2.tgz#f55eeb8bc1d3ae754049e124ab3bb56d97797fb8"
+  integrity sha512-gDBO4aHNZS6coiZCKVhSNh43F9ioIL4JwRjLZPkoLIY4yZFwg264Y5lu2x6rb1Js42Gh6Yqm2f6L2AJcnkzinQ==
+  dependencies:
+    uc.micro "^1.0.1"
+
 lint-staged@^9.5.0:
   version "9.5.0"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-9.5.0.tgz#290ec605252af646d9b74d73a0fa118362b05a33"
@@ -14315,6 +14322,11 @@ tinycolor2@^1.4.1:
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.2.tgz#3f6a4d1071ad07676d7fa472e1fac40a719d8803"
   integrity sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==
 
+tlds@^1.221.1:
+  version "1.221.1"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.221.1.tgz#6cf6bff5eaf30c5618c5801c3f425a6dc61ca0ad"
+  integrity sha512-N1Afn/SLeOQRpxMwHBuNFJ3GvGrdtY4XPXKPFcx8he0U9Jg9ZkvTKE1k3jQDtCmlFn44UxjVtouF6PT4rEGd3Q==
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -14658,6 +14670,11 @@ typescript@^3.8.3:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+
+uc.micro@^1.0.1:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/uc.micro/-/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
+  integrity sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
 
 ultron@~1.1.0:
   version "1.1.1"
