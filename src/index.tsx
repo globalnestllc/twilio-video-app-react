@@ -6,8 +6,10 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Redirect, Route, Switch, useLocation, useParams } from 'react-router-dom';
 import theme from './theme';
 import VideoModule, { VonageVideo } from '@eventdex/video';
+import { actionOpenVideo } from '@eventdex/video/src/store/actions';
 import store from './store/store';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
+
 //============
 import { registerModule } from '@eventdex/core';
 
@@ -42,6 +44,15 @@ const VideoApp = () => {
   let query = useQuery();
   const user = { name: query.get('uname') };
   const isAdmin = query.get('admin');
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    //Just set video state open.
+    let params = { isOpen: true };
+    dispatch(actionOpenVideo(params));
+  }, []);
+
   return (
     <React.Fragment>
       <Suspense
