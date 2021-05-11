@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
-import { CssBaseline } from '@material-ui/core';
+import { Box, Container, CssBaseline, Grid, Typography } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Redirect, Route, Switch, useLocation, useParams } from 'react-router-dom';
 import theme from './theme';
@@ -19,7 +19,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EventdexModules from './EventdexModules';
 import CircleBackdrop from '@eventdex/common/src/components/CircleBackdrop';
-
+import logoLandscape from '@eventdex/assets/images/logo-landscape.png';
 let hostApp = {
   abbreviation: 'vv',
   name: 'Video call vonage',
@@ -52,6 +52,22 @@ const VideoApp = () => {
     let params = { isOpen: true };
     dispatch(actionOpenVideo(params));
   }, []);
+
+  if (!roomName) {
+    return (
+      <Grid
+        container
+        direction={'column'}
+        justify={'space-around'}
+        alignItems={'center'}
+        style={{ maxHeight: '500px', height: '100%' }}
+      >
+        <img src={logoLandscape} />
+        <Typography variant={'h3'}> Eventdex video conferencing </Typography>
+        <Typography variant={'body1'}> Please use the link provided to join meeting.</Typography>
+      </Grid>
+    );
+  }
 
   return (
     <React.Fragment>
