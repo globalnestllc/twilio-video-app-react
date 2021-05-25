@@ -1379,10 +1379,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@eventdex/assets@0.1.14":
-  version "0.1.14"
-  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.14.tgz#6234e12fa27422bdc587ba7d54829280ec0c2374"
-  integrity sha512-B/KCTk9QawcWLReqIGhpSmKEDnUKmXAAxw0i/rm37g5dE3C2hf7VZGiTziMYk92mS9ZGzfUFm/ygCn+OSucsWg==
+"@eventdex/assets@0.1.16":
+  version "0.1.16"
+  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.16.tgz#2554160c28e7a04f7f90d0c70435ff395bf37555"
+  integrity sha512-+K/IBk7LJK8J2txYjyIJAlWHbr/BBJUe3tN7wKj59+bHjTKYjGzgkBx8jtgJBhm+wU7UF9UZQMKW2HX2wKOryQ==
 
 "@eventdex/chat@0.1.312":
   version "0.1.312"
@@ -1396,22 +1396,22 @@
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.283":
-  version "0.1.283"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.283.tgz#3c492bc23255e8490523671e1bbbad6ce9b6d268"
-  integrity sha512-xJu7aoiiLMpfIIu1LFyMI/APzF/9HCWlIwYhF8RdSCeKXdjSCDWf/b95Jaf6BA/K5IKlhryC+7ZYhgc/11dDKw==
+"@eventdex/core@0.1.285":
+  version "0.1.285"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.285.tgz#70018da3e9a8bd217d1027c68ba53c7765e10985"
+  integrity sha512-RM8ouOYajOgS/4ojUjiZAHYyp8i5XpCPv2S2S8HWZolQCx/jUwt1ZcUS/r0HgY82u39kT6gVLahTOBJFz9Or3Q==
 
-"@eventdex/event@0.1.324":
-  version "0.1.324"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.324.tgz#90fa3852a4460d9e607931baffc23f479327ee4d"
-  integrity sha512-9aR85tCwCtfsT167C5XPjkQFyntXlBPUiXY0FK4HDzZAB6wtQs/ecQg6tq+pHtX3F0I+2LmLxsPcY15WC6CQHw==
+"@eventdex/event@0.1.326":
+  version "0.1.326"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.326.tgz#e708693d6421089b293004cb6a74fe3aebf219a7"
+  integrity sha512-Y0aXNblc/cgtL1xgTQ9oQSasRBehvhGznQQZtmsjQzPkSsfku/W9gRN8YvK7lwTTxmlPcAVkXzkOpvTIWY494w==
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.273":
-  version "0.1.273"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.273.tgz#b88221a996828eccd0c22d628023797d3c5c4d85"
-  integrity sha512-xWEoVomtx5pvJtr+GGqc1kXV5uz5QrjGtoH/riMTIFMmeYriUShlafohQ2l8ZVtD3fh2llPN3F2kCbHxV3u3sg==
+"@eventdex/lounge@0.1.275":
+  version "0.1.275"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.275.tgz#2e9506e09a219ecd72f54bb0b08c8c0718b902fd"
+  integrity sha512-6iOMqNLNww9DfnJVmgI5mpaS7OOHRPthZHDVxJ8AdkGSIaj1VK4pQfXmhD8HyHJ82GXkJn0/o9aIyMGiv/tqeA==
 
 "@eventdex/manageappt@0.0.40":
   version "0.0.40"
@@ -1446,17 +1446,17 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.242.tgz#aca8d87c94ac2e55432a2f39ec07b547aefd63da"
   integrity sha512-p5dZ5D3LJpj80/Uv7C41GU8VhUiaMshCCo7SgwRmzx1bddPY482bItxGST//WvthEGYuMeP4flndJeR9vtySig==
 
-"@eventdex/video@0.1.318":
-  version "0.1.318"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.318.tgz#245c64a2c929554da2676abc418019c5de8150df"
-  integrity sha512-08MsbgCH1HIcsywpmIoUvKLCP1ii2TyMd8dJeWDraqp1LScgY3smfe7dFOvm3fC9D+g4l+Bm7iF4zNAfUOlZKA==
+"@eventdex/video@0.1.320":
+  version "0.1.320"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.320.tgz#5fdc14ebe68865efddd60fa3a92ace29a52adf1c"
+  integrity sha512-uteL2TZS2St6okpaSIANqxH+Fs6rYHb93YyY1+JyhyWVEQ8KQs2KqVmwhIpDCtXZbctZvciYeI+Y+/qIp3cWEA==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
-"@eventdex/widgets@^0.0.195":
-  version "0.0.195"
-  resolved "http://3.89.41.88:4873/@eventdex%2fwidgets/-/widgets-0.0.195.tgz#af7bf73a4053b1284c866edc6206a8769ae91643"
-  integrity sha512-em2f/blPO/5sXS1GIZlcpaHV8AoKyCPJo4mPROOtQPnonuMYrCyEyPoedNTgEs1jhs16W66v9YMJutI0CJpWWw==
+"@eventdex/widgets@^0.0.197":
+  version "0.0.197"
+  resolved "http://3.89.41.88:4873/@eventdex%2fwidgets/-/widgets-0.0.197.tgz#79b6e4a2af4793b9b749c68a0de33cb9e910ae52"
+  integrity sha512-dacL3nNkH8xH/WwUpGYRncYdWa1bbrFrUhVFe+2ZaO4RP9bskX4o57AC5O6bssNWTSqDac10M9B3pyGB5U9ung==
 
 "@firebase/analytics-types@0.4.0":
   version "0.4.0"
