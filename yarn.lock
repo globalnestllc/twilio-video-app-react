@@ -1401,17 +1401,17 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.285.tgz#70018da3e9a8bd217d1027c68ba53c7765e10985"
   integrity sha512-RM8ouOYajOgS/4ojUjiZAHYyp8i5XpCPv2S2S8HWZolQCx/jUwt1ZcUS/r0HgY82u39kT6gVLahTOBJFz9Or3Q==
 
-"@eventdex/event@0.1.326":
-  version "0.1.326"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.326.tgz#e708693d6421089b293004cb6a74fe3aebf219a7"
-  integrity sha512-Y0aXNblc/cgtL1xgTQ9oQSasRBehvhGznQQZtmsjQzPkSsfku/W9gRN8YvK7lwTTxmlPcAVkXzkOpvTIWY494w==
+"@eventdex/event@0.1.327":
+  version "0.1.327"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.327.tgz#b453a5fdf44a02638594d1f135334256322f79dd"
+  integrity sha512-icwTLNrFrSREFPb9eLojRpwto5OW9HQz/Nbyhjc2a2g0BPXA5797PSfqSor74btn95rNKL3Cps65cqCuyFlV/w==
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.275":
-  version "0.1.275"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.275.tgz#2e9506e09a219ecd72f54bb0b08c8c0718b902fd"
-  integrity sha512-6iOMqNLNww9DfnJVmgI5mpaS7OOHRPthZHDVxJ8AdkGSIaj1VK4pQfXmhD8HyHJ82GXkJn0/o9aIyMGiv/tqeA==
+"@eventdex/lounge@0.1.276":
+  version "0.1.276"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.276.tgz#11d3a42720f4edc480f318891ca193ab39f78cb2"
+  integrity sha512-2hO+YfP4e/F4WK71u3Fpjth9osYib2DugJsO8p/adu/lPV3R4KmlEOioU7o/4ivx2zADrIB+DFckJWcRIfw6EQ==
 
 "@eventdex/manageappt@0.0.40":
   version "0.0.40"
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.242.tgz#aca8d87c94ac2e55432a2f39ec07b547aefd63da"
   integrity sha512-p5dZ5D3LJpj80/Uv7C41GU8VhUiaMshCCo7SgwRmzx1bddPY482bItxGST//WvthEGYuMeP4flndJeR9vtySig==
 
-"@eventdex/video@0.1.320":
-  version "0.1.320"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.320.tgz#5fdc14ebe68865efddd60fa3a92ace29a52adf1c"
-  integrity sha512-uteL2TZS2St6okpaSIANqxH+Fs6rYHb93YyY1+JyhyWVEQ8KQs2KqVmwhIpDCtXZbctZvciYeI+Y+/qIp3cWEA==
+"@eventdex/video@0.1.321":
+  version "0.1.321"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.321.tgz#bd68970bdb3b6b295278c4380a839ccea4fb5968"
+  integrity sha512-lPHtZFiwDuirziWLML7KIc0O+FR6lhhRs5ctLg+MQ+rpesob68LBsXIKU2mHeKhfP4DD1jcekAb76EKUuXf6ZQ==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
