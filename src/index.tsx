@@ -9,6 +9,7 @@ import VideoModule, { VonageVideo } from '@eventdex/video';
 import { actionOpenVideo } from '@eventdex/video/src/store/actions';
 import store from './store/store';
 import { Provider, useDispatch } from 'react-redux';
+import { localStorageHelper } from '@eventdex/core/context';
 
 //============
 import { registerModule } from '@eventdex/core';
@@ -19,13 +20,18 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EventdexModules from './EventdexModules';
 import CircleBackdrop from '@eventdex/common/src/components/CircleBackdrop';
-import logoLandscape from '@eventdex/assets/images/logo-landscape.png';
+import LandingPage from './LandingPage';
 let hostApp = {
   abbreviation: 'vv',
   name: 'Video call vonage',
 };
 
-const AppLazy = React.lazy(() => import('./EventdexModules'));
+const ModulesLazy = React.lazy(() => import('./EventdexModules'));
+const Modules = () => (
+  <Suspense fallback={<div />}>
+    <ModulesLazy />
+  </Suspense>
+);
 
 initializeContext(store, history, hostApp);
 registerModule(VideoModule);
@@ -44,6 +50,10 @@ const VideoApp = () => {
   let query = useQuery();
   const user = { name: query.get('uname') };
   const isAdmin = query.get('admin');
+  const email = query.get('email');
+  if (email) {
+    localStorageHelper.email = email;
+  }
 
   const dispatch = useDispatch();
 
@@ -54,36 +64,12 @@ const VideoApp = () => {
   }, []);
 
   if (!roomName) {
-    return (
-      <Grid
-        container
-        direction={'column'}
-        justify={'space-around'}
-        alignItems={'center'}
-        style={{ maxHeight: '500px', height: '100%' }}
-      >
-        <img src={logoLandscape} />
-        <Typography variant={'h3'}> Eventdex video conferencing </Typography>
-        <Typography variant={'body1'}> Please use the link provided to join meeting.</Typography>
-      </Grid>
-    );
+    return <LandingPage />;
   }
 
   return (
     <React.Fragment>
-      <Suspense
-        fallback={
-          <CircleBackdrop
-            color={'primary'}
-            backgroundColor={'#fff7'}
-            open={true}
-            loadingText={'Loading video call...'}
-            size={100}
-          />
-        }
-      >
-        <AppLazy />
-      </Suspense>
+      <Modules />
 
       <VonageVideo
         isOpen={true}
