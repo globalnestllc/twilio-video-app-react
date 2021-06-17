@@ -78,6 +78,7 @@
     "tlds": "^1.221.1",
     "twilio": "^3.39.3",
     "twilio-chat": "3.3.7",
+    "twilio-sync": "^2.0.1",
     "twilio-video": "2.9.0",
     "typescript": "^3.8.3"
   },

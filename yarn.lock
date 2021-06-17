@@ -14389,6 +14389,11 @@ twilio-notifications@^0.5.11, twilio-notifications@^0.5.9:
     twilsock "^0.6.2"
     uuid "^3.2.1"
 
+twilio-sdk-type-validator@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/twilio-sdk-type-validator/-/twilio-sdk-type-validator-0.1.0.tgz#897c2d8f8a2ef405947a99ebfd6b8ad3969b9c0e"
+  integrity sha512-YYGvjKvEN8EoavXH5efC5oPtuSdUAJz+uygg3j6J6Jrg3yaQedPe63T8Srs9a5XtDn2CqU5ODRJJqTyRtNy8eg==
+
 twilio-sync@^0.12.2:
   version "0.12.4"
   resolved "https://registry.yarnpkg.com/twilio-sync/-/twilio-sync-0.12.4.tgz#a278d5da65cd0e63f4964f3687b5ed2712a10e02"
@@ -14399,6 +14404,18 @@ twilio-sync@^0.12.2:
     platform "^1.3.5"
     twilio-notifications "^0.5.11"
     twilsock "^0.5.14"
+    uuid "^3.3.2"
+
+twilio-sync@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/twilio-sync/-/twilio-sync-2.0.1.tgz#0c299e7d490f9e64b505bffaecedcaad902b60c4"
+  integrity sha512-50bBz5nXokdi/9WM6ZFMpILLPTXYp53tl1Vc14Fmw5aDGVIGIpkNyk4JDrBQq+l57LJkNBDpb7KHfY1jezpYXw==
+  dependencies:
+    loglevel "^1.6.3"
+    operation-retrier "^3.0.0"
+    platform "^1.3.6"
+    twilio-sdk-type-validator "0.1.0"
+    twilsock "^0.8.2"
     uuid "^3.3.2"
 
 twilio-video@2.9.0:
@@ -14445,6 +14462,18 @@ twilsock@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/twilsock/-/twilsock-0.6.2.tgz#8f6f800e8071998508717c536f28f761bf0acc17"
   integrity sha512-Wk60XZxwFR5ooLkSLO5CGtBBXLT7VRbyPcg49D9icUqeAgm9McVZPPDq0kxVW4R4c3k4cppd1EvuhtUEejezCw==
+  dependencies:
+    javascript-state-machine "^3.0.1"
+    loglevel "^1.6.3"
+    operation-retrier "^3.0.0"
+    platform "^1.3.6"
+    uuid "^3.2.1"
+    ws "^5.1.0"
+
+twilsock@^0.8.2:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/twilsock/-/twilsock-0.8.3.tgz#a3db1387eb50be48ae260e9f1955c316026ec8a8"
+  integrity sha512-jS7sFoecgofYiRAYvinL3cYlwqOXkgtdb81q24H8mD2DNbnTwNQ6GQNURJ5GxjTYo/iSsgQjYVUs9lJaXU1uaA==
   dependencies:
     javascript-state-machine "^3.0.1"
     loglevel "^1.6.3"
