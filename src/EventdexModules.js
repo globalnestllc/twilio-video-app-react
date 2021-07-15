@@ -7,6 +7,7 @@ import ScheduleModule from '@eventdex/schedule';
 import EventModule from '@eventdex/event';
 import ChatModule from '@eventdex/chat';
 import CommonModule from '@eventdex/common';
+import { twilioHelper } from '@eventdex/core/src/context';
 
 registerModule(LoungeModule);
 registerModule(PlayerModule);
@@ -17,5 +18,6 @@ registerModule(CoreModule);
 registerModule(CommonModule);
 
 export default function EventdexModules(props) {
+  twilioHelper.initialize(localStorage.email);
   return <React.Fragment></React.Fragment>;
 }
