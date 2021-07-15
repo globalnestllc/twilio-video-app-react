@@ -1396,10 +1396,10 @@
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.289":
-  version "0.1.289"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.289.tgz#62a97e423cffb40454607a8e1dd1e52214abd7e3"
-  integrity sha512-sGkAYZdeAOa7CZVuCNay+3NpUQiW6146LxJXBySPIx714SfSfrC/l5nAGE3KVQ7tSCOVonLxA5WeyhlPbeQSjQ==
+"@eventdex/core@0.1.290":
+  version "0.1.290"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.290.tgz#a3d73ae8382d8c6902f1eb1058da278e4f041519"
+  integrity sha512-u9pQfNmDJeQy8gPXOLzgSofA2C2HBGZS1tsJcF3BshzU/pml1Bq1WuwB7gi1mZE3swQzw/1ghtytw31OgrOC5Q==
 
 "@eventdex/event@0.1.346":
   version "0.1.346"
