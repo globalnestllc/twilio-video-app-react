@@ -18,6 +18,8 @@ registerModule(CoreModule);
 registerModule(CommonModule);
 
 export default function EventdexModules(props) {
-  twilioHelper.initialize(localStorage.email);
+  if (localStorage.email) {
+    twilioHelper.initialize(localStorage.email);
+  }
   return <React.Fragment></React.Fragment>;
 }
