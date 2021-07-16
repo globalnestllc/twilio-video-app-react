@@ -1379,10 +1379,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@eventdex/assets@0.1.16":
-  version "0.1.16"
-  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.16.tgz#2554160c28e7a04f7f90d0c70435ff395bf37555"
-  integrity sha512-+K/IBk7LJK8J2txYjyIJAlWHbr/BBJUe3tN7wKj59+bHjTKYjGzgkBx8jtgJBhm+wU7UF9UZQMKW2HX2wKOryQ==
+"@eventdex/assets@0.1.17":
+  version "0.1.17"
+  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.17.tgz#922a6de1fe6aa309df4e32890aed9122fe0fda4c"
+  integrity sha512-q4aZK7sDHaAwEvFFUkM4TIzYiLvrGOIcLo5ixKdMCQhwF7wttpxsFLEqgOuNKYLVLNdfhAqbqRwF6ObrQkSpsw==
 
 "@eventdex/chat@0.1.313":
   version "0.1.313"
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.245.tgz#58b612654f705f95bc7e70098a32351e2632c5ed"
   integrity sha512-lJEbUqeeI3NDp+VGQxXy8xpp8SIiOeMRSJKGxiIW5LznWLaOEenL024CdAlOFKPnb8wISnzNVWEn7nQSDkyk3g==
 
-"@eventdex/video@0.1.346":
-  version "0.1.346"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.346.tgz#25a6bab0c96ecad3bc4c9ce3b5d8dc8a9530cc74"
-  integrity sha512-T6nQ3NKCtxUoCTB9aCTlIKRCU8DtRfY7t5FRdNT/GO6u3qNZv8ZAanlXuWGfiiSPsQw+JXma4oG+vp6ECYzX6Q==
+"@eventdex/video@0.1.347":
+  version "0.1.347"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.347.tgz#002b7f23727ed7d853c7a14038f4c2b27be7c270"
+  integrity sha512-OL3Eoioj27T1k4LEhHhI4VjhxqmLj3qrr4lQEqMBDphAK9WItfvj1PoU3ct6tQW0Ac4g45F1ZERrF1pOEaNpKQ==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
