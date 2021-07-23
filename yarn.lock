@@ -1384,22 +1384,22 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.17.tgz#922a6de1fe6aa309df4e32890aed9122fe0fda4c"
   integrity sha512-q4aZK7sDHaAwEvFFUkM4TIzYiLvrGOIcLo5ixKdMCQhwF7wttpxsFLEqgOuNKYLVLNdfhAqbqRwF6ObrQkSpsw==
 
-"@eventdex/chat@0.1.313":
-  version "0.1.313"
-  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.313.tgz#0c9b07c1bfd733aa30cc34ca7ca8e887d2245e47"
-  integrity sha512-WIsR5y/wSD6KmrOckLslNeUcsTZ2vukmsJgqwjoZdFQcKatRhHU/w+7zQPi8Z7Zphln4F9r7jgtC26JDXFKIbA==
+"@eventdex/chat@0.1.319":
+  version "0.1.319"
+  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.319.tgz#f702193ca540d610f62bc8359ab25c5d7f01f8f1"
+  integrity sha512-zCAmCz7mtvgnAOvBX1s5UD3r4KEExEbsDk0G/7DgIPsOiQfCFsQ47v0jO1zWOGJ6Qq1xZ62UHZZlSz5cP74edQ==
 
-"@eventdex/common@0.1.294":
-  version "0.1.294"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.294.tgz#df0499e254ef693f2ea465bdd5fccccd579e458e"
-  integrity sha512-wUWQjIWny/NLgO0ox6PcxMq1cSc02xLYhSBNzB6h92rFHlVMkyTOCsoL5A62ckM1MpaWdxaB/adTkNwkHqqpkA==
+"@eventdex/common@0.1.303":
+  version "0.1.303"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.303.tgz#cbecf238a9bd254f8ddc9315c5219e23b59a25eb"
+  integrity sha512-grKkjw2GdJ40PFyJu5sZQqC+19Uhkur82RsNOS5oyLT4CWTLA3Or8KpL5JCbXHAmobanMpGiiThIeRzH4BampQ==
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.290":
-  version "0.1.290"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.290.tgz#a3d73ae8382d8c6902f1eb1058da278e4f041519"
-  integrity sha512-u9pQfNmDJeQy8gPXOLzgSofA2C2HBGZS1tsJcF3BshzU/pml1Bq1WuwB7gi1mZE3swQzw/1ghtytw31OgrOC5Q==
+"@eventdex/core@0.1.294":
+  version "0.1.294"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.294.tgz#1670f993cb30f0b7338cf8fcd87d10a49dd220f6"
+  integrity sha512-fpzL+1D9T9Yv6bDmW1UCs/d6cfC15puQvZyttcQSg447s++Kx211r0SS9uwJdvDzWV2y9aPNui940EopCM1oAQ==
 
 "@eventdex/event@0.1.346":
   version "0.1.346"
@@ -1408,10 +1408,10 @@
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.278":
-  version "0.1.278"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.278.tgz#dbb2f96d426e8fc9af32d29b002440c83535d053"
-  integrity sha512-foLte0WM84a/lU1udKP2tVDV3C0hwf1csqwhY4QfPQceXlBJKP25pdSaftlvUzvHurN6rp+9gfSU1zWXKHNRsQ==
+"@eventdex/lounge@0.1.285":
+  version "0.1.285"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.285.tgz#d07b18825c822ceb3f009d05f27d1f181ed03851"
+  integrity sha512-MwjBnAIPoGEga35gszUviHad8Mf2V8kkQ1XiwtBDdkBLHzLSWUNcjQ5nPMnY9zy+jr8l2PRWwcZV5NLld3868g==
 
 "@eventdex/manageappt@0.0.40":
   version "0.0.40"
@@ -1434,10 +1434,10 @@
   dependencies:
     react-rnd "^10.2.1"
 
-"@eventdex/schedule@0.1.283":
-  version "0.1.283"
-  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.283.tgz#ce49f3302c9a4fb076a540a0212219e3a6c3ea1c"
-  integrity sha512-iZxj0cnMZVwdFA8+N1D3tHZ+KFGAAiSWZMegOoK2QsBvi5LgMT0icvLV8TzsHjzwBveAossxZZg8t0ffs/vHJA==
+"@eventdex/schedule@0.1.289":
+  version "0.1.289"
+  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.289.tgz#18c43cb02a87920da51616451de04c06f0fd0a02"
+  integrity sha512-Q8glsZQVeWkW7kVnQ6gmBefCZwoLg5irA6P+2Szq2prcFutD1j2eLmdDD3k7gnSle6kQ02RLOuCzW+RJfZhhaQ==
   dependencies:
     react-rnd "^10.2.1"
 
