@@ -1384,15 +1384,15 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.17.tgz#922a6de1fe6aa309df4e32890aed9122fe0fda4c"
   integrity sha512-q4aZK7sDHaAwEvFFUkM4TIzYiLvrGOIcLo5ixKdMCQhwF7wttpxsFLEqgOuNKYLVLNdfhAqbqRwF6ObrQkSpsw==
 
-"@eventdex/chat@0.1.319":
-  version "0.1.319"
-  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.319.tgz#f702193ca540d610f62bc8359ab25c5d7f01f8f1"
-  integrity sha512-zCAmCz7mtvgnAOvBX1s5UD3r4KEExEbsDk0G/7DgIPsOiQfCFsQ47v0jO1zWOGJ6Qq1xZ62UHZZlSz5cP74edQ==
+"@eventdex/chat@0.1.320":
+  version "0.1.320"
+  resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.320.tgz#bc1bb5795ff62213d98e6b52972f02b80883d4c5"
+  integrity sha512-gT8UgJDg4P0/lYuot1nmkMxhWJwFFAOMR0/R0RdaSDtorRuu7ovQXVAgicZPvLNhDIYyK8w24qGHS9YzHsVjBg==
 
-"@eventdex/common@0.1.303":
-  version "0.1.303"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.303.tgz#cbecf238a9bd254f8ddc9315c5219e23b59a25eb"
-  integrity sha512-grKkjw2GdJ40PFyJu5sZQqC+19Uhkur82RsNOS5oyLT4CWTLA3Or8KpL5JCbXHAmobanMpGiiThIeRzH4BampQ==
+"@eventdex/common@0.1.304":
+  version "0.1.304"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.304.tgz#555d93341dd42957fb1ec9f42ba1d1261fa4e7eb"
+  integrity sha512-dfgnAGEt15Rbf0cMcuvXpGX9FomO40xEgKoJnvRnyRZt37SKCNzWChw1RagjzI4dJ9jN3lnJJ25gVrwKkiUufA==
   dependencies:
     react-papaparse "^3.9.0"
 
@@ -1408,10 +1408,10 @@
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.285":
-  version "0.1.285"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.285.tgz#d07b18825c822ceb3f009d05f27d1f181ed03851"
-  integrity sha512-MwjBnAIPoGEga35gszUviHad8Mf2V8kkQ1XiwtBDdkBLHzLSWUNcjQ5nPMnY9zy+jr8l2PRWwcZV5NLld3868g==
+"@eventdex/lounge@0.1.286":
+  version "0.1.286"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.286.tgz#af21eab4df5eac37bc22d36753c056db53809b35"
+  integrity sha512-i4FPe1496x/A/hYEPtjTdZDglGPzMNkJGGkBfaH9G1lJHf7QiHLSaPNLU0OtIPkQVS37kv5ZDasqkmWnnLxO1w==
 
 "@eventdex/manageappt@0.0.40":
   version "0.0.40"
