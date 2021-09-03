@@ -9,6 +9,8 @@ import { withStyles, useTheme } from '@material-ui/core/styles';
 import { urlFor_RestApi } from '@eventdex/core/src/context';
 import { useWindowMessageCallback } from './useWindowMessageCallback';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { urlFor_PublicApi, usePrevious } from '@eventdex/core/context';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles(theme => ({
   dialogPaper: {
@@ -52,15 +54,43 @@ const DialogTitle = withStyles(styles)(props => {
 });
 
 export default function AfterCallSurveyDialog(props) {
+  const { roomName } = props;
   const classes = useStyles();
-  const { open, onClose, url } = props;
+
+  const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
+  const videoRoomState = useSelector(state => state.ed_video.videoRoomState);
+  const eventId = useSelector(state => state.ed_video.video.sessionData?.event_id || null);
+  const surveyUrl = urlFor_PublicApi('/apex/BLN_POSTMMAPP', { eventid: eventId, slug: roomName });
+
+  const prevVideoRoomState = usePrevious(videoRoomState);
+  const callEnded = !!(
+    prevVideoRoomState &&
+    prevVideoRoomState !== videoRoomState &&
+    videoRoomState === 'disconnected'
+  );
+
+  React.useEffect(() => {
+    // async function checkSurvey() {
+    //   let result = await getNoAuth({url:"https://www.surveymonkey.com/r/22XZM8K"})
+    //   console.log('Disconnected: survey result:',result)
+    // }
+
+    if (callEnded) {
+      // checkSurvey();
+      setIsOpen(true);
+    }
+  }, [callEnded]);
+
+  function handleCloseDialog() {
+    setIsOpen(false);
+  }
+
   function handleIframeMessage(message, data) {
     if (data === 'iframe_message' || message === 'iframe_message') {
-      console.log('handleIframeMessage', message, data);
-      onClose();
+      handleCloseDialog();
     }
   }
   useWindowMessageCallback(handleIframeMessage);
@@ -70,15 +100,15 @@ export default function AfterCallSurveyDialog(props) {
       fullScreen={fullScreen}
       fullWidth={true}
       maxWidth={'md'}
-      open={open}
+      open={isOpen}
       aria-labelledby="survey questions"
       classes={{ paper: classes.dialogPaper }}
     >
-      <DialogTitle id="max-width-dialog-title" onClose={onClose}>
+      <DialogTitle id="max-width-dialog-title" onClose={handleCloseDialog}>
         {/*Please answer the following questions*/}
       </DialogTitle>
 
-      <iframe src={url} className={classes.iframe} />
+      <iframe src={surveyUrl} className={classes.iframe} />
     </Dialog>
   );
 }
