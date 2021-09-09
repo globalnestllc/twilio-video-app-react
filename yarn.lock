@@ -1396,15 +1396,15 @@
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.304":
-  version "0.1.304"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.304.tgz#7bba6209930b908b295cacc4cd54614ddc7788a5"
-  integrity sha512-iWpBlPyCZiNdVdoyKcTsnr8LQX2J8NAJAsoYgEzZrUFUPJjau5OfywfV11QWM6BOj/I4zLI/VfQ4PP6mzeoP4Q==
+"@eventdex/core@0.1.305":
+  version "0.1.305"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.305.tgz#dd5871863acf0819fb12386119376ee156ddca8e"
+  integrity sha512-CJCqaj+o04v01fur29GEg1e2g7f7yR6f2bEc/bx9QhZRekCEEE5XvxbQujrnnm4QA7dPPMDFm1OsE4/eGPVV6g==
 
-"@eventdex/event@0.1.358":
-  version "0.1.358"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.358.tgz#fb89a415ac8aba14a642e81d43659aae8966210c"
-  integrity sha512-OjccNxA59/OES4NKaEvbJu0fTkHKkXrlHYLf8veSk7dK/M5xciZMssyJeJ7ihze5DLdLfwrMDVlJT3fcY9uy1w==
+"@eventdex/event@0.1.359":
+  version "0.1.359"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.359.tgz#bf3fc1ee62413b6ceb11644fd3c102468a390884"
+  integrity sha512-KYFkwMRb7MvHmQ1LsmXonhp/g1vWvQdnSzECQ1t9nqPxJCdNvIvBOR1LwSWRcwxXYmrl7XzvOtXSZJHJc9wGLA==
   dependencies:
     react-joyride "^2.3.0"
 
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.246.tgz#9ae77e5626dfe3cb82a07e70eb31ed7d0b5362c8"
   integrity sha512-tgjY29uGFCmvhmlR3yNWqES/ZcrxKyP44QgJ1CXQV0q8j6M4FJPhw4tuY9NyGA5r5nSBDBoS1rrWAYRYkMO9EQ==
 
-"@eventdex/video@0.1.363":
-  version "0.1.363"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.363.tgz#ae55ef0fa51a0104742d17d2c07fc073d8b1ecfc"
-  integrity sha512-a9t0iBhy9wAOaEJjR38JN+fGSeuq4pVXYEHFtTFbPefQ0SN4o9xp5zleGj/tryby+FuJFMrcgs3d395MSU0WZg==
+"@eventdex/video@0.1.364":
+  version "0.1.364"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.364.tgz#3f8d1cd371f4a8dcfa04adc7ee595b839f873fa3"
+  integrity sha512-TlJ1RlPKa4EVbObbRE5Jg2I2NRQUtUNnjLKA/tJW+/F/6N5FKHv+3zRDTbyi0t11kCyj22kv5/lBX3VGlWJmcQ==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
