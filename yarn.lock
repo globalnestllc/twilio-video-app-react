@@ -1401,10 +1401,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.305.tgz#dd5871863acf0819fb12386119376ee156ddca8e"
   integrity sha512-CJCqaj+o04v01fur29GEg1e2g7f7yR6f2bEc/bx9QhZRekCEEE5XvxbQujrnnm4QA7dPPMDFm1OsE4/eGPVV6g==
 
-"@eventdex/event@0.1.360":
-  version "0.1.360"
-  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.360.tgz#c173ebe1c817146a2b3e4ca918e05119449a204c"
-  integrity sha512-/vXCVwkESvr1zo6Tod9UcuVHUkCwTCwT09gMsSULEN8FnBagQz/SsuttBzk42uIO5M0fgBstdB+jWDEaqBzqQQ==
+"@eventdex/event@0.1.361":
+  version "0.1.361"
+  resolved "http://3.89.41.88:4873/@eventdex%2fevent/-/event-0.1.361.tgz#3c7499be2536ff2c90bf6eecb517a2f60c96d84f"
+  integrity sha512-Bi/ucovkjhQGgyfACj0IqcMt52afa9Y1Oj7EOqAKajN80rTCu9AZYEHxRxNfgx+2lypERC/fBvQ5XrNTs0KY3Q==
   dependencies:
     react-joyride "^2.3.0"
 
