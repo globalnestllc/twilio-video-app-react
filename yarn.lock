@@ -1427,10 +1427,10 @@
   dependencies:
     react-player "^2.5.0"
 
-"@eventdex/profile@^0.0.118":
-  version "0.0.118"
-  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.118.tgz#07b00f9875fad3eabb5dab9e4a5b1624b273ab4a"
-  integrity sha512-9jxQPJgIiO0gRET1/bkDDb1oBjoBKA11gtsBOizA25ve6ljC7epNfy6K7JOgh2kd/L2An+qhy+mzGI44gt1oyw==
+"@eventdex/profile@^0.0.119":
+  version "0.0.119"
+  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.119.tgz#d96536234190910973f042395295d18d1814bfff"
+  integrity sha512-xR8yoPvDvj/3mltbiBZhZVO1mk+CSV266DEfZMAQnjY5BTjU6plpMpGrrOnvgzKcBGq4ZRMfjecjS32Dp75GTQ==
   dependencies:
     react-rnd "^10.2.1"
 
