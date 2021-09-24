@@ -21,6 +21,7 @@ import AfterCallSurveyDialog from './AfterCallSurvey/AfterCallSurveyDialog';
 let hostApp = {
   abbreviation: 'vv',
   name: 'Video call vonage',
+  disableMeetingSchedule: true,
 };
 
 const ModulesLazy = React.lazy(() => import('./EventdexModules'));

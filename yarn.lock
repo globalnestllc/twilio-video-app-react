@@ -1413,10 +1413,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.294.tgz#eb66136bfed4297497fbb874df430c48082eb64a"
   integrity sha512-5xApfLDsUzj/SqQpoUXovfyuNQhV15NtJFifEb5Gdn6Bbwxfr++4LpADytUOc9kugmRk1N39eZ8Z1lDSfVoEmw==
 
-"@eventdex/manageappt@0.0.44":
-  version "0.0.44"
-  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.44.tgz#a30b47a945f80e63ead722c5c148065feb1bf295"
-  integrity sha512-q4OLzSLaXOyk5XIqh6eg/cZsbnCmULk1ST56eEN5K5bBdVeoSFangqr114BsmJt1s0GqjGDkd21Ryl4HbmRuMA==
+"@eventdex/manageappt@0.0.46":
+  version "0.0.46"
+  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.46.tgz#2604607221ebf6bb766d2eeda7eb733269c8f0db"
+  integrity sha512-+ZzdpqmRV6O0BPgDdDj3j5Hr46AzIvWrEiIITiwrHg34qo1ywqyRwDIQn0Hli8/jqooEInQ1GdVAzEdMnQ6M3Q==
   dependencies:
     react-rnd "^10.2.1"
 
@@ -1441,15 +1441,15 @@
   dependencies:
     react-rnd "^10.2.1"
 
-"@eventdex/utils@0.1.246":
-  version "0.1.246"
-  resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.246.tgz#9ae77e5626dfe3cb82a07e70eb31ed7d0b5362c8"
-  integrity sha512-tgjY29uGFCmvhmlR3yNWqES/ZcrxKyP44QgJ1CXQV0q8j6M4FJPhw4tuY9NyGA5r5nSBDBoS1rrWAYRYkMO9EQ==
+"@eventdex/utils@0.1.247":
+  version "0.1.247"
+  resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.247.tgz#de671d38ca491014f0a5a994515bb05affd0983b"
+  integrity sha512-YAuro/wUEhM5pc5WesYWS44D0YNBz0taGYYh7hPzGrNn4I+k78T6zVh//bpysxzp7Y9cxzQ1pEUdY22Tk9QlvQ==
 
-"@eventdex/video@0.1.367":
-  version "0.1.367"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.367.tgz#662e4c1fd69ac0732ef1b48d8f88d86f0f795cdb"
-  integrity sha512-HNmzBP+qKNJm58qGLGfW2v2uVNXQ+WfnPw8HSqBM2lB5RELL4MwKCW0b7qkx1nLyStbuWJQ7+2m9W8fUrqsAyw==
+"@eventdex/video@0.1.368":
+  version "0.1.368"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.368.tgz#6979d03e2ea9e841e6f9afe193c760e64e94c753"
+  integrity sha512-MVKnhesT6wtNwag3ImRbHRAnIf+Qj5H3meJoxpIOgYS7cVW2yKyLd5HHFGXoEMNgL/TSUVB146nA3vUDWKZiYw==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
