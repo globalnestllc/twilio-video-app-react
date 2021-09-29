@@ -1379,10 +1379,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
-"@eventdex/assets@0.1.21":
-  version "0.1.21"
-  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.21.tgz#caecaaa8bacea239a4b48bb79d6ddd386579e417"
-  integrity sha512-JJG/c0ckqZECUH627FJmmGi093uxajHLDb6Np45SBXLvJ4JbJmIAn7me3xLeaiarUSUPjjBShmNw9ReIuQTBAQ==
+"@eventdex/assets@0.1.22":
+  version "0.1.22"
+  resolved "http://3.89.41.88:4873/@eventdex%2fassets/-/assets-0.1.22.tgz#aea844f189f406001684c9b974879e4e6e8f49ca"
+  integrity sha512-OUr2GKFi6EoWq+bosfJfjj+3Gt70HQUTd2GJxagxtfpC/F9cJ1YodRc1LQLLaNyeZshVxrKtKzW+riWsK2ksHA==
 
 "@eventdex/chat@0.1.324":
   version "0.1.324"
@@ -1408,15 +1408,15 @@
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.296":
-  version "0.1.296"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.296.tgz#d735bd22574e121dff1c7c922d4ba9443cb3d09b"
-  integrity sha512-e22fU87bmJcaLCskJHdtnz/M6ZytqOgKqKp/CI++g5c3ZWVcMBXMRVFXlHG9Izy6wJfqsPONtA+VDyJLvcC4rA==
+"@eventdex/lounge@0.1.298":
+  version "0.1.298"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.298.tgz#bc3ab06ca88476128cc18c3268ff2c4fadfe1217"
+  integrity sha512-alP23B3PruknxoMBtH8YRaGCJ4dgrMc+2zXULt28ENw8YgX/Gzu5Pe89HmSMtbdKDTsm3Fd6TZh3mtNEZrVN0Q==
 
-"@eventdex/manageappt@0.0.48":
-  version "0.0.48"
-  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.48.tgz#617273cf15443a21be3a0ccecd1fc188a113a18c"
-  integrity sha512-/HTA99i59eqj8d6aWAYLrIrxwAqGkz+5Bft0zk+FrYVsOj2COKeXVV73WrWrgyRpCALJ5bPMrqJ3XXdkGzLE7g==
+"@eventdex/manageappt@0.0.50":
+  version "0.0.50"
+  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.50.tgz#51cae0ea23efb89c54c0d6bf87db3a7c0f917155"
+  integrity sha512-Du8L1K8jaMd5H1JV45o+9SNdWAP/wvs5nCzT+NMwQNPHKH/+cShI82T6S1WIC3iCnhuU3Jz+MoWMNnZA0F3yug==
   dependencies:
     react-rnd "^10.2.1"
 
@@ -1427,10 +1427,10 @@
   dependencies:
     react-player "^2.5.0"
 
-"@eventdex/profile@^0.0.121":
-  version "0.0.121"
-  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.121.tgz#2868a09abac1cbbf95dc9822304228f86cefba75"
-  integrity sha512-nu+mWelUh9idGC+dCBm6Ud36i5U2EZdo5gdGIdgkPLlp/cZWvCAh5lUr7QQYrZpue56835LpdG4K1ifb5ETGXQ==
+"@eventdex/profile@^0.0.123":
+  version "0.0.123"
+  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.123.tgz#7fbfb7110260c8dd36c4239d7e4a8c77af7e18d9"
+  integrity sha512-5W33W62YqwXd0yrK05XvT3TrJ/0F5e0Lr5pwZ5lBNrPGa1XSCFKmbKKnb3aoS0k81pepyAmsYbLKxZW/qtBDZw==
   dependencies:
     react-rnd "^10.2.1"
 
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.247.tgz#de671d38ca491014f0a5a994515bb05affd0983b"
   integrity sha512-YAuro/wUEhM5pc5WesYWS44D0YNBz0taGYYh7hPzGrNn4I+k78T6zVh//bpysxzp7Y9cxzQ1pEUdY22Tk9QlvQ==
 
-"@eventdex/video@0.1.375":
-  version "0.1.375"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.375.tgz#b5e7a9dbe19fd05ee5d9d9eef6ef41a19ef88550"
-  integrity sha512-F1d4TTGa92lz6w4BzQD4znaJVYZtAm7YvpuycoeNT9zriKCzcn54Pl3sCADK1+b82RXgKns4CyOqZpqN01h7ww==
+"@eventdex/video@0.1.377":
+  version "0.1.377"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.377.tgz#bb9aab8291d316b2a74874f26eb202fc8e944b50"
+  integrity sha512-iC5AtJhKiGHw4DwH8Rspssuqnp2p1Zudv43cDdjQ/eB8WnNtAwhRyqTm0dFbUKLAFYmKLEnbbPcN3BwMwL6vEg==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
