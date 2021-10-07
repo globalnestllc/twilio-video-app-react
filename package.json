@@ -14,7 +14,7 @@
     "@eventdex/manageappt": "0.0.53",
     "@eventdex/player": "0.1.267",
     "@eventdex/profile": "^0.0.127",
-    "@eventdex/schedule": "0.1.302",
+    "@eventdex/schedule": "0.1.303",
     "@eventdex/utils": "0.1.248",
     "@eventdex/video": "0.1.381",
     "@eventdex/widgets": "^0.0.208",

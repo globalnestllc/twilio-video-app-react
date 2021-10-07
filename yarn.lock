@@ -1434,10 +1434,10 @@
   dependencies:
     react-rnd "^10.2.1"
 
-"@eventdex/schedule@0.1.302":
-  version "0.1.302"
-  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.302.tgz#b1b813d503b8af4a2bca9bdeba88d6a78d1e74cf"
-  integrity sha512-R7LKyV6G24zGnTxE4Nfl4Fv9sCWE0EGMR5k5GyAon6hUSKJ5u9CnRirzjCZpzmxygOJjbRhjYXRw59X7aro6zg==
+"@eventdex/schedule@0.1.303":
+  version "0.1.303"
+  resolved "http://3.89.41.88:4873/@eventdex%2fschedule/-/schedule-0.1.303.tgz#17ecc327d58942c3e655b0d35bc10218c0187980"
+  integrity sha512-8nN80A5vSWc4efZKY9IYl6HqJe3sPFDHynITbQt+SHFa4D16guRmtnH2Ljg69+hYCATaKmYujFpSemBcKIUrrQ==
   dependencies:
     react-rnd "^10.2.1"
 
