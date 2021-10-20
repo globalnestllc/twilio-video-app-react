@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.248.tgz#0fa88b2f6cecf68c147357664196baf81a6c0eb4"
   integrity sha512-HJSJMDo4M/pUiQg2mzYXlLKpnxWLZzDEyxXNKjYTrx5yNpwCn1KDR16IDbf/u1LBuB6O77OtP7fHJ72FwOBDsw==
 
-"@eventdex/video@0.1.385":
-  version "0.1.385"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.385.tgz#f2206d9eb4f760c895aae2974a87e15a9e96eee1"
-  integrity sha512-pd2B05oy1irV4wOTTd5aVqSvzR0jds/YTPdeLNSN33hmWfUn+EK73RmB6S9+572fGM9JqdMPYVIB7TWSVYGKqw==
+"@eventdex/video@0.1.386":
+  version "0.1.386"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.386.tgz#481fd3e66fd2fe57da3aca35d35663f2f41747bd"
+  integrity sha512-PBayDqhUHa7UwFoBYQgzYlKYwEHIcE/Fgm4UTNMm1AM2JzBRUQ9UDRrx1hqgKq4RThrEMVfI+RiNITUIBAEe7w==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
