@@ -1389,10 +1389,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.324.tgz#2a289f77ab4dcfa69d7a94751b5d114b65f02d41"
   integrity sha512-USxCv59iNiKp8v2XqfyDvc3VYURj47u6f7zghtilMX71mHcchaI1IZDs9bzgfHOMKTAQJjhwmF6Qe12R2elC8w==
 
-"@eventdex/common@0.1.315":
-  version "0.1.315"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.315.tgz#e6470f2ac903272c31531021400a9d864067b448"
-  integrity sha512-5tEij9FFAJjKYIQhWFQEjDENlaQ43WTK82eQmjCeBMvOqidQtNEHWV5EpLkcOjYRSOMp+WqVeCuJGuxQCvtzTw==
+"@eventdex/common@0.1.325":
+  version "0.1.325"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.325.tgz#5c1cfa4237336d42adb06220ec43727a0b70bbd6"
+  integrity sha512-cKlDe8pdWo/xO7FEK9XJp0SkFJIj2JUCyQ8TFXCSOQ8hXK2ljEt0GQRrAMn7abtgjZFvzFxlz6I2bm0fLqging==
   dependencies:
     react-papaparse "^3.9.0"
 
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.246.tgz#9ae77e5626dfe3cb82a07e70eb31ed7d0b5362c8"
   integrity sha512-tgjY29uGFCmvhmlR3yNWqES/ZcrxKyP44QgJ1CXQV0q8j6M4FJPhw4tuY9NyGA5r5nSBDBoS1rrWAYRYkMO9EQ==
 
-"@eventdex/video@0.1.394":
-  version "0.1.394"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.394.tgz#00301d3a6e05e8abd2b50b97e5268f96ebc1c688"
-  integrity sha512-H0C7AFb+HXAJ4Lhbl55Fw8gXQbQ6IKZRIr9I4lOdiYR7AhQ9Ip7kv7SQYyo+jMSWmtm2aaE/8T8sIPmAmj1Q9Q==
+"@eventdex/video@0.1.410":
+  version "0.1.410"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.410.tgz#50af7aaefb3bf28c0fe42c3901bc27b138fb468e"
+  integrity sha512-W25Y0lNxKuqWybGvZ0oJcnLRccLUVZdfhWVC0DfZ671Pf7A5OIpUHH0f/yxkqfNlQas9uNecwLqXeZyXoRv/nA==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
