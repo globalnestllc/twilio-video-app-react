@@ -1413,10 +1413,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.317.tgz#890321ed0f1efb591ffd10f42eb45e58dd9057ca"
   integrity sha512-zr4P+0VMfIqyb5wfAwftFQ7YlNkkWYmPZZZ8PkPbwNyaLNAW8wuUByhFLSIUZLXCxxjIB7snZQo9c4Z/zOy4eg==
 
-"@eventdex/manageappt@0.0.74":
-  version "0.0.74"
-  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.74.tgz#be885067711c0fd17e79aa74715a8bb2e33fd51b"
-  integrity sha512-Bhidn8F434yNJqbtaRLCxwivE8n0amZ8nDi5hfwIH8hvIeNz1AypLVsvbXxkvHLP2kxhCcf088THbQXCnXcQcg==
+"@eventdex/manageappt@0.0.76":
+  version "0.0.76"
+  resolved "http://3.89.41.88:4873/@eventdex%2fmanageappt/-/manageappt-0.0.76.tgz#aa72277932c77849c0c4feadad4b620b04b6f2a5"
+  integrity sha512-0RVunnuOaysxR9aQXR5GHrts9jmOu/8FG7L84oYawNsA30D41J9EFhN4QbKOBmuM6xbiIAbAVthQlYkF6hRsmg==
   dependencies:
     react-rnd "^10.2.1"
 

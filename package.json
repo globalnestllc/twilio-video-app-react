@@ -11,7 +11,7 @@
     "@eventdex/core": "0.1.322",
     "@eventdex/event": "0.1.387",
     "@eventdex/lounge": "0.1.317",
-    "@eventdex/manageappt": "0.0.74",
+    "@eventdex/manageappt": "0.0.76",
     "@eventdex/player": "0.1.277",
     "@eventdex/profile": "^0.0.152",
     "@eventdex/schedule": "0.1.316",
