@@ -16,7 +16,7 @@
     "@eventdex/profile": "^0.0.152",
     "@eventdex/schedule": "0.1.316",
     "@eventdex/utils": "0.1.250",
-    "@eventdex/video": "0.1.429",
+    "@eventdex/video": "0.1.431",
     "@eventdex/widgets": "^0.0.222",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
