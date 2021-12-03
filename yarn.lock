@@ -1396,10 +1396,10 @@
   dependencies:
     react-papaparse "^3.9.0"
 
-"@eventdex/core@0.1.322":
-  version "0.1.322"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.322.tgz#a988b71fe10545d0b8a9f10744381aaa28f34c64"
-  integrity sha512-ertxC0isex8k9G3gfLMzw2hyOR8c5sJD8Aak6XaWl41uhZzBzOEsFSJfn9mAKK1+lyRE5/QAb9eC/ATjpKu8cw==
+"@eventdex/core@0.1.323":
+  version "0.1.323"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcore/-/core-0.1.323.tgz#4d4a3e41aa55b9e3820b3cb6b971ab4c80a08497"
+  integrity sha512-hu160usT0fwXRZ1m6Ql1t+oDmFUNBp/sYt1yI2HgXVIjcq0oBJHSw2heHR67mKu8C0PsdOYs4VtcIsJGhZ1mXA==
 
 "@eventdex/event@0.1.387":
   version "0.1.387"
@@ -1408,10 +1408,10 @@
   dependencies:
     react-joyride "^2.3.0"
 
-"@eventdex/lounge@0.1.317":
-  version "0.1.317"
-  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.317.tgz#890321ed0f1efb591ffd10f42eb45e58dd9057ca"
-  integrity sha512-zr4P+0VMfIqyb5wfAwftFQ7YlNkkWYmPZZZ8PkPbwNyaLNAW8wuUByhFLSIUZLXCxxjIB7snZQo9c4Z/zOy4eg==
+"@eventdex/lounge@0.1.318":
+  version "0.1.318"
+  resolved "http://3.89.41.88:4873/@eventdex%2flounge/-/lounge-0.1.318.tgz#64b2d4ccbaf836a14b6500fb60f98bbcbd5f7c4f"
+  integrity sha512-+5i0u98focX9P3jGs8dPEqvZWuoCnPaEVVELNaEAgbrj3S4nhro65AKiqUON0LLpimmKL09S2wHZ/3t7/cKPNQ==
 
 "@eventdex/manageappt@0.0.76":
   version "0.0.76"
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.250.tgz#ee897cee10d44a2cd4de847ffce5d292d4a1cc48"
   integrity sha512-phDGFbcGINf1bROCGZlOQo/I3S5wp5MvAsbtTkQjtM04MzntD2l4SPqV+to3U4Fe/yYpTmhO4gf8R39ZKEWeIw==
 
-"@eventdex/video@0.1.431":
-  version "0.1.431"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.431.tgz#c13374aea3f7adfc862fd4f15ef8010d38726ed4"
-  integrity sha512-DGmTQCFSNeaOTJRYOv7sM0mQmqWCF6wfE1cT+yf588+BIGNtx7hcZsyDSxE4X+qyRkvL9aK4sKH7OY2NdB/UXQ==
+"@eventdex/video@0.1.433":
+  version "0.1.433"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.433.tgz#9b69bda5ca0e682e2cf58eb099951f9273207593"
+  integrity sha512-c/BbGWzaO7+WIgnfUjXWPPIYdb8AxzJC81EeA7wNjMnL567pSU0FMi0uSvtPpvOu/ddGteCHb+cn66kIaDg1lw==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
