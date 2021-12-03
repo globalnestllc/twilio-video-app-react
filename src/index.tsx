@@ -22,6 +22,7 @@ let hostApp = {
   abbreviation: 'vv',
   name: 'Video call vonage',
   disableMeetingSchedule: true,
+  disableMinimizeVideo: true,
 };
 
 const ModulesLazy = React.lazy(() => import('./EventdexModules'));
