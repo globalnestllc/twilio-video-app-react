@@ -11,6 +11,7 @@ import { useWindowMessageCallback } from './useWindowMessageCallback';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { urlFor_PublicApi, usePrevious } from '@eventdex/core/context';
 import { useSelector } from 'react-redux';
+import { getNoAuth } from '@eventdex/core/context';
 
 const useStyles = makeStyles(theme => ({
   dialogPaper: {
@@ -64,6 +65,10 @@ export default function AfterCallSurveyDialog(props) {
   const videoRoomState = useSelector(state => state.ed_video.videoRoomState);
   const eventId = useSelector(state => state.ed_video.video.sessionData?.event_id || null);
   const surveyUrl = urlFor_PublicApi('/apex/BLN_POSTMMAPP', { eventid: eventId, slug: roomName });
+  const surveyQueryUrl = urlFor_PublicApi('/services/apexrest/BLN_ASC_CheckMMSurvey', {
+    eventid: eventId,
+    slug: roomName,
+  });
 
   const prevVideoRoomState = usePrevious(videoRoomState);
   const callEnded = !!(
@@ -73,14 +78,27 @@ export default function AfterCallSurveyDialog(props) {
   );
 
   React.useEffect(() => {
-    // async function checkSurvey() {
-    //   let result = await getNoAuth({url:"https://www.surveymonkey.com/r/22XZM8K"})
-    //   console.log('Disconnected: survey result:',result)
-    // }
+    async function checkSurvey() {
+      // let result = await new Promise(resolve=>{
+      //   setTimeout(()=>{
+      //       resolve({data:{hasSurvey:true}});
+      //     },3000)
+      // })
+
+      try {
+        let response = await getNoAuth({ url: surveyQueryUrl });
+        let result = JSON.parse(response.data);
+        console.log('Disconnected: survey result:', result);
+        return result;
+      } catch (e) {
+        return false;
+      }
+    }
 
     if (callEnded) {
-      // checkSurvey();
-      setIsOpen(true);
+      checkSurvey().then(hasSurvey => {
+        setIsOpen(hasSurvey);
+      });
     }
   }, [callEnded]);
 
