@@ -1389,10 +1389,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2fchat/-/chat-0.1.326.tgz#68c5faea335e37648508e40650387517846135a0"
   integrity sha512-5OlryVVxlojPrXylb2udfllajOaAjI/vm15d2y/iAj2FOUAfAPKAxFw9PmxTpjvv6JXQkZOtADtPxU+cP9ckiQ==
 
-"@eventdex/common@0.1.345":
-  version "0.1.345"
-  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.345.tgz#52891aaedc077809a03b6511d2608f1c7dd62ac1"
-  integrity sha512-8xKKNL4CZesKi5Xutv7io/WP7utBIkaXzRr+VIUUkULCOrf5h+mSYghjEPSc2HBUWwsKi1BFi8zAxQSj7Z2S/g==
+"@eventdex/common@0.1.347":
+  version "0.1.347"
+  resolved "http://3.89.41.88:4873/@eventdex%2fcommon/-/common-0.1.347.tgz#89f2f9723d65f26901837a305911f19e91168139"
+  integrity sha512-yASEle+I5ucWie3x0TFxj7bUpaA3raLSnFjR0ZbMwN245YwQdTxcafiXGySdujvZIa6qUEf/ZzsrV8MGm+qQWg==
   dependencies:
     react-papaparse "^3.9.0"
 
@@ -1427,10 +1427,10 @@
   dependencies:
     react-player "^2.5.0"
 
-"@eventdex/profile@^0.0.170":
-  version "0.0.170"
-  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.170.tgz#ffc8504e663db98e1b8915f8fb97458f9718331e"
-  integrity sha512-Xs+yqeQ8WO9ekfUyBEuCaKjhF9i35fcTvajDgCBI83RAHHH/BmyWwdf/r3zTlbXMIUw8dYmG4k0YGL1Pn1hVTg==
+"@eventdex/profile@^0.0.172":
+  version "0.0.172"
+  resolved "http://3.89.41.88:4873/@eventdex%2fprofile/-/profile-0.0.172.tgz#6cb54e139d22d49b4b3be61a567436bf20139f3c"
+  integrity sha512-AwDxx5hoJZ67f6M0brhOPu24SiEwTi8vyA+o4w8DOboBJ9DDve1ZRAFxxP85ILoJ+TR9CClnLJV/vWHZ7cEKiw==
   dependencies:
     react-rnd "^10.2.1"
 
@@ -1446,10 +1446,10 @@
   resolved "http://3.89.41.88:4873/@eventdex%2futils/-/utils-0.1.250.tgz#ee897cee10d44a2cd4de847ffce5d292d4a1cc48"
   integrity sha512-phDGFbcGINf1bROCGZlOQo/I3S5wp5MvAsbtTkQjtM04MzntD2l4SPqV+to3U4Fe/yYpTmhO4gf8R39ZKEWeIw==
 
-"@eventdex/video@0.1.437":
-  version "0.1.437"
-  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.437.tgz#daaa5b5a6be3278baa0834a33e41606e2971a027"
-  integrity sha512-kxZaL1OBOwqIAD46HbdPl29YIPdWka/n6rquDyImJcg5QfTMG/QmEIlD6WqWJaI3ilsM7a+dtldHfjarQfbigA==
+"@eventdex/video@0.1.439":
+  version "0.1.439"
+  resolved "http://3.89.41.88:4873/@eventdex%2fvideo/-/video-0.1.439.tgz#fed9db4335e07ca9fde1c5263b908ceba7fbf3f1"
+  integrity sha512-PV1zj21LHqbiqL1Ar5yreuagcywY5yA2OV6onfTM/g9gE4mhj/b+AxatDNIkS/Z/J935bYeozuX6tUHH7YKXmQ==
   dependencies:
     react-phone-input-material-ui "^2.13.11"
 
