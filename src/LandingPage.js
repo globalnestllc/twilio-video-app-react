@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@mui/material';
 import logoLandscape from '@eventdex/assets/images/logo-landscape.png';
 
 export default function LandingPage() {
@@ -7,7 +7,7 @@ export default function LandingPage() {
     <Grid
       container
       direction={'column'}
-      justify={'space-around'}
+      justifyContent={'space-around'}
       alignItems={'center'}
       style={{ maxHeight: '500px', height: '100%' }}
     >

@@ -1,22 +1,23 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { Dialog, DialogContent } from '@material-ui/core';
+import { makeStyles } from 'tss-react/mui';
+import { Dialog, DialogContent } from '@mui/material';
 import React, { useState } from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import Typography from '@material-ui/core/Typography';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import { withStyles, useTheme } from '@material-ui/core/styles';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Typography from '@mui/material/Typography';
+import MuiDialogTitle from '@mui/material/DialogTitle';
+import { useTheme } from '@mui/material/styles';
+import withStyles from '@mui/styles/withStyles';
 import { urlFor_RestApi } from '@eventdex/core/src/context';
 import { useWindowMessageCallback } from './useWindowMessageCallback';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { urlFor_PublicApi, usePrevious } from '@eventdex/core/context';
 import { useSelector } from 'react-redux';
 import { getNoAuth } from '@eventdex/core/context';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles()(theme => ({
   dialogPaper: {
     height: '80%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       height: '100%',
     },
   },
@@ -46,7 +47,7 @@ const DialogTitle = withStyles(styles)(props => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose} size="large">
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -56,11 +57,11 @@ const DialogTitle = withStyles(styles)(props => {
 
 export default function AfterCallSurveyDialog(props) {
   const { roomName } = props;
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const videoRoomState = useSelector(state => state.ed_video.videoRoomState);
   const eventId = useSelector(state => state.ed_video.video.sessionData?.event_id || null);

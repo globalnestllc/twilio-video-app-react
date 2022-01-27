@@ -1,21 +1,21 @@
 import React from 'react';
 
 import CoreModule, { registerModule } from '@eventdex/core';
-import PlayerModule from '@eventdex/player';
+// import PlayerModule from '@eventdex/player';
 import LoungeModule from '@eventdex/lounge';
-import ScheduleModule from '@eventdex/schedule';
-import EventModule from '@eventdex/event';
-import ChatModule from '@eventdex/chat';
+// import ScheduleModule from '@eventdex/schedule';
+// import EventModule from '@eventdex/event';
+// import ChatModule from '@eventdex/chat';
 import CommonModule from '@eventdex/common';
-import { twilioHelper } from '@eventdex/core/src/context';
+import { twilioHelper } from '@eventdex/core/src/services';
 
-registerModule(LoungeModule);
-registerModule(PlayerModule);
-registerModule(ScheduleModule);
-registerModule(EventModule);
-registerModule(ChatModule);
+// registerModule(PlayerModule);
+// registerModule(ScheduleModule);
+// registerModule(EventModule);
+// registerModule(ChatModule);
 registerModule(CoreModule);
 registerModule(CommonModule);
+registerModule(LoungeModule);
 
 export default function EventdexModules(props) {
   if (localStorage.email) {

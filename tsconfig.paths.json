@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@eventdex/*": ["../eventdex-modules/src/modules/*"]
+    }
+  }
+}
