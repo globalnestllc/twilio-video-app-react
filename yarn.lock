@@ -17791,7 +17791,7 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.27
-    "@eventdex/bootstrap": 0.1.249
+    "@eventdex/bootstrap": ^0.1.250
     "@eventdex/chat": 0.1.331
     "@eventdex/common": 0.1.356
     "@eventdex/core": 0.1.327
