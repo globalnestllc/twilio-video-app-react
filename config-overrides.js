@@ -13,7 +13,6 @@ const addAliases = aliasDangerous(aliasMap);
 module.exports = {
     webpack: override(
         devOnly(addAliases),
-
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useBabelRc(),
         duplicatesPlugin,

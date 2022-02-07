@@ -1,105 +1,112 @@
-import React, { Suspense } from 'react';
+import React, {Suspense} from "react";
 
-import { CssBaseline } from '@mui/material';
-import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Router, Redirect, Route, Switch, useLocation, useParams } from 'react-router-dom';
-import VideoModule, { VonageVideo } from '@eventdex/video';
-import { actionOpenVideo } from '@eventdex/video/src/store/actions';
-import store from './store/store';
-import { Provider, useDispatch } from 'react-redux';
-import { localStorageHelper } from '@eventdex/core/src/services';
+import {CssBaseline} from "@mui/material";
+import {StyledEngineProvider, ThemeProvider} from "@mui/material/styles";
+import {
+    BrowserRouter as Router,
+    Redirect,
+    Route,
+    Switch,
+    useLocation,
+    useParams,
+} from "react-router-dom";
+import VideoModule, {VonageVideo} from "@eventdex/video";
+import {actionOpenVideo} from "@eventdex/video/src/store/actions";
+import store from "./store/store";
+import {Provider, useDispatch} from "react-redux";
+import {localStorageHelper} from "@eventdex/core/src/services";
 //============
-import { registerModule } from '@eventdex/core';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import LandingPage from './LandingPage';
-import AfterCallSurveyDialog from './AfterCallSurvey/AfterCallSurveyDialog';
-import useAppTheme from '@eventdex/common/src/hooks/useAppTheme';
+import {registerModule} from "@eventdex/core";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LandingPage from "./LandingPage";
+import AfterCallSurveyDialog from "./AfterCallSurvey/AfterCallSurveyDialog";
+import useAppTheme from "@eventdex/common/src/hooks/useAppTheme";
 
-const ModulesLazy = React.lazy(() => import('./EventdexModules'));
+const ModulesLazy = React.lazy(() => import("./EventdexModules"));
 const Modules = () => (
-  <Suspense fallback={<div />}>
-    <ModulesLazy />
-  </Suspense>
+    <Suspense fallback={<div />}>
+        <ModulesLazy />
+    </Suspense>
 );
 
 registerModule(VideoModule);
 
 interface RoomName {
-  roomName: string;
+    roomName: string;
 }
 
 function useQuery() {
-  return new URLSearchParams(useLocation().search);
+    return new URLSearchParams(useLocation().search);
 }
 
 const VideoApp = () => {
-  const dispatch = useDispatch();
-  const { roomName } = useParams<RoomName>();
-  let query = useQuery();
+    const dispatch = useDispatch();
+    const {roomName} = useParams<RoomName>();
+    let query = useQuery();
 
-  const room = { name: roomName };
-  const user = { name: query.get('uname') };
-  const isAdmin = query.get('admin');
-  const email = query.get('email');
+    const room = {name: roomName};
+    const user = {name: query.get("uname")};
+    const isAdmin = query.get("admin");
+    const email = query.get("email");
 
-  if (email) {
-    // @ts-ignore
-    localStorageHelper.email = email;
-  }
+    if (email) {
+        // @ts-ignore
+        localStorageHelper.email = email;
+    }
 
-  React.useEffect(() => {
-    //Just set video state open.
-    let params = { isOpen: true };
-    dispatch(actionOpenVideo(params));
-  }, []);
+    React.useEffect(() => {
+        //Just set video state open.
+        let params = {isOpen: true};
+        dispatch(actionOpenVideo(params));
+    }, []);
 
-  if (!roomName) {
-    return <LandingPage />;
-  }
+    if (!roomName) {
+        return <LandingPage />;
+    }
 
-  return (
-    <React.Fragment>
-      <Modules />
+    return (
+        <React.Fragment>
+            <Modules />
 
-      <VonageVideo
-        isOpen={true}
-        room={room}
-        user={user}
-        isAdmin={isAdmin}
-        // modal
-        // contained
-      />
-      <ToastContainer
-        style={{ position: 'absolute', zIndex: 10000, width: 'fit-content', minWidth: 320 }}
-        autoClose={30000}
-      />
+            <VonageVideo
+                isOpen={true}
+                room={room}
+                user={user}
+                isAdmin={isAdmin}
+                // modal
+                // contained
+            />
+            <ToastContainer
+                style={{position: "absolute", zIndex: 10000, width: "fit-content", minWidth: 320}}
+                autoClose={30000}
+            />
 
-      <AfterCallSurveyDialog roomName={roomName} />
-    </React.Fragment>
-  );
+            <AfterCallSurveyDialog roomName={roomName} />
+        </React.Fragment>
+    );
 };
 
 export default function AppWrapper(props) {
-  const { theme } = useAppTheme('dark');
-  return (
-    <Provider store={store}>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Router>
-            <Switch>
-              <Route exact path="/">
-                <VideoApp />
-              </Route>
-              <Route exact={false} path="/:roomName">
-                <VideoApp />
-              </Route>
-              <Redirect to="/" />
-            </Switch>
-          </Router>
-        </ThemeProvider>
-      </StyledEngineProvider>
-    </Provider>
-  );
+    const {theme} = useAppTheme("dark");
+    return (
+        <Provider store={store}>
+            <StyledEngineProvider injectFirst>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <Router>
+                        <Switch>
+                            <Route exact path="/">
+                                <VideoApp />
+                            </Route>
+                            <Route exact={false} path="/:roomName">
+                                <VideoApp />
+                            </Route>
+                            <Redirect to="/" />
+                        </Switch>
+                    </Router>
+                </ThemeProvider>
+            </StyledEngineProvider>
+        </Provider>
+    );
 }

@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import CoreModule, { registerModule } from '@eventdex/core';
+import CoreModule, {registerModule} from "@eventdex/core";
 // import PlayerModule from '@eventdex/player';
-import LoungeModule from '@eventdex/lounge';
+import LoungeModule from "@eventdex/lounge";
 // import ScheduleModule from '@eventdex/schedule';
 // import EventModule from '@eventdex/event';
 // import ChatModule from '@eventdex/chat';
-import CommonModule from '@eventdex/common';
-import { twilioHelper } from '@eventdex/core/src/services';
+import CommonModule from "@eventdex/common";
+import {twilioHelper} from "@eventdex/core/src/services";
 
 // registerModule(PlayerModule);
 // registerModule(ScheduleModule);
@@ -18,8 +18,8 @@ registerModule(CommonModule);
 registerModule(LoungeModule);
 
 export default function EventdexModules(props) {
-  if (localStorage.email) {
-    twilioHelper.initialize(localStorage.email);
-  }
-  return <React.Fragment></React.Fragment>;
+    if (localStorage.email) {
+        twilioHelper.initialize(localStorage.email);
+    }
+    return <React.Fragment></React.Fragment>;
 }

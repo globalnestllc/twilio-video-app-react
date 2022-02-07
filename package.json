@@ -38,15 +38,12 @@
     "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
     "express": "^4.17.1",
-    "husky": "^7.0.4",
     "is-plain-object": "^5.0.0",
     "less": "^3.12.2",
     "less-loader": "^5.0.0",
-    "lint-staged": "^12.3.3",
     "lodash.throttle": "^4.1.1",
     "node-sass": "^6.0.1",
     "normalizr": "^3.6.1",
-    "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.24.4",
@@ -72,12 +69,15 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
+    "husky": "^7.0.0",
     "inspectpack": "^4.5.2",
     "isomorphic-fetch": "^2.2.1",
     "jest-junit": "^9.0.0",
+    "lint-staged": "^12.3.3",
     "mocha": "^6.2.2",
     "mocha-junit-reporter": "^1.23.3",
     "pixelmatch": "^5.1.0",
+    "prettier": "^2.5.1",
     "puppeteer": "^5.3.1",
     "react-app-rewired": "^2.1.11",
     "react-test-renderer": "^16.12.0",
@@ -109,7 +109,8 @@
     "deploy:twilio-cli": "cross-env REACT_APP_SET_AUTH=passcode npm run build && twilio rtc:apps:video:deploy --authentication=passcode --app-directory ./build",
     "modules:upgrade": "yarn upgrade -L -S @eventdex",
     "modules:link": "node ./scripts/linkModules.js",
-    "modules:unlink": "node ./scripts/linkModules.js -u"
+    "modules:unlink": "node ./scripts/linkModules.js -u",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -128,11 +129,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "proxy": "http://localhost:8081/",
   "jest": {
