@@ -1825,6 +1825,7 @@ __metadata:
     socket.io-client: ^3.0.4
     timesync: ^1.0.7
     twilio-chat: ^6.0.0
+    twilio-sync: ^3.0.6
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -9857,7 +9858,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:7":
+"husky@npm:^7.0.0":
   version: 7.0.4
   resolution: "husky@npm:7.0.4"
   bin:
@@ -17838,10 +17839,10 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.27
-    "@eventdex/bootstrap": 0.1.252
-    "@eventdex/chat": 0.1.331
-    "@eventdex/common": 0.1.356
-    "@eventdex/core": 0.1.327
+    "@eventdex/bootstrap": ^0.1.253
+    "@eventdex/chat": ^0.1.332
+    "@eventdex/common": ^0.1.357
+    "@eventdex/core": ^0.1.328
     "@eventdex/event": 0.1.399
     "@eventdex/leads": ^0.1.295
     "@eventdex/lounge": 0.1.330
@@ -17850,7 +17851,7 @@ __metadata:
     "@eventdex/profile": 0.0.183
     "@eventdex/schedule": 0.1.320
     "@eventdex/utils": 0.1.251
-    "@eventdex/video": 0.1.450
+    "@eventdex/video": ^0.1.451
     "@eventdex/widgets": 0.0.226
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
@@ -17882,7 +17883,7 @@ __metadata:
     enzyme-adapter-react-16: ^1.15.2
     enzyme-to-json: ^3.4.4
     express: ^4.17.1
-    husky: 7
+    husky: ^7.0.0
     inspectpack: ^4.5.2
     is-plain-object: ^5.0.0
     isomorphic-fetch: ^2.2.1
