@@ -17851,7 +17851,7 @@ __metadata:
     "@eventdex/profile": ^0.0.186
     "@eventdex/schedule": ^0.1.321
     "@eventdex/utils": 0.1.251
-    "@eventdex/video": ^0.1.451
+    "@eventdex/video": ^0.1.452
     "@eventdex/widgets": 0.0.226
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
