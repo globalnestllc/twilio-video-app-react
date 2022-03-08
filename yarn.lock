@@ -17857,17 +17857,17 @@ __metadata:
     "@eventdex/assets": 0.1.27
     "@eventdex/bootstrap": ^0.1.253
     "@eventdex/chat": ^0.1.333
-    "@eventdex/common": ^0.1.359
+    "@eventdex/common": ^0.1.363
     "@eventdex/core": ^0.1.329
     "@eventdex/event": ^0.1.401
     "@eventdex/leads": ^0.1.295
     "@eventdex/lounge": ^0.1.331
     "@eventdex/manageappt": 0.0.83
     "@eventdex/player": 0.1.278
-    "@eventdex/profile": ^0.0.204
+    "@eventdex/profile": ^0.0.205
     "@eventdex/schedule": ^0.1.321
     "@eventdex/utils": 0.1.251
-    "@eventdex/video": ^0.1.457
+    "@eventdex/video": ^0.1.458
     "@eventdex/widgets": 0.0.226
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
