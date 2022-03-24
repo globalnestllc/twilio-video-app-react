@@ -17857,7 +17857,7 @@ __metadata:
     "@eventdex/assets": 0.1.27
     "@eventdex/bootstrap": ^0.1.253
     "@eventdex/chat": ^0.1.333
-    "@eventdex/common": ^0.1.364
+    "@eventdex/common": ^0.1.366
     "@eventdex/core": ^0.1.332
     "@eventdex/event": ^0.1.407
     "@eventdex/leads": ^0.1.295
@@ -17867,7 +17867,7 @@ __metadata:
     "@eventdex/profile": ^0.0.207
     "@eventdex/schedule": ^0.1.323
     "@eventdex/utils": 0.1.251
-    "@eventdex/video": ^0.1.459
+    "@eventdex/video": ^0.1.461
     "@eventdex/widgets": 0.0.226
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
