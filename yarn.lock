@@ -1807,8 +1807,6 @@ __metadata:
     react-rnd: ^10.2.1
     react-window: ^1.8.6
     react-zoom-pan-pinch: ^1.6.1
-  peerDependencies:
-    "@eventdex/core": ^0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1823,13 +1821,13 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.67
     "@mui/material": ^5.4.0
     "@mui/styles": ^5.3.0
+    "@twilio/conversations": 2.0.1
     moment: ">= 2.9.0"
     moment-timezone: ^0.5.31
     react-app-rewire-alias: ^1.1.7
     react-toastify: ^8.1.0
     socket.io-client: ^3.0.4
     timesync: ^1.0.7
-    twilio-chat: ^6.0.0
     twilio-sync: ^3.0.6
   peerDependenciesMeta:
     "@types/react":
@@ -1842,8 +1840,6 @@ __metadata:
   resolution: "@eventdex/event@portal:../eventdex-modules/src/modules/event::locator=twilio-video-app-react%40workspace%3A."
   dependencies:
     react-joyride: ^2.3.2
-  peerDependencies:
-    "@eventdex/core": 0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1853,8 +1849,6 @@ __metadata:
 "@eventdex/leads@portal:../eventdex-modules/src/modules/leads::locator=twilio-video-app-react%40workspace%3A.":
   version: 0.0.0-use.local
   resolution: "@eventdex/leads@portal:../eventdex-modules/src/modules/leads::locator=twilio-video-app-react%40workspace%3A."
-  peerDependencies:
-    "@eventdex/core": 0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1864,9 +1858,6 @@ __metadata:
 "@eventdex/lounge@portal:../eventdex-modules/src/modules/lounge::locator=twilio-video-app-react%40workspace%3A.":
   version: 0.0.0-use.local
   resolution: "@eventdex/lounge@portal:../eventdex-modules/src/modules/lounge::locator=twilio-video-app-react%40workspace%3A."
-  peerDependencies:
-    "@eventdex/common": ^0.0.0
-    "@eventdex/core": ^0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1876,9 +1867,6 @@ __metadata:
 "@eventdex/manageappt@portal:../eventdex-modules/src/modules/manageappt::locator=twilio-video-app-react%40workspace%3A.":
   version: 0.0.0-use.local
   resolution: "@eventdex/manageappt@portal:../eventdex-modules/src/modules/manageappt::locator=twilio-video-app-react%40workspace%3A."
-  peerDependencies:
-    "@eventdex/common": ^0.1.0
-    "@eventdex/core": ^0.1.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1890,9 +1878,6 @@ __metadata:
   resolution: "@eventdex/player@portal:../eventdex-modules/src/modules/player::locator=twilio-video-app-react%40workspace%3A."
   dependencies:
     react-player: ^2.5.0
-  peerDependencies:
-    "@eventdex/common": ^0.0.0
-    "@eventdex/core": ^0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1906,9 +1891,6 @@ __metadata:
     final-form: ^4.20.6
     react-final-form: ^6.5.8
     react-social-icons: ^5.6.1
-  peerDependencies:
-    "@eventdex/common": ^0.1.0
-    "@eventdex/core": ^0.1.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1918,9 +1900,6 @@ __metadata:
 "@eventdex/schedule@portal:../eventdex-modules/src/modules/schedule::locator=twilio-video-app-react%40workspace%3A.":
   version: 0.0.0-use.local
   resolution: "@eventdex/schedule@portal:../eventdex-modules/src/modules/schedule::locator=twilio-video-app-react%40workspace%3A."
-  peerDependencies:
-    "@eventdex/common": ^0.0.0
-    "@eventdex/core": ^0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -1944,9 +1923,6 @@ __metadata:
     opentok-solutions-css: ^0.0.43
     opentok-text-chat: ^1.0.36
     twilio-video: ^2.18.3
-  peerDependencies:
-    "@eventdex/common": ^0.0.0
-    "@eventdex/core": ^0.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -3732,6 +3708,30 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@twilio/conversations@npm:2.0.1":
+  version: 2.0.1
+  resolution: "@twilio/conversations@npm:2.0.1"
+  dependencies:
+    "@babel/runtime": ^7.14.5
+    "@twilio/declarative-type-validator": ^0.1.10
+    "@twilio/mcs-client": ^0.5.2
+    "@twilio/notifications": ^1.0.4
+    "@twilio/operation-retrier": ^4.0.6
+    "@twilio/replay-event-emitter": ^0.2.3
+    core-js: ^3.17.3
+    glob: ^7.1.7
+    iso8601-duration: =1.2.0
+    isomorphic-form-data: ^2.0.0
+    lodash.isequal: ^4.5.0
+    loglevel: ^1.6.6
+    platform: ^1.3.6
+    twilio-sync: ^3.0.6
+    twilsock: ^0.12.1
+    uuid: ^3.4.0
+  checksum: 9990aa9424f918be9e8325e08dc64f1c9e3442b78f13fb7d2477301e80bb4d6653b51a576dc3821c433e523b9e4fdcba4518e79c5ebbbdae22d281bd28b15b9e
   languageName: node
   linkType: hard
 
@@ -8996,6 +8996,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"form-data@npm:^2.3.2":
+  version: 2.5.1
+  resolution: "form-data@npm:2.5.1"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.6
+    mime-types: ^2.1.12
+  checksum: 5134ada56cc246b293a1ac7678dba6830000603a3979cf83ff7b2f21f2e3725202237cfb89e32bcb38a1d35727efbd3c3a22e65b42321e8ade8eec01ce755d08
+  languageName: node
+  linkType: hard
+
 "form-data@npm:^3.0.0":
   version: 3.0.1
   resolution: "form-data@npm:3.0.1"
@@ -9353,6 +9364,20 @@ __metadata:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 351d549dd90553b87c2d3f90ce11aed9e1093c74130440e7ae0592e11bbcd2ce7f0ebb8ba6bfe63aaf9b62166a7f4c80cb84490ae5d78408bb2572bf7d4ee0a6
+  languageName: node
+  linkType: hard
+
+"glob@npm:^7.1.7":
+  version: 7.2.3
+  resolution: "glob@npm:7.2.3"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^3.1.1
+    once: ^1.3.0
+    path-is-absolute: ^1.0.0
+  checksum: 29452e97b38fa704dabb1d1045350fb2467cf0277e155aa9ff7077e90ad81d1ea9d53d3ee63bd37c05b09a065e90f16aec4a65f5b8de401d1dac40bc5605d133
   languageName: node
   linkType: hard
 
@@ -10586,6 +10611,15 @@ __metadata:
     node-fetch: ^1.0.1
     whatwg-fetch: ">=0.10.0"
   checksum: bb5daa7c3785d6742f4379a81e55b549a469503f7c9bf9411b48592e86632cf5e8fe8ea878dba185c0f33eb7c510c23abdeb55aebfdf5d3c70f031ced68c5424
+  languageName: node
+  linkType: hard
+
+"isomorphic-form-data@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "isomorphic-form-data@npm:2.0.0"
+  dependencies:
+    form-data: ^2.3.2
+  checksum: 234bfaa1ed037b1d6cf659eb7a5806889f1f60bc4c7effe5f54e52506004604a9d7229a03a8f9656a1a7ea5fcedca4342277083e38f88ff910b64eefa97dd95e
   languageName: node
   linkType: hard
 
@@ -12459,6 +12493,15 @@ __metadata:
   dependencies:
     brace-expansion: ^1.1.7
   checksum: 66ac295f8a7b59788000ea3749938b0970344c841750abd96694f80269b926ebcafad3deeb3f1da2522978b119e6ae3a5869b63b13a7859a456b3408bd18a078
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^3.1.1":
+  version: 3.1.2
+  resolution: "minimatch@npm:3.1.2"
+  dependencies:
+    brace-expansion: ^1.1.7
+  checksum: c154e566406683e7bcb746e000b84d74465b3a832c45d59912b9b55cd50dee66e5c4b1e5566dba26154040e51672f9aa450a9aef0c97cfc7336b78b7afb9540a
   languageName: node
   linkType: hard
 
@@ -17810,28 +17853,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"twilio-chat@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "twilio-chat@npm:6.0.0"
-  dependencies:
-    "@babel/runtime": ^7.14.5
-    "@twilio/declarative-type-validator": ^0.1.10
-    "@twilio/mcs-client": ^0.5.2
-    "@twilio/notifications": ^1.0.4
-    "@twilio/operation-retrier": ^4.0.6
-    "@twilio/replay-event-emitter": ^0.2.3
-    core-js: ^3.17.3
-    iso8601-duration: =1.2.0
-    lodash.isequal: ^4.5.0
-    loglevel: ^1.6.6
-    platform: ^1.3.6
-    twilio-sync: ^3.0.6
-    twilsock: ^0.12.1
-    uuid: ^3.4.0
-  checksum: f1ddfd9d6b518061e09cf817f4aff9a9c15d122aa82d52ed132dd6700d944f177d08a33b07375de81892634d3192054593e341967f8a18ac525d31934c2c3ce0
-  languageName: node
-  linkType: hard
-
 "twilio-sync@npm:^3.0.6":
   version: 3.0.6
   resolution: "twilio-sync@npm:3.0.6"
@@ -17856,19 +17877,19 @@ __metadata:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.27
     "@eventdex/bootstrap": ^0.1.253
-    "@eventdex/chat": ^0.1.333
-    "@eventdex/common": ^0.1.372
-    "@eventdex/core": ^0.1.342
-    "@eventdex/event": ^0.1.410
-    "@eventdex/leads": ^0.1.295
-    "@eventdex/lounge": ^0.1.339
+    "@eventdex/chat": 0.1.344
+    "@eventdex/common": 0.1.393
+    "@eventdex/core": 0.1.355
+    "@eventdex/event": 0.1.428
+    "@eventdex/leads": 0.1.303
+    "@eventdex/lounge": 0.1.349
     "@eventdex/manageappt": 0.0.83
     "@eventdex/player": 0.1.278
-    "@eventdex/profile": ^0.0.214
-    "@eventdex/schedule": ^0.1.325
-    "@eventdex/utils": 0.1.251
-    "@eventdex/video": ^0.1.465
-    "@eventdex/widgets": 0.0.226
+    "@eventdex/profile": 0.1.4
+    "@eventdex/schedule": 0.1.343
+    "@eventdex/utils": 0.1.254
+    "@eventdex/video": 0.1.474
+    "@eventdex/widgets": 0.0.235
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
     "@mui/styles": ^5.3.0
