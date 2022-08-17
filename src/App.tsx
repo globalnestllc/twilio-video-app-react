@@ -10,7 +10,8 @@ import {
     useLocation,
     useParams,
 } from "react-router-dom";
-import VideoModule, {VonageVideo} from "@eventdex/video";
+import VideoModule from "@eventdex/video";
+import VonageVideo from "@eventdex/video/src/components/Vonage";
 import {actionOpenVideo} from "@eventdex/video/src/store/actions";
 import store from "./store/store";
 import {Provider, useDispatch} from "react-redux";
