@@ -1,6 +1,6 @@
 import React from "react";
 import {Grid, Typography} from "@mui/material";
-import logoLandscape from "@eventdex/assets/images/logo-landscape.png";
+import {landscape_logo} from "@eventdex/assets/images";
 
 export default function LandingPage() {
     return (
@@ -11,7 +11,7 @@ export default function LandingPage() {
             alignItems={"center"}
             style={{maxHeight: "500px", height: "100%"}}
         >
-            <img src={logoLandscape} />
+            <img src={landscape_logo} />
             <Typography variant={"h3"}> Eventdex video conferencing </Typography>
             <Typography variant={"body1"}>
                 {" "}
