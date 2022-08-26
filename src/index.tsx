@@ -10,6 +10,7 @@ let hostApp = {
     name: "Video call vonage",
     disableMeetingSchedule: true,
     disableMinimizeVideo: true,
+    blockJoiningMeetingBeforeTime: true,
 };
 
 const AppLazy = React.lazy(() => import("./App"));
