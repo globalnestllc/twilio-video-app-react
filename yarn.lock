@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.418":
-  version: 0.1.418
-  resolution: "@eventdex/common@npm:0.1.418"
+"@eventdex/common@npm:0.1.420":
+  version: 0.1.420
+  resolution: "@eventdex/common@npm:0.1.420"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,21 +1794,21 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: e6f2f8760fff03e13622010928e5d76cbf5eeca3ea273ef19219ea2ed830a63fec81f402e145c528070d33de580db5524c988b18378813c86a02b21289088c83
+  checksum: ede5d47b49bca1ad04c1205e63449c8b63b55d2605b031983d6597415d65c570c8663425ad1acf1fcb2b7834a1c1f66af3993b238d266ed12e4d2d2460fdbd5d
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.374":
-  version: 0.1.374
-  resolution: "@eventdex/core@npm:0.1.374"
+"@eventdex/core@npm:0.1.376":
+  version: 0.1.376
+  resolution: "@eventdex/core@npm:0.1.376"
   dependencies:
     "@mui/icons-material": ^5.3.1
     "@mui/lab": 5.0.0-alpha.67
     "@mui/material": ^5.4.0
     "@mui/styles": ^5.3.0
     "@mui/x-date-pickers": ^5.0.0-beta.1
-    "@sentry/react": ^7.11.1
-    "@sentry/tracing": ^7.11.1
+    "@sentry/react": ^7.12.1
+    "@sentry/tracing": ^7.12.1
     "@twilio/conversations": 2.0.1
     moment: ">= 2.9.0"
     moment-timezone: ^0.5.31
@@ -1823,7 +1823,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 2bdd94e0af9695b6de436a1ee2510209549eb033835e9eae6834f5d902b5ddcb00f3ae57218c0c4f5642c89f600b02098d593f47c1c6e7f5a9d4e8c8056bd044
+  checksum: 84e21e9069a33a5d7a8411db3f95c40510fc27f5769e33a2be91d91cc487a71ab05c9dac91eb2b7e28a3a68ef4c67bff6e8fdd00b334d59e5ca83f8006a05800
   languageName: node
   linkType: hard
 
@@ -3538,7 +3538,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/react@npm:^7.11.1, @sentry/react@npm:^7.12.1":
+"@sentry/react@npm:^7.12.1":
   version: 7.12.1
   resolution: "@sentry/react@npm:7.12.1"
   dependencies:
@@ -3553,7 +3553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/tracing@npm:^7.11.1, @sentry/tracing@npm:^7.12.1":
+"@sentry/tracing@npm:^7.12.1":
   version: 7.12.1
   resolution: "@sentry/tracing@npm:7.12.1"
   dependencies:
@@ -17359,8 +17359,8 @@ __metadata:
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.361
-    "@eventdex/common": 0.1.418
-    "@eventdex/core": 0.1.374
+    "@eventdex/common": 0.1.420
+    "@eventdex/core": 0.1.376
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.312
     "@eventdex/lounge": 0.1.362
@@ -17377,8 +17377,6 @@ __metadata:
     "@opentok/client": ^2.19.0
     "@primer/octicons-react": ^9.4.0
     "@reduxjs/toolkit": ^1.5.0
-    "@sentry/react": ^7.12.1
-    "@sentry/tracing": ^7.12.1
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.4.0
     "@testing-library/react-hooks": ^3.2.1
