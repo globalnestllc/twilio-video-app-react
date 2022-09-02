@@ -23,6 +23,7 @@ import "react-toastify/dist/ReactToastify.css";
 import LandingPage from "./LandingPage";
 import AfterCallSurveyDialog from "./AfterCallSurvey/AfterCallSurveyDialog";
 import useAppTheme from "@eventdex/common/src/hooks/useAppTheme";
+import SetTestUser from "@eventdex/common/src/components/ErrorBoundaries/SetTestUser";
 
 const ModulesLazy = React.lazy(() => import("./EventdexModules"));
 const Modules = () => (
@@ -97,6 +98,7 @@ export default function AppWrapper(props) {
                     <CssBaseline />
                     <Router>
                         <Switch>
+                            <Route exact path="/testUser" component={SetTestUser} />
                             <Route exact path="/">
                                 <VideoApp />
                             </Route>
