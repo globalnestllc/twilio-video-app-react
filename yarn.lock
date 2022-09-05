@@ -1798,9 +1798,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.377":
-  version: 0.1.377
-  resolution: "@eventdex/core@npm:0.1.377"
+"@eventdex/core@npm:0.1.378":
+  version: 0.1.378
+  resolution: "@eventdex/core@npm:0.1.378"
   dependencies:
     "@mui/icons-material": ^5.3.1
     "@mui/lab": 5.0.0-alpha.67
@@ -1823,7 +1823,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 14e22dc5fa5b707b189e25408e1d19d314f7575d635812c34fa4db72453353586feef67e24cfb307ec077f99cd75bb0ef3fa84322012cbd7bacf961310f08c38
+  checksum: 5361024d0622323c44485f200e8bc958000a7acf814495deb16fa00201cd6c01702ad876603f77bc69856f49139c36b600e963c23432b0facc21d1bd19576419
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.493":
-  version: 0.1.493
-  resolution: "@eventdex/video@npm:0.1.493"
+"@eventdex/video@npm:0.1.494":
+  version: 0.1.494
+  resolution: "@eventdex/video@npm:0.1.494"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1928,7 +1928,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: f192d24064f17c6f206ad7ad74cc3c3c1a240ea2e64f2325441e9921807b07ee0417f8bb1b44a91abea7a04eb911a3ed5f32469ae799d4702c1587d5c020221c
+  checksum: a20f8bd1f07da5ad5eccf7356de30b34a2a4839e67b83695fbfa2638519ff4ff76ce74e30634f9de2d583d59bd78d42dc8475c6dced47f9d189fd1193e05c9e0
   languageName: node
   linkType: hard
 
@@ -17360,7 +17360,7 @@ __metadata:
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.361
     "@eventdex/common": 0.1.421
-    "@eventdex/core": 0.1.377
+    "@eventdex/core": 0.1.378
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.314
     "@eventdex/lounge": 0.1.362
@@ -17369,7 +17369,7 @@ __metadata:
     "@eventdex/profile": 0.1.26
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.493
+    "@eventdex/video": 0.1.494
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
