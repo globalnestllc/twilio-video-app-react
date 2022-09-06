@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.12.1",
-    "@eventdex/assets": "0.1.56",
+    "@eventdex/assets": "0.1.57",
     "@eventdex/auth": "0.1.302",
     "@eventdex/bootstrap": "0.1.269",
     "@eventdex/builder": "0.1.13",

@@ -1724,10 +1724,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/assets@npm:0.1.56":
-  version: 0.1.56
-  resolution: "@eventdex/assets@npm:0.1.56"
-  checksum: feba2457bb4de9e5618ce58f4365cc17e3e025d62fad71b3f9427131f19d70eee3376d7a8cfdf84b89287093f5409146f4b395d093184735d6a21637dbf5350c
+"@eventdex/assets@npm:0.1.57":
+  version: 0.1.57
+  resolution: "@eventdex/assets@npm:0.1.57"
+  checksum: b3d7b3fe02f030b29950966a7f803c4a461b12a5211b7329858347922b42e90e6b8fb0a72ddfbe8b58692df3906d0d10fdc87a13993606cd827bff1eedc1f36d
   languageName: node
   linkType: hard
 
@@ -17354,7 +17354,7 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/assets": 0.1.56
+    "@eventdex/assets": 0.1.57
     "@eventdex/auth": 0.1.302
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
