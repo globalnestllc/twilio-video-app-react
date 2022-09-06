@@ -1724,10 +1724,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/assets@npm:0.1.54":
-  version: 0.1.54
-  resolution: "@eventdex/assets@npm:0.1.54"
-  checksum: 947d4a2be85aed578cabe5f592751d3cd9ca5700d63e2b7122cd6749e649d2d7f37d48d56b5cdf8251f4f75cf4e8d2b36a106d4cd5bcd2f32b0b5ef91deba0d1
+"@eventdex/assets@npm:0.1.56":
+  version: 0.1.56
+  resolution: "@eventdex/assets@npm:0.1.56"
+  checksum: feba2457bb4de9e5618ce58f4365cc17e3e025d62fad71b3f9427131f19d70eee3376d7a8cfdf84b89287093f5409146f4b395d093184735d6a21637dbf5350c
   languageName: node
   linkType: hard
 
@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.421":
-  version: 0.1.421
-  resolution: "@eventdex/common@npm:0.1.421"
+"@eventdex/common@npm:0.1.423":
+  version: 0.1.423
+  resolution: "@eventdex/common@npm:0.1.423"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,7 +1794,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4f41451e7dd4c8dce35be8000a29300b8d6170519d7feba4faab9480d40ae95b330b5fe430c177e012b9af66c6716a411c4ca102ba6e3f267610c4a9adbc1388
+  checksum: d43e1c834415e81cc02b59af4079a41cacdbb7005abfd11fdd3fdd44844f3bedc6e140debb30d39c265761570f68c193eca4fc6b71e1e90652407c6380192a6a
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.497":
-  version: 0.1.497
-  resolution: "@eventdex/video@npm:0.1.497"
+"@eventdex/video@npm:0.1.498":
+  version: 0.1.498
+  resolution: "@eventdex/video@npm:0.1.498"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1928,7 +1928,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 94178844f269673dafcaf69041eb2893872cc4b15f21771b4d8a5ea24afebed41ba4760c38ed9ff34a8879390fdf38cd5e5992b755608bea951db74e5b2ab9d9
+  checksum: 583bb547238ad746de8a71dbcb4dde79d5d77c70377f491b1e1b253f4595c97d6f469f819d7f8451686e38123cc748189bb42af8deab2214090b423f255d95ee
   languageName: node
   linkType: hard
 
@@ -17354,12 +17354,12 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/assets": 0.1.54
+    "@eventdex/assets": 0.1.56
     "@eventdex/auth": 0.1.302
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.361
-    "@eventdex/common": 0.1.421
+    "@eventdex/common": 0.1.423
     "@eventdex/core": 0.1.378
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.314
@@ -17369,7 +17369,7 @@ __metadata:
     "@eventdex/profile": 0.1.26
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.497
+    "@eventdex/video": 0.1.498
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
