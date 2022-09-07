@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.424":
-  version: 0.1.424
-  resolution: "@eventdex/common@npm:0.1.424"
+"@eventdex/common@npm:0.1.425":
+  version: 0.1.425
+  resolution: "@eventdex/common@npm:0.1.425"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,7 +1794,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 95b6163145a2c2ee2edca7b2e16f768571d1abdb8b1e148570df479835f001c83060dc9c1e59aeeab410da636bb5bc7687d3a64562549682cbe5bd3f5b073a25
+  checksum: 3afb662bc7e51eb0bd5a327bf3200cb07fa78a6186ca0f1bc18e349b769b106b99b2e1abf3c4d48721b6d13d67915bff5e24e3daea7b255553fcabad12907df9
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.502":
-  version: 0.1.502
-  resolution: "@eventdex/video@npm:0.1.502"
+"@eventdex/video@npm:0.1.503":
+  version: 0.1.503
+  resolution: "@eventdex/video@npm:0.1.503"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1928,7 +1928,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 1297bdd40c6a5e492486a8bf3f4f89aecd1e8d0b7d62fb790d4657f2cd92dc43add39cd7209918d7e388ecdb0438d9407ed4910a3cd37627aae915eb50b43eb5
+  checksum: ca01dce9b84fb7a5ae613dc793651fbb1e062ba39fbffddef682c7481ab3c28892f0d191fcb59f90381aaac8344622d9dfc9e670c0600cfd7ea7188fc529a75a
   languageName: node
   linkType: hard
 
@@ -17359,7 +17359,7 @@ __metadata:
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.361
-    "@eventdex/common": 0.1.424
+    "@eventdex/common": 0.1.425
     "@eventdex/core": 0.1.379
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.314
@@ -17369,7 +17369,7 @@ __metadata:
     "@eventdex/profile": 0.1.26
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.502
+    "@eventdex/video": 0.1.503
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
