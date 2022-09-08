@@ -1731,13 +1731,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.302":
-  version: 0.1.302
-  resolution: "@eventdex/auth@npm:0.1.302"
+"@eventdex/auth@npm:0.1.303":
+  version: 0.1.303
+  resolution: "@eventdex/auth@npm:0.1.303"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b3da14964a4cfb9498f7a99dd79d12f02298c933ec8b6bd7e3dbabcf6720c77df47b2ba58d1a9c2d34766a213a63e532b839e5ae08c248cba6d1469df01a7439
+  checksum: 2e025656bc6faa78e0be54f8bd5640fea339880a7b77fe6ce209ab6cf71b3dab17e61515ec1a9d119bea2f2964a7cf27d044cd6be36f1dee678b597a4d91b35e
   languageName: node
   linkType: hard
 
@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.426":
-  version: 0.1.426
-  resolution: "@eventdex/common@npm:0.1.426"
+"@eventdex/common@npm:0.1.427":
+  version: 0.1.427
+  resolution: "@eventdex/common@npm:0.1.427"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,7 +1794,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 913cac1f692b7e8f75d743c5286a8eb86b2254564bb251ea6a2a916aab8bd5ad269e6f0450275e4cf8835d1afb6b2c6162bb50f016e66b4cf16010c64a58eec8
+  checksum: 824eabcac2d840fe2360f16e4b8eea2fef1196cd5642fc3c16e71c2f1ed3c7df4a0f4f2b41cdb9cba16528b1e8d6c679b84778320a117b8055e3831e48401d2a
   languageName: node
   linkType: hard
 
@@ -1859,13 +1859,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/manageappt@npm:0.0.90":
-  version: 0.0.90
-  resolution: "@eventdex/manageappt@npm:0.0.90"
+"@eventdex/manageappt@npm:0.0.91":
+  version: 0.0.91
+  resolution: "@eventdex/manageappt@npm:0.0.91"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: d9dd1be4d60a8ff99673d895521fc45bac45e6015ad5b0d88fbbc92b9692c82b08c174cd67af6b29adea5fc24e362f43326b62b4066f06bdccea4c637d55ab3f
+  checksum: 9254988159162502ef484de47b4b2b3a73524cc86fdb5a5dfc8a9072afa1224dcb404d67135fdc5e7ecedb7a02fd27c8c5f24f8f7f3963c2823326d219120587
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.504":
-  version: 0.1.504
-  resolution: "@eventdex/video@npm:0.1.504"
+"@eventdex/video@npm:0.1.505":
+  version: 0.1.505
+  resolution: "@eventdex/video@npm:0.1.505"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1928,7 +1928,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 18e664ec2be34df0f34f75e03d849eab00dd4be22bf7db6b3858889434b1487724600b43b85db99aff993896bc0477dec7210b327c6aff80622aa0d436e848c3
+  checksum: 86daba093f8bee063c5a6831c631931693458ca519d1a8c7673d8019ab96cb0cd855ee9a61082f639e27019df0963c37d4f880eace3de79653420d9a0d2447cb
   languageName: node
   linkType: hard
 
@@ -17355,21 +17355,21 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.57
-    "@eventdex/auth": 0.1.302
+    "@eventdex/auth": 0.1.303
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.361
-    "@eventdex/common": 0.1.426
+    "@eventdex/common": 0.1.427
     "@eventdex/core": 0.1.379
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.314
     "@eventdex/lounge": 0.1.362
-    "@eventdex/manageappt": 0.0.90
+    "@eventdex/manageappt": 0.0.91
     "@eventdex/player": 0.1.284
     "@eventdex/profile": 0.1.26
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.504
+    "@eventdex/video": 0.1.505
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
