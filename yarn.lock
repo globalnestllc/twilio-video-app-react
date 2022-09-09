@@ -1767,18 +1767,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/chat@npm:0.1.361":
-  version: 0.1.361
-  resolution: "@eventdex/chat@npm:0.1.361"
+"@eventdex/chat@npm:0.1.362":
+  version: 0.1.362
+  resolution: "@eventdex/chat@npm:0.1.362"
   dependencies:
     react-linkify: ^1.0.0-alpha
-  checksum: 5689924cc7a0aa6fc413293c9fb0df422093d7c2efcfbeb5f7c1f866180818742208cee8228becc33db534b7a7ad215b2d07554c950837f828717cbb39339e88
+  checksum: f37bff2b304c3f2446d920539b6828527fa97af0690a52a18013ba4da5e727a29e64c61030c5dd335322934084ae0b8720deb5474fa354fb7e57d3a13e38585a
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.428":
-  version: 0.1.428
-  resolution: "@eventdex/common@npm:0.1.428"
+"@eventdex/common@npm:0.1.429":
+  version: 0.1.429
+  resolution: "@eventdex/common@npm:0.1.429"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,13 +1794,13 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 7bdbf1d17740cabc0d9b73278fa722839815ce75ca0c719c9c5d86e0146d3d5cf1ff8e71ee4091b967154ab77017367013887d8489f9f10b4c5e1f3b3a5920bc
+  checksum: ac9089df5a6e2ec0abdf2e32ab33034c3f06727b07e4c0fcbf7cc017060be26d1deebcd4ac65811127622577b39c2179000ac020691a4f31ab6bc82694b66970
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.379":
-  version: 0.1.379
-  resolution: "@eventdex/core@npm:0.1.379"
+"@eventdex/core@npm:0.1.380":
+  version: 0.1.380
+  resolution: "@eventdex/core@npm:0.1.380"
   dependencies:
     "@mui/icons-material": ^5.3.1
     "@mui/lab": 5.0.0-alpha.67
@@ -1823,7 +1823,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b983a8c984efcc2ad19b77d93db64591a09e23d5df22c8b84296b8ab2743376ec37b333ae8ed08e7f366a51e2b17ca012874beeacc4e309502c6abe2c8b5af5a
+  checksum: b12d8b242a1428e65d06a74a3bd3efdf162810567401c0bc5df420a00f581a8281e5a45e4426181723f7aef45bac10eb7ed5e5ad7a0bce9c56b510fd9b3852e2
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.505":
-  version: 0.1.505
-  resolution: "@eventdex/video@npm:0.1.505"
+"@eventdex/video@npm:0.1.506":
+  version: 0.1.506
+  resolution: "@eventdex/video@npm:0.1.506"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1923,12 +1923,11 @@ __metadata:
     is-plain-object: ^2.0.3
     opentok-network-test-js: ^2.4.3
     opentok-solutions-css: ^0.0.43
-    opentok-text-chat: ^1.0.36
     twilio-video: ^2.18.3
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 86daba093f8bee063c5a6831c631931693458ca519d1a8c7673d8019ab96cb0cd855ee9a61082f639e27019df0963c37d4f880eace3de79653420d9a0d2447cb
+  checksum: 08bbf8432aa521bd27644d1744d78ae647f12d67bc95dbbd55ee6420665ecc3a77302e9856b69e94350313b897eb668f360d65214d3a4ee67380de09dab8df2c
   languageName: node
   linkType: hard
 
@@ -11026,13 +11025,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "jquery@npm:3.5.1"
-  checksum: 813047b852511ca1ecfaa7b2568aba1d7270a92e5c74962b308792a401adf041869a3b2a6858b0b7a02f6684947fb93171e40cbb4460831977a937b40b0e15ce
-  languageName: node
-  linkType: hard
-
 "js-base64@npm:^2.1.8":
   version: 2.6.4
   resolution: "js-base64@npm:2.6.4"
@@ -11383,13 +11375,6 @@ __metadata:
   version: 2.0.5
   resolution: "klona@npm:2.0.5"
   checksum: 8c976126ea252b766e648a4866e1bccff9d3b08432474ad80c559f6c7265cf7caede2498d463754d8c88c4759895edd8210c85c0d3155e6aae4968362889466f
-  languageName: node
-  linkType: hard
-
-"kuende-livestamp@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "kuende-livestamp@npm:1.1.2"
-  checksum: f8ec3aa07447c77e0e68b4fdd4da2d54a611edc4e01cd200cc4610a5cc2904545b5b8791e82e93eec6b67b689d7435991ec00575ebcae18a919a1223561cf776
   languageName: node
   linkType: hard
 
@@ -12321,7 +12306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moment@npm:>= 2.9.0, moment@npm:^2.27.0":
+"moment@npm:>= 2.9.0":
   version: 2.29.1
   resolution: "moment@npm:2.29.1"
   checksum: 1e14d5f422a2687996be11dd2d50c8de3bd577c4a4ca79ba5d02c397242a933e5b941655de6c8cb90ac18f01cc4127e55b4a12ae3c527a6c0a274e455979345e
@@ -12935,25 +12920,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"opentok-solutions-logging@npm:^1.1.0, opentok-solutions-logging@npm:^1.1.1":
+"opentok-solutions-logging@npm:^1.1.1":
   version: 1.1.1
   resolution: "opentok-solutions-logging@npm:1.1.1"
   dependencies:
     axios: ^0.21.1
   checksum: b73105d87759e145cc410b34d4e0cac1f8afb0fe0bdd33f5b185c6dc05e775881ffe1aab0935027228a4a5588336bda355f727eaf759c8f1c754cc85b7ad8ad8
-  languageName: node
-  linkType: hard
-
-"opentok-text-chat@npm:^1.0.36":
-  version: 1.0.36
-  resolution: "opentok-text-chat@npm:1.0.36"
-  dependencies:
-    jquery: ^3.5.1
-    kuende-livestamp: ^1.1.2
-    moment: ^2.27.0
-    opentok-solutions-logging: ^1.1.0
-    underscore: ^1.11.0
-  checksum: 1c5bbefcfbc192ad62e41d83094904a29a3a805100be014e3977088d293c2681ba69636c2a26a587c9cf1f68066c2ce5e627772bc957c2a30c00f8064efb7d31
   languageName: node
   linkType: hard
 
@@ -17358,9 +17330,9 @@ __metadata:
     "@eventdex/auth": 0.1.303
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
-    "@eventdex/chat": 0.1.361
-    "@eventdex/common": 0.1.428
-    "@eventdex/core": 0.1.379
+    "@eventdex/chat": 0.1.362
+    "@eventdex/common": 0.1.429
+    "@eventdex/core": 0.1.380
     "@eventdex/event": 0.1.450
     "@eventdex/leads": 0.1.314
     "@eventdex/lounge": 0.1.362
@@ -17369,7 +17341,7 @@ __metadata:
     "@eventdex/profile": 0.1.26
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.505
+    "@eventdex/video": 0.1.506
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
@@ -17611,13 +17583,6 @@ __metadata:
     has-symbols: ^1.0.2
     which-boxed-primitive: ^1.0.2
   checksum: 89d950e18fb45672bc6b3c961f1e72c07beb9640c7ceed847b571ba6f7d2af570ae1a2584cfee268b9d9ea1e3293f7e33e0bc29eaeb9f8e8a0bab057ff9e6bba
-  languageName: node
-  linkType: hard
-
-"underscore@npm:^1.11.0":
-  version: 1.12.0
-  resolution: "underscore@npm:1.12.0"
-  checksum: 652d6a4daf64d31557527e8a5189fb90d2defecbd5e8d83dbec4e70ba78ec46e3e5aadb691434d2221f49c9ea96433b74af77d7362d94e18c1b316a4ac4d4997
   languageName: node
   linkType: hard
 
