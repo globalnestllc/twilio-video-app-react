@@ -1724,20 +1724,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/assets@npm:0.1.57":
-  version: 0.1.57
-  resolution: "@eventdex/assets@npm:0.1.57"
-  checksum: b3d7b3fe02f030b29950966a7f803c4a461b12a5211b7329858347922b42e90e6b8fb0a72ddfbe8b58692df3906d0d10fdc87a13993606cd827bff1eedc1f36d
+"@eventdex/assets@npm:0.1.59":
+  version: 0.1.59
+  resolution: "@eventdex/assets@npm:0.1.59"
+  checksum: 17ffabb88ea24cf7fd7059c98e7bc6799fd144f95a13560022c23b96df28f0095633df97af309e7642cc662f610e2f5611d80a18022c7ea7f96eb3b4eb178459
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.303":
-  version: 0.1.303
-  resolution: "@eventdex/auth@npm:0.1.303"
+"@eventdex/auth@npm:0.1.305":
+  version: 0.1.305
+  resolution: "@eventdex/auth@npm:0.1.305"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 2e025656bc6faa78e0be54f8bd5640fea339880a7b77fe6ce209ab6cf71b3dab17e61515ec1a9d119bea2f2964a7cf27d044cd6be36f1dee678b597a4d91b35e
+  checksum: 1a69bd6918a5d6bfa08db6a36a941078998a3102251947c7f1b55c955a5a389d00f34c05e130bf1ad303017b7dd5609bb1c8377778a3dc9bebfa96a21a429b6b
   languageName: node
   linkType: hard
 
@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.429":
-  version: 0.1.429
-  resolution: "@eventdex/common@npm:0.1.429"
+"@eventdex/common@npm:0.1.431":
+  version: 0.1.431
+  resolution: "@eventdex/common@npm:0.1.431"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,7 +1794,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: ac9089df5a6e2ec0abdf2e32ab33034c3f06727b07e4c0fcbf7cc017060be26d1deebcd4ac65811127622577b39c2179000ac020691a4f31ab6bc82694b66970
+  checksum: 6f088b4fe56bfdc928666cb24e173aac77cf0ef3aeb5d0101535109a1a21c6659c128b852ba75c7863237a5fcd1b4e4ab23a0809d559c02671994af7c82b95a1
   languageName: node
   linkType: hard
 
@@ -1827,15 +1827,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/event@npm:0.1.450":
-  version: 0.1.450
-  resolution: "@eventdex/event@npm:0.1.450"
+"@eventdex/event@npm:0.1.452":
+  version: 0.1.452
+  resolution: "@eventdex/event@npm:0.1.452"
   dependencies:
     react-joyride: ^2.3.2
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 9931eae8d4d74591af9f275fbf9b2f35a5a4984ea682792a5eb21aef20d6ac9c91220a82575c05aa2df6f898e70e49772914e06f7c3b14db3dd183f628902c8f
+  checksum: 04eb2f023a9ba7840029c29a40fc94f91dc0af17cc20227e164b35eebd335f23d793306e4e88c85a6c11572c54f6ca4717d954b7c38470a90ff15f1378e42f5d
   languageName: node
   linkType: hard
 
@@ -17326,14 +17326,14 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/assets": 0.1.57
-    "@eventdex/auth": 0.1.303
+    "@eventdex/assets": 0.1.59
+    "@eventdex/auth": 0.1.305
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.362
-    "@eventdex/common": 0.1.429
+    "@eventdex/common": 0.1.431
     "@eventdex/core": 0.1.380
-    "@eventdex/event": 0.1.450
+    "@eventdex/event": 0.1.452
     "@eventdex/leads": 0.1.314
     "@eventdex/lounge": 0.1.362
     "@eventdex/manageappt": 0.0.91
