@@ -5,15 +5,15 @@ import CoreModule, {registerModule} from "@eventdex/core";
 import LoungeModule from "@eventdex/lounge";
 // import ScheduleModule from '@eventdex/schedule';
 // import EventModule from '@eventdex/event';
-// import ChatModule from '@eventdex/chat';
+import ChatModule from "@eventdex/chat";
 import CommonModule from "@eventdex/common";
 import {twilioHelper} from "@eventdex/core/src/services";
 
 // registerModule(PlayerModule);
 // registerModule(ScheduleModule);
 // registerModule(EventModule);
-// registerModule(ChatModule);
 registerModule(CoreModule);
+registerModule(ChatModule);
 registerModule(CommonModule);
 registerModule(LoungeModule);
 

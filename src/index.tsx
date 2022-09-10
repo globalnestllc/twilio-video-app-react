@@ -13,6 +13,7 @@ let hostApp = {
     disableMeetingSchedule: true,
     disableMinimizeVideo: true,
     blockJoiningMeetingBeforeTime: true,
+    noAuth: true,
 };
 
 Sentry.init({

@@ -18,8 +18,7 @@ import {Provider, useDispatch} from "react-redux";
 import {localStorageHelper} from "@eventdex/core/src/services";
 //============
 import {registerModule} from "@eventdex/core";
-import {ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import LandingPage from "./LandingPage";
 import AfterCallSurveyDialog from "./AfterCallSurvey/AfterCallSurveyDialog";
 import useAppTheme from "@eventdex/common/src/hooks/useAppTheme";
@@ -78,10 +77,6 @@ const VideoApp = () => {
                 isAdmin={isAdmin}
                 // modal
                 // contained
-            />
-            <ToastContainer
-                style={{position: "absolute", zIndex: 10000, width: "fit-content", minWidth: 320}}
-                autoClose={30000}
             />
 
             <AfterCallSurveyDialog roomName={roomName} />
