@@ -1767,12 +1767,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/chat@npm:0.1.363":
-  version: 0.1.363
-  resolution: "@eventdex/chat@npm:0.1.363"
+"@eventdex/chat@npm:0.1.364":
+  version: 0.1.364
+  resolution: "@eventdex/chat@npm:0.1.364"
   dependencies:
     react-linkify: ^1.0.0-alpha
-  checksum: f362858a58812b72c428f9f57989407547cec3980e44194ebb4d38dad8bfc8f4e3e818307b0802a9b98d229b90b3e766d911101795b01fa802feb53f059fd3f1
+  checksum: 21bec9269c4a07c7abaa0b0f77ef41f833cfaa7e954d7a422c47ada951c61640f0d2c52e868d834ebe3f0f72e043ee514946fcdbf7e2fdf69c2e7797733204b8
   languageName: node
   linkType: hard
 
@@ -1881,9 +1881,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/profile@npm:0.1.26":
-  version: 0.1.26
-  resolution: "@eventdex/profile@npm:0.1.26"
+"@eventdex/profile@npm:0.1.27":
+  version: 0.1.27
+  resolution: "@eventdex/profile@npm:0.1.27"
   dependencies:
     "@tinymce/tinymce-react": ^3.3.2
     final-form: ^4.20.6
@@ -1892,7 +1892,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 627cfd51b6c2f515e07a541e628dd6ed032614411c052a3b2e819d70d77e2ea3475252d0e6c953d922e714e1c6761b5ec12fd15b75c3dfd2237944e91912ec1f
+  checksum: 95f2eee06623d823bb19639ea536983cf4064ab562580bbd25079b25b74e9cf49c1305d2d59b1e5ea38e6d56ec765097c83b54c8c05d92e88cef46983a352b9b
   languageName: node
   linkType: hard
 
@@ -1913,9 +1913,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.507":
-  version: 0.1.507
-  resolution: "@eventdex/video@npm:0.1.507"
+"@eventdex/video@npm:0.1.508":
+  version: 0.1.508
+  resolution: "@eventdex/video@npm:0.1.508"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1927,7 +1927,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 70ab1047743f4729f7c3586f9a024d515d799fb9d1263d19e92f6e4982deb6b92e37d5cdafe0f565bd3242fbf6be23dd6fc078ea3609c7f26012c06168994cb0
+  checksum: 7fc6f3ed91e3f256bedd9bfcf725b260215f7d904e002f00c11420c982596f066d048a27c97f5133d1a03912633e4138329a0bb5fa61854accf3ec5a1f40a98b
   languageName: node
   linkType: hard
 
@@ -17330,7 +17330,7 @@ __metadata:
     "@eventdex/auth": 0.1.305
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
-    "@eventdex/chat": 0.1.363
+    "@eventdex/chat": 0.1.364
     "@eventdex/common": 0.1.431
     "@eventdex/core": 0.1.381
     "@eventdex/event": 0.1.452
@@ -17338,10 +17338,10 @@ __metadata:
     "@eventdex/lounge": 0.1.362
     "@eventdex/manageappt": 0.0.91
     "@eventdex/player": 0.1.284
-    "@eventdex/profile": 0.1.26
+    "@eventdex/profile": 0.1.27
     "@eventdex/schedule": 0.1.352
     "@eventdex/utils": 0.1.255
-    "@eventdex/video": 0.1.507
+    "@eventdex/video": 0.1.508
     "@eventdex/widgets": 0.0.240
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
