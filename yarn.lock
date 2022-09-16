@@ -1731,13 +1731,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.307":
-  version: 0.1.307
-  resolution: "@eventdex/auth@npm:0.1.307"
+"@eventdex/auth@npm:0.1.308":
+  version: 0.1.308
+  resolution: "@eventdex/auth@npm:0.1.308"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 1a57f5244b0b063b18b96e5825ada4063bb0e41f04454ac18e0e211bd20ed2b716b8786c70ec2f19634b1e4e5c35948216e2194f82fdbfd8c9f580378cc3d5dc
+  checksum: 93fde44631d8301b2c7d6f8f40ad819c80b7d59362e2f5cd1b189c4673074541a435f31e1051c993879527f7bbeac6fdaa5643b35b8a7f893ab443c6cd26556e
   languageName: node
   linkType: hard
 
@@ -17348,7 +17348,7 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.59
-    "@eventdex/auth": 0.1.307
+    "@eventdex/auth": 0.1.308
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.367
