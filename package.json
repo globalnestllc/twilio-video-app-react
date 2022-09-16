@@ -6,7 +6,7 @@
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.12.1",
     "@eventdex/assets": "0.1.59",
-    "@eventdex/auth": "0.1.306",
+    "@eventdex/auth": "0.1.307",
     "@eventdex/bootstrap": "0.1.269",
     "@eventdex/builder": "0.1.13",
     "@eventdex/chat": "0.1.367",
