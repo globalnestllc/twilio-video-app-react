@@ -1914,9 +1914,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.517":
-  version: 0.1.517
-  resolution: "@eventdex/video@npm:0.1.517"
+"@eventdex/video@npm:0.1.519":
+  version: 0.1.519
+  resolution: "@eventdex/video@npm:0.1.519"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.6.4
@@ -1928,7 +1928,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b6d263d2434bda3ebe97fdbbefce0599918116e6f9ef18ff234225f15069f815ae4d518db71f6ae05c830d2d5088e37889d184396f99c54990a16b44dd9143fd
+  checksum: ee5d46b8e4d766c8cc7b43d274369f604d13d9cf2c623650d7f46437dd829801f3885d601bbdc1997b3c78aed79bc534190e2b76829bcdac429b76cc629345da
   languageName: node
   linkType: hard
 
@@ -17362,7 +17362,7 @@ __metadata:
     "@eventdex/profile": 0.1.30
     "@eventdex/schedule": 0.1.360
     "@eventdex/utils": 0.1.257
-    "@eventdex/video": 0.1.517
+    "@eventdex/video": 0.1.519
     "@eventdex/widgets": 0.0.244
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
