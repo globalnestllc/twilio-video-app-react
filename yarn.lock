@@ -1731,13 +1731,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.311":
-  version: 0.1.311
-  resolution: "@eventdex/auth@npm:0.1.311"
+"@eventdex/auth@npm:0.1.312":
+  version: 0.1.312
+  resolution: "@eventdex/auth@npm:0.1.312"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 1840935400e358f27009f567bb55279ca47a750c4a3285e51e5ad195367e9fdbb70ddb50af27112a4618f494ff06262dbe63ad10e4588ac4b072cae75095bcb2
+  checksum: 449820fb075e6a45f735777cbef412b13fdc90a5b8f7b93995596d1b1d44ce9b1e3ce612128b36aa489c311f38f953339d18885d1712d40c2e72f56f0c88766b
   languageName: node
   linkType: hard
 
@@ -1776,9 +1776,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.435":
-  version: 0.1.435
-  resolution: "@eventdex/common@npm:0.1.435"
+"@eventdex/common@npm:0.1.439":
+  version: 0.1.439
+  resolution: "@eventdex/common@npm:0.1.439"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
@@ -1794,7 +1794,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 802e069585c78c785f0c1c1a587e4efeedf7386260381ea4ec01ea58175b5250939bd6fb3f6073978d7bd602e2ab4db830a4cf6eca50a97068ab5429c973ade7
+  checksum: c68754e0bf89fd516c2528fd28a66cc85ba66f25f2df8baa7312d45d140fbd530f01427f8e7ed994a53cc51afb5413470501848e836aa0b1d030c1b2f4ee8668
   languageName: node
   linkType: hard
 
@@ -1828,15 +1828,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/event@npm:0.1.461":
-  version: 0.1.461
-  resolution: "@eventdex/event@npm:0.1.461"
+"@eventdex/event@npm:0.1.463":
+  version: 0.1.463
+  resolution: "@eventdex/event@npm:0.1.463"
   dependencies:
     react-joyride: ^2.3.2
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: cb38eb24c707059e437477298933f963b6a7b22b2fd52ca415390966342eccd9eda97fd4828c7aea218542530e46527488e12635857dacd6efc3835a46aa8e9f
+  checksum: 7da39b0e56cff4f7b97d0a424ec1246ead9044f04b805cf2bc7fee7a6cfb42309d3fb6229157b996193d7c59d497a05f736fd502c98e80e12c005f4e4bd97dee
   languageName: node
   linkType: hard
 
@@ -1870,15 +1870,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/player@npm:0.1.287":
-  version: 0.1.287
-  resolution: "@eventdex/player@npm:0.1.287"
+"@eventdex/player@npm:0.1.290":
+  version: 0.1.290
+  resolution: "@eventdex/player@npm:0.1.290"
   dependencies:
     react-player: ^2.5.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6627e6ff689f5ba290330ffae439253b4bcfcefa41d7bb7bfcddd747d9d232cfeabf0556596667662f92a491d197c8a984fd9e69fce97dd8501f0c74f1ec700b
+  checksum: 52893889d55e57932370997452ab9d9a8bdb937ef6dcfb53a3a6a96acaa5d20ec5ead43b5fbf587c3fa0e79dd9a77d1e63310cddfcb6fd4e87cae16cdd1f3f3d
   languageName: node
   linkType: hard
 
@@ -17348,17 +17348,17 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/assets": 0.1.59
-    "@eventdex/auth": 0.1.311
+    "@eventdex/auth": 0.1.312
     "@eventdex/bootstrap": 0.1.269
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.372
-    "@eventdex/common": 0.1.435
+    "@eventdex/common": 0.1.439
     "@eventdex/core": 0.1.389
-    "@eventdex/event": 0.1.461
+    "@eventdex/event": 0.1.463
     "@eventdex/leads": 0.1.323
     "@eventdex/lounge": 0.1.367
     "@eventdex/manageappt": 0.0.92
-    "@eventdex/player": 0.1.287
+    "@eventdex/player": 0.1.290
     "@eventdex/profile": 0.1.30
     "@eventdex/schedule": 0.1.360
     "@eventdex/utils": 0.1.257
