@@ -1798,9 +1798,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.390":
-  version: 0.1.390
-  resolution: "@eventdex/core@npm:0.1.390"
+"@eventdex/core@npm:0.1.391":
+  version: 0.1.391
+  resolution: "@eventdex/core@npm:0.1.391"
   dependencies:
     "@mui/icons-material": ^5.3.1
     "@mui/lab": 5.0.0-alpha.67
@@ -1824,7 +1824,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 0b5f08e8fa9ae3e8954a13b84f75916606e4632c9c957768f5aa2ae26fd6fb9d287b932a74394cb888f60226afbfe2f3201e3816c14d9366cf413ab65714c3f2
+  checksum: d307e348b29f06a81253487a3fdaf6867ed43f8fd4c30e2af8bb57bc1d803a26cfa131a99e4a15c51b6f652dadb4f6abfe02ee3947512325f41254edd70aec84
   languageName: node
   linkType: hard
 
@@ -1870,15 +1870,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/player@npm:0.1.291":
-  version: 0.1.291
-  resolution: "@eventdex/player@npm:0.1.291"
+"@eventdex/player@npm:0.1.292":
+  version: 0.1.292
+  resolution: "@eventdex/player@npm:0.1.292"
   dependencies:
     react-player: ^2.5.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 52323bab04251d3e33f100caf98a673516b8a83c8389d3a648c958c26b116c9959fcfaaf8a6f25a3dfbed8cce5ea82c1a6aa90838c6bae6042f3144feb3e4802
+  checksum: 0016fb28dbf290b2860cb54abdb1aa950cd652fe34ffaed2f4689a58684a899bba545a61e5ab08dc8360d13d3e61bd603c0bafe5319f9de2a92aba8b4da543a8
   languageName: node
   linkType: hard
 
@@ -1932,10 +1932,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/widgets@npm:0.0.245":
-  version: 0.0.245
-  resolution: "@eventdex/widgets@npm:0.0.245"
-  checksum: 1f7349763e8b02407ccb7ede7d645c1c41b35dac3dae1c50e4d6c7e44725363e7bad6981fb861050726ddca9c636db16597a1f60c51acf2feb42b9bf97973fe0
+"@eventdex/widgets@npm:0.0.246":
+  version: 0.0.246
+  resolution: "@eventdex/widgets@npm:0.0.246"
+  checksum: e55cb5393751844c3b31b0bbf4f0456626ed6ba7cfa3dd79bb68c75843c68103eee40b2df85e14c15ba0f58297f9e637c59cf308d0874032c29b25f2652b83e3
   languageName: node
   linkType: hard
 
@@ -17353,17 +17353,17 @@ __metadata:
     "@eventdex/builder": 0.1.13
     "@eventdex/chat": 0.1.373
     "@eventdex/common": 0.1.440
-    "@eventdex/core": 0.1.390
+    "@eventdex/core": 0.1.391
     "@eventdex/event": 0.1.463
     "@eventdex/leads": 0.1.324
     "@eventdex/lounge": 0.1.368
     "@eventdex/manageappt": 0.0.93
-    "@eventdex/player": 0.1.291
+    "@eventdex/player": 0.1.292
     "@eventdex/profile": 0.1.31
     "@eventdex/schedule": 0.1.360
     "@eventdex/utils": 0.1.257
     "@eventdex/video": 0.1.522
-    "@eventdex/widgets": 0.0.245
+    "@eventdex/widgets": 0.0.246
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
     "@mui/styles": ^5.3.0
