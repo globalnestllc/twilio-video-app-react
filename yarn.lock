@@ -1870,15 +1870,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/player@npm:0.1.292":
-  version: 0.1.292
-  resolution: "@eventdex/player@npm:0.1.292"
+"@eventdex/player@npm:0.1.293":
+  version: 0.1.293
+  resolution: "@eventdex/player@npm:0.1.293"
   dependencies:
     react-player: ^2.5.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 0016fb28dbf290b2860cb54abdb1aa950cd652fe34ffaed2f4689a58684a899bba545a61e5ab08dc8360d13d3e61bd603c0bafe5319f9de2a92aba8b4da543a8
+  checksum: f3e3ae1680f6a4c41dc0123d3c8da0668b48a168b1f10313594b8ceedc363003d24b23eb4a01b845f310ed4e6266a124439d0285d6504b2bf410ca09685c8afb
   languageName: node
   linkType: hard
 
@@ -1932,10 +1932,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/widgets@npm:0.0.246":
-  version: 0.0.246
-  resolution: "@eventdex/widgets@npm:0.0.246"
-  checksum: e55cb5393751844c3b31b0bbf4f0456626ed6ba7cfa3dd79bb68c75843c68103eee40b2df85e14c15ba0f58297f9e637c59cf308d0874032c29b25f2652b83e3
+"@eventdex/widgets@npm:0.0.247":
+  version: 0.0.247
+  resolution: "@eventdex/widgets@npm:0.0.247"
+  checksum: 4217121344a194468af6c9ff768f215ec455d1f14e270aa47177ca06165ef29fdb6c70df946d4aa638c20f3dc806cdfab8054a9013cd69e7459b4179417f4011
   languageName: node
   linkType: hard
 
@@ -17358,12 +17358,12 @@ __metadata:
     "@eventdex/leads": 0.1.324
     "@eventdex/lounge": 0.1.368
     "@eventdex/manageappt": 0.0.93
-    "@eventdex/player": 0.1.292
+    "@eventdex/player": 0.1.293
     "@eventdex/profile": 0.1.31
     "@eventdex/schedule": 0.1.360
     "@eventdex/utils": 0.1.257
     "@eventdex/video": 0.1.522
-    "@eventdex/widgets": 0.0.246
+    "@eventdex/widgets": 0.0.247
     "@mui/icons-material": ^5.3.1
     "@mui/material": ^5.3.1
     "@mui/styles": ^5.3.0
