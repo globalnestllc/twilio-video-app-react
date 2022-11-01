@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import history from "@eventdex/bootstrap/src/hostConfig/history";
 import * as Sentry from "@sentry/react";
 import {BrowserTracing} from "@sentry/tracing";
+import LazyComponent from "@eventdex/common/src/helpers/LazyComponent";
 
 let hostApp = {
     abbreviation: "vv",
@@ -26,12 +27,7 @@ Sentry.init({
     tracesSampleRate: 0.2,
 });
 
-const AppLazy = React.lazy(() => import("./App"));
-const App = () => (
-    <Suspense fallback={<div />}>
-        <AppLazy />
-    </Suspense>
-);
+const App = LazyComponent(() => import("./App"));
 
 initializeContext(store, history, hostApp);
 

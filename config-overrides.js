@@ -1,7 +1,7 @@
 const {override, useBabelRc} = require("customize-cra");
 const {
     circularDependencyPlugin, bundleAnalyzerPlugin, duplicatesPlugin, printConfig,
-    fixModuleResolutionForLinkedPackages, addPolyfills,devOnly
+    fixModuleResolutionForLinkedPackages, addPolyfills,devOnly,includeEventdexModulesInBabel
 } = require("@eventdex/bootstrap/src/hostConfig/config-overrides")
 const path = require("path");
 
@@ -20,6 +20,7 @@ module.exports = {
         fixModuleResolutionForLinkedPackages,
         bundleAnalyzerPlugin,
         addPolyfills(["util"]),
-        printConfig()
+        printConfig(),
+        includeEventdexModulesInBabel()
     ),
 };

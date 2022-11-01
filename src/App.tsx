@@ -23,13 +23,10 @@ import LandingPage from "./LandingPage";
 import AfterCallSurveyDialog from "./AfterCallSurvey/AfterCallSurveyDialog";
 import useAppTheme from "@eventdex/common/src/hooks/useAppTheme";
 import SetTestUser from "@eventdex/common/src/components/ErrorBoundaries/SetTestUser";
+import "@eventdex/chat/src/components/Chat/style.scss";
+import LazyComponent from "@eventdex/common/src/helpers/LazyComponent";
 
-const ModulesLazy = React.lazy(() => import("./EventdexModules"));
-const Modules = () => (
-    <Suspense fallback={<div />}>
-        <ModulesLazy />
-    </Suspense>
-);
+const Modules = LazyComponent(() => import("./EventdexModules"));
 
 registerModule(VideoModule);
 
