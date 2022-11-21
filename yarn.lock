@@ -1788,6 +1788,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eventdex/api@portal:../eventdex-modules/src/modules/api::locator=twilio-video-app-react%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@eventdex/api@portal:../eventdex-modules/src/modules/api::locator=twilio-video-app-react%40workspace%3A."
+  languageName: node
+  linkType: soft
+
 "@eventdex/assets@portal:../eventdex-modules/src/modules/assets::locator=twilio-video-app-react%40workspace%3A.":
   version: 0.0.0-use.local
   resolution: "@eventdex/assets@portal:../eventdex-modules/src/modules/assets::locator=twilio-video-app-react%40workspace%3A."
@@ -16554,6 +16560,7 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
+    "@eventdex/api": 0.1.196
     "@eventdex/assets": 0.1.59
     "@eventdex/auth": 0.1.316
     "@eventdex/bootstrap": 0.1.269

@@ -7,12 +7,12 @@ import Typography from "@mui/material/Typography";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import {useTheme} from "@mui/material/styles";
 import withStyles from "@mui/styles/withStyles";
-import {urlFor_RestApi} from "@eventdex/core/src/context";
 import {useWindowMessageCallback} from "./useWindowMessageCallback";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {urlFor_PublicApi, usePrevious} from "@eventdex/core/context";
+import {urlFor_PublicApi} from "@eventdex/api/src/services/apiUrl";
+import {usePrevious} from "@eventdex/core/context";
 import {useSelector} from "react-redux";
-import {getNoAuth} from "@eventdex/core/context";
+import {getNoAuth} from "@eventdex/api/src/services/request";
 
 const useStyles = makeStyles()((theme) => ({
     dialogPaper: {
