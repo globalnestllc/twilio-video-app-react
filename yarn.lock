@@ -16563,18 +16563,18 @@ __metadata:
     "@eventdex/api": 0.1.199
     "@eventdex/assets": 0.1.61
     "@eventdex/auth": 0.1.320
-    "@eventdex/bootstrap": 0.1.272
-    "@eventdex/builder": 0.1.18
+    "@eventdex/bootstrap": 0.1.273
+    "@eventdex/builder": 0.1.21
     "@eventdex/chat": 0.1.384
-    "@eventdex/common": 0.1.464
+    "@eventdex/common": 0.1.473
     "@eventdex/core": 0.1.404
     "@eventdex/event": 0.1.475
     "@eventdex/leads": 0.1.332
-    "@eventdex/lounge": 0.1.390
+    "@eventdex/lounge": 0.1.397
     "@eventdex/manageappt": 0.0.95
     "@eventdex/player": 0.1.298
-    "@eventdex/profile": 0.1.52
-    "@eventdex/schedule": 0.1.368
+    "@eventdex/profile": 0.1.59
+    "@eventdex/schedule": 0.1.372
     "@eventdex/utils": 0.1.261
     "@eventdex/video": 0.1.531
     "@eventdex/widgets": 0.0.251
