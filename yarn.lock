@@ -1855,7 +1855,7 @@ __metadata:
     react-phone-input-2: ^2.14.0
     react-rnd: ^10.2.1
     react-window: ^1.8.6
-    react-zoom-pan-pinch: ^1.6.1
+    react-zoom-pan-pinch: ^2.2.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
@@ -14455,14 +14455,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-zoom-pan-pinch@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "react-zoom-pan-pinch@npm:1.6.1"
+"react-zoom-pan-pinch@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-zoom-pan-pinch@npm:2.2.0"
   peerDependencies:
-    prop-types: ^15.5.4
-    react: ^15.0.0 || ^16.0.0
-    react-dom: ^15.0.0 || ^16.0.0
-  checksum: f28588c0fbc75f7e49d355a6c0890eefbe6dd04b42a2dff792963abbadaa9cfe782688fae06100f46b8995f70a74fed7070bf9cd4ee59858c6b2e3bf2770beba
+    react: "*"
+    react-dom: "*"
+  checksum: e5b3eb56eb734a926de79ecf97bcf3edfa82c8dab7b2eb11dd83872ebb1cbba19ba71e8f1a68b7318180aadf96c8c2c26cfb7465d81d1b18d429756a51574526
   languageName: node
   linkType: hard
 
@@ -16560,21 +16559,21 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/api": 0.1.199
+    "@eventdex/api": 0.1.207
     "@eventdex/assets": 0.1.61
     "@eventdex/auth": 0.1.320
-    "@eventdex/bootstrap": 0.1.274
-    "@eventdex/builder": 0.1.22
+    "@eventdex/bootstrap": 0.1.278
+    "@eventdex/builder": 0.1.23
     "@eventdex/chat": 0.1.384
-    "@eventdex/common": 0.1.474
+    "@eventdex/common": 0.1.478
     "@eventdex/core": 0.1.404
-    "@eventdex/event": 0.1.475
+    "@eventdex/event": 0.1.485
     "@eventdex/leads": 0.1.332
-    "@eventdex/lounge": 0.1.398
+    "@eventdex/lounge": 0.1.404
     "@eventdex/manageappt": 0.0.95
     "@eventdex/player": 0.1.298
-    "@eventdex/profile": 0.1.60
-    "@eventdex/schedule": 0.1.373
+    "@eventdex/profile": 0.1.63
+    "@eventdex/schedule": 0.1.375
     "@eventdex/utils": 0.1.261
     "@eventdex/video": 0.1.531
     "@eventdex/widgets": 0.0.251
