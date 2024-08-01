@@ -1892,13 +1892,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.656":
-  version: 0.1.656
-  resolution: "@eventdex/common@npm:0.1.656"
+"@eventdex/common@npm:0.1.657":
+  version: 0.1.657
+  resolution: "@eventdex/common@npm:0.1.657"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
-    "@eventdex/components": 0.1.54
+    "@eventdex/components": 0.1.55
     fontname: ^1.0.1
     react-color: ^2.19.3
     react-coverflow: ^0.2.20
@@ -1912,24 +1912,24 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 79af398c5c158fa07f7f2633258f7fec132c4d44f94933baeb74311c4140fc5fd90425611cdd7c322e8ec47a3fceefe0b6091fc28b4a10156805ba6b3ac52a21
+  checksum: 136747b101295bfb2674c7e63ec4542f0b511f8a0134e5fbd0af55ccda42ee0da43cdc1a53de69a993b325e126a22bda1aa47e42bc20fa3f648c91fb8f4c7f61
   languageName: node
   linkType: hard
 
-"@eventdex/components@npm:0.1.54":
-  version: 0.1.54
-  resolution: "@eventdex/components@npm:0.1.54"
+"@eventdex/components@npm:0.1.55":
+  version: 0.1.55
+  resolution: "@eventdex/components@npm:0.1.55"
   dependencies:
     "@mui/icons-material": ^5.16.6
     "@mui/material": ^5.16.6
     "@mui/styles": ^5.16.6
-  checksum: 72ca8060ae1089fc0048ab92c141ae6ea2bb6c37984f272d020bef9cafb0dae6036909ea024c4ddbdb3f16b3f1868054c16199ed80f1208ef9c5672bf05808bd
+  checksum: 8cbb0028a897dd97f92af87478a93cc1dc33a68a482a1fa244d514d8112a11eb6e704c73fba670652a33b9f20738f481ebe734606fffc25d108e6ce7619697d3
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.527":
-  version: 0.1.527
-  resolution: "@eventdex/core@npm:0.1.527"
+"@eventdex/core@npm:0.1.528":
+  version: 0.1.528
+  resolution: "@eventdex/core@npm:0.1.528"
   dependencies:
     "@reduxjs/toolkit": ^1.9.7
     "@sentry/react": ^7.14.1
@@ -1944,21 +1944,21 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: a0447dd76d5478762798de0bc64e01ed3d30ae01f024f906184106f6b45614791a4785e694eeed615910d91039f968a7fa4d98b4bb8f5377b285da33b563a73f
+  checksum: ceb3b0d2c8f91f52bb56f8321ff9e11ed9ee5b97f4ee3677e20f91684261354f704bcd2ff5d79a450a8113f4d88cf35754c3c2c4bc442eaa26c6a3ba080d3043
   languageName: node
   linkType: hard
 
-"@eventdex/event@npm:0.1.648":
-  version: 0.1.648
-  resolution: "@eventdex/event@npm:0.1.648"
+"@eventdex/event@npm:0.1.649":
+  version: 0.1.649
+  resolution: "@eventdex/event@npm:0.1.649"
   dependencies:
-    "@eventdex/components": 0.1.54
+    "@eventdex/components": 0.1.55
     react-joyride: ^2.5.3
     react-perfect-scrollbar: ^1.5.8
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 1c3661462d64a3295bd2d14a47fc7d66fcd633f3916674765c0882c3c239e2fe045cca637c102220c3367c755d87966a1bedd9b81993ee1ed69f69b0265bd2d1
+  checksum: afcd286b65eb94002aef9ec2efd91f9206590793d56efa274ccb0c38a20b55f0f8be51328325bfc104df465f03ce4bd66fa9f90ce7d58a1d938b768f2aa27ef0
   languageName: node
   linkType: hard
 
@@ -2004,9 +2004,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/profile@npm:0.1.238":
-  version: 0.1.238
-  resolution: "@eventdex/profile@npm:0.1.238"
+"@eventdex/profile@npm:0.1.239":
+  version: 0.1.239
+  resolution: "@eventdex/profile@npm:0.1.239"
   dependencies:
     "@mui/x-date-pickers": ^5.0.20
     "@tinymce/tinymce-react": ^4.2.0
@@ -2019,7 +2019,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6fc80c8fc9c3ad6a2cc9ea97e50ab5984f48497998b0dc6218cfd2e87222bcecf04d84a8588a4943f5f0e11f94822926a52c6ce0b7c80b9bef034ce53639fc08
+  checksum: 15519620a2791a7f7ce9fc22818b28f67af336b1cd1eb192d4f9918a6306f73187f308d04bbbe21021cde1e119dd19d0f385f24235a9a9b81feb5e95efbaf00f
   languageName: node
   linkType: hard
 
@@ -2033,12 +2033,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/utils@npm:0.1.336":
-  version: 0.1.336
-  resolution: "@eventdex/utils@npm:0.1.336"
+"@eventdex/utils@npm:0.1.337":
+  version: 0.1.337
+  resolution: "@eventdex/utils@npm:0.1.337"
   dependencies:
     platform-detect: ^3.0.1
-  checksum: a0c8f3b73be7389ae81a89f3a8b5631165dad41d52da671a392f20fbef1f36b7c6d6cb354ca305bc570519beb429769689ff80cc140f798cceb030ca6d18e791
+  checksum: 406602e11003f38299e822148d7c7e6b3a51cd69f7d5b590fe2ed9d64b1ee418f6fd06b621c1e25a5ed845324fc986aa686dca59c74b13e132c810982f2b9aad
   languageName: node
   linkType: hard
 
@@ -17218,16 +17218,16 @@ __metadata:
     "@eventdex/bootstrap": 0.1.360
     "@eventdex/builder": 0.1.345
     "@eventdex/chat": 0.1.458
-    "@eventdex/common": 0.1.656
-    "@eventdex/core": 0.1.527
-    "@eventdex/event": 0.1.648
+    "@eventdex/common": 0.1.657
+    "@eventdex/core": 0.1.528
+    "@eventdex/event": 0.1.649
     "@eventdex/leads": 0.1.390
     "@eventdex/lounge": 0.1.677
     "@eventdex/manageappt": 0.0.152
     "@eventdex/player": 0.1.368
-    "@eventdex/profile": 0.1.238
+    "@eventdex/profile": 0.1.239
     "@eventdex/schedule": 0.1.467
-    "@eventdex/utils": 0.1.336
+    "@eventdex/utils": 0.1.337
     "@eventdex/video": 0.1.611
     "@eventdex/widgets": 0.0.314
     "@opentok/client": ^2.19.0
