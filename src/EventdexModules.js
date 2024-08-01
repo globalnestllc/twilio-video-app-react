@@ -7,7 +7,7 @@ import LoungeModule from "@eventdex/lounge";
 // import EventModule from '@eventdex/event';
 import ChatModule from "@eventdex/chat";
 import CommonModule from "@eventdex/common";
-import {twilioHelper} from "@eventdex/core/src/services";
+import twilioHelper from "@eventdex/twilio/src/Twilio/TwilioHelper";
 
 // registerModule(PlayerModule);
 // registerModule(ScheduleModule);

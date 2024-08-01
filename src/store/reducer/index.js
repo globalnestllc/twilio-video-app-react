@@ -61,11 +61,11 @@ const initialState = {
 };
 console.log("Came here");
 
-const reducer = createReducer(initialState, {
-    [Actions.startCall]: (state, action) => {
+const reducer = createReducer(initialState, (builder) => {
+    builder.addCase(Actions.startCall, (state, action) => {
         state.isConneted = true;
-    },
-    [Actions.updateLayoutClass]: (state, action) => {
+    });
+    builder.addCase(Actions.updateLayoutClass, (state, action) => {
         let layout = state.broadcast.layout;
         layout = layout.filter((data) => {
             if (data.layoutClassList.indexOf("focus") > -1) {
@@ -75,8 +75,8 @@ const reducer = createReducer(initialState, {
                 return data.layoutClassList.push("focus");
             }
         });
-    },
-    [Actions.updateLayoutOption]: (state, action) => {},
+    });
+    builder.addCase(Actions.updateLayoutOption, (state, action) => {});
 });
 
 export default reducer;

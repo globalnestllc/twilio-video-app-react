@@ -10,7 +10,7 @@ import withStyles from "@mui/styles/withStyles";
 import {useWindowMessageCallback} from "./useWindowMessageCallback";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {urlFor_PublicApi} from "@eventdex/api/src/services/apiUrl";
-import {usePrevious} from "@eventdex/core/context";
+import {usePrevious} from "@eventdex/utils/src/hooks/usePrevious";
 import {useSelector} from "react-redux";
 import {getNoAuth} from "@eventdex/api/src/services/request";
 
