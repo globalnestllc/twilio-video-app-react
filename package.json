@@ -6,7 +6,7 @@
     "dependencies": {
         "@babel/plugin-proposal-decorators": "^7.12.1",
         "@eventdex/api": "0.1.367",
-        "@eventdex/assets": "0.1.149",
+        "@eventdex/assets": "0.1.150",
         "@eventdex/auth": "0.1.440",
         "@eventdex/bootstrap": "0.1.380",
         "@eventdex/builder": "0.1.406",
@@ -23,7 +23,7 @@
         "@eventdex/schedule": "0.1.495",
         "@eventdex/twilio": "0.1.17",
         "@eventdex/utils": "0.1.358",
-        "@eventdex/video": "0.1.628",
+        "@eventdex/video": "0.1.629",
         "@eventdex/widgets": "0.0.343",
         "@opentok/client": "^2.19.0",
         "@primer/octicons-react": "^9.4.0",

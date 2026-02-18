@@ -1744,10 +1744,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/assets@npm:0.1.149":
-  version: 0.1.149
-  resolution: "@eventdex/assets@npm:0.1.149"
-  checksum: 4e2eb6601e7c7e373da1ef4730d5d4c5422429fa52e079012b4ee1af745d8584be5f188deed038ea625f553228385485db1e0c3263f85baec5a55161fd8d6da9
+"@eventdex/assets@npm:0.1.150":
+  version: 0.1.150
+  resolution: "@eventdex/assets@npm:0.1.150"
+  checksum: 3fd882101607e08f363d053afcf77ea0b326deec34d557dcbf450c0e18c51a70c505b98acaa84e2daad0a52afe52e01ec84d8834f6def9c2e0ec9373834a4fbb
   languageName: node
   linkType: hard
 
@@ -1979,9 +1979,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.628":
-  version: 0.1.628
-  resolution: "@eventdex/video@npm:0.1.628"
+"@eventdex/video@npm:0.1.629":
+  version: 0.1.629
+  resolution: "@eventdex/video@npm:0.1.629"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.10.0
@@ -1993,7 +1993,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: df47d763362b1119c867e65f5a1014de15b2e705336cf0a9a4e12f6bfd9e0d7665789fb653f38d458cc7c86d5c4d99c04f9ea03510782e94ebc0c1b2d0eb5bbe
+  checksum: 47a27fd13590e4e714431a23f84eaef9f320befca31f9badd81c6dadbcab7a388c64e873e5acaf16e44bb812d4ec90f5731aab215036316b53891f1fedae847a
   languageName: node
   linkType: hard
 
@@ -6138,9 +6138,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001297, caniuse-lite@npm:^1.0.30001299":
-  version: 1.0.30001418
-  resolution: "caniuse-lite@npm:1.0.30001418"
-  checksum: 03380a9ba50b1abd0081e76bfdf331bfb2c28f2277ce5eead5b83960c4db9f1fbbd84a536efa6f8f1fe2c038bc01129d6c42d17f8323fe99a016a5da3829c4bc
+  version: 1.0.30001767
+  resolution: "caniuse-lite@npm:1.0.30001767"
+  checksum: c55acc7e05b0645b02988421649fab155fd6c1cfaa9b4289d8b597261d096209b7b7483891399143cc10eb46f86b6ec419396de049c05f7c9f8f1992c648be31
   languageName: node
   linkType: hard
 
@@ -17387,7 +17387,7 @@ __metadata:
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/api": 0.1.367
-    "@eventdex/assets": 0.1.149
+    "@eventdex/assets": 0.1.150
     "@eventdex/auth": 0.1.440
     "@eventdex/bootstrap": 0.1.380
     "@eventdex/builder": 0.1.406
@@ -17404,7 +17404,7 @@ __metadata:
     "@eventdex/schedule": 0.1.495
     "@eventdex/twilio": 0.1.17
     "@eventdex/utils": 0.1.358
-    "@eventdex/video": 0.1.628
+    "@eventdex/video": 0.1.629
     "@eventdex/widgets": 0.0.343
     "@opentok/client": ^2.19.0
     "@primer/octicons-react": ^9.4.0
