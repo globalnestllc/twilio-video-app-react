@@ -23,7 +23,7 @@
         "@eventdex/schedule": "0.1.495",
         "@eventdex/twilio": "0.1.17",
         "@eventdex/utils": "0.1.358",
-        "@eventdex/video": "0.1.629",
+        "@eventdex/video": "0.1.630",
         "@eventdex/widgets": "0.0.343",
         "@opentok/client": "^2.19.0",
         "@primer/octicons-react": "^9.4.0",

@@ -1979,9 +1979,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.629":
-  version: 0.1.629
-  resolution: "@eventdex/video@npm:0.1.629"
+"@eventdex/video@npm:0.1.630":
+  version: 0.1.630
+  resolution: "@eventdex/video@npm:0.1.630"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.10.0
@@ -1993,7 +1993,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 47a27fd13590e4e714431a23f84eaef9f320befca31f9badd81c6dadbcab7a388c64e873e5acaf16e44bb812d4ec90f5731aab215036316b53891f1fedae847a
+  checksum: 5d87ec5dab90e10ea8a9c1a0bac33fc050e7b717dcd769eb3b43e1207960b578bb25f6ad062945d2b8f6796ae78fce01b803fc9bc51d9b9146d724c99f4e4a4b
   languageName: node
   linkType: hard
 
@@ -17404,7 +17404,7 @@ __metadata:
     "@eventdex/schedule": 0.1.495
     "@eventdex/twilio": 0.1.17
     "@eventdex/utils": 0.1.358
-    "@eventdex/video": 0.1.629
+    "@eventdex/video": 0.1.630
     "@eventdex/widgets": 0.0.343
     "@opentok/client": ^2.19.0
     "@primer/octicons-react": ^9.4.0
