@@ -1751,13 +1751,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.444":
-  version: 0.1.444
-  resolution: "@eventdex/auth@npm:0.1.444"
+"@eventdex/auth@npm:0.1.445":
+  version: 0.1.445
+  resolution: "@eventdex/auth@npm:0.1.445"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4d5c47ed6068d5c961183cda99fa652635c93d851ea9d1a41ac93dc0c0f66b7dea9cae1e1e062f8b9508838463ae39bfbf11fdbe77662d32c7e62f91f75a2ebf
+  checksum: 4140f09a98960d17e2f74fde7c15c599174df0a4015eddd26fa09f51d7cafacd7354be96cdeb1fd56c41bbaa33a9adf01239a5e5b52c41c653526b6980f7c965
   languageName: node
   linkType: hard
 
@@ -1837,9 +1837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.586":
-  version: 0.1.586
-  resolution: "@eventdex/core@npm:0.1.586"
+"@eventdex/core@npm:0.1.587":
+  version: 0.1.587
+  resolution: "@eventdex/core@npm:0.1.587"
   dependencies:
     "@mui/icons-material": ^5.10.6
     "@mui/lab": ^5.0.0-alpha.102
@@ -1863,7 +1863,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 09691dba4722705bea82b874af9c560a5e4ae4a3637ee8d9ab40328982e732f4aaab63bd13b4a0a66434ebe20c49481273cc8fba0ebd2af5c9302e6e984ecbc7
+  checksum: 9cc29e8257fb6c7851bb8ce141118da9beb897c4543dad057b9352a95942103724eeb3612ccb03af6e77631498e3475d8b0b7a1d959e8cd36dede327ad26330c
   languageName: node
   linkType: hard
 
@@ -17388,12 +17388,12 @@ __metadata:
     "@babel/plugin-proposal-decorators": ^7.12.1
     "@eventdex/api": 0.1.371
     "@eventdex/assets": 0.1.153
-    "@eventdex/auth": 0.1.444
+    "@eventdex/auth": 0.1.445
     "@eventdex/bootstrap": 0.1.384
     "@eventdex/builder": 0.1.411
     "@eventdex/chat": 0.1.488
     "@eventdex/common": 0.1.696
-    "@eventdex/core": 0.1.586
+    "@eventdex/core": 0.1.587
     "@eventdex/event": 0.1.689
     "@eventdex/leads": 0.1.409
     "@eventdex/lounge": 0.1.722
