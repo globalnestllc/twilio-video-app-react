@@ -1734,36 +1734,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/api@npm:0.1.371":
-  version: 0.1.371
-  resolution: "@eventdex/api@npm:0.1.371"
+"@eventdex/api@npm:0.1.372":
+  version: 0.1.372
+  resolution: "@eventdex/api@npm:0.1.372"
   peerDependencies:
     "@tanstack/react-query": ^4.41.0
     axios: ^0.21.4
-  checksum: 9e424020f43734c9a94672cbad65bab70973f668383a1d10e125a83e55e8874741ceb3b0ab0d16aa1cc6c592ccb1503fcbd8eeb59bcd2073c17146ed1f110b04
+  checksum: 64123c37a617a555913fc45ccc7aa4901e313f4a7ffc96c24a50b95b5f9e00231fd96ea43cfb531d175272613dc7ea9f1f628f19f74de15c5ef547809267cf47
   languageName: node
   linkType: hard
 
-"@eventdex/assets@npm:0.1.153":
-  version: 0.1.153
-  resolution: "@eventdex/assets@npm:0.1.153"
-  checksum: 5a6af68c331e290ffd32d0f66ca4d1fa4bed73735b8d6ca22346ab1d740f10a5dce5c2075ded912a826a5821521f53b0dbad37997e5d9ab4917556a97fe2481f
+"@eventdex/assets@npm:0.1.154":
+  version: 0.1.154
+  resolution: "@eventdex/assets@npm:0.1.154"
+  checksum: 7d3682c1db0f830489631eefe207a8df8e59f52e8f2f74ddd4813553dab00d38df51338a71680d9cb061fbaeeab5ded27fcf79e695dfb51d3d5f76d50853dca5
   languageName: node
   linkType: hard
 
-"@eventdex/auth@npm:0.1.445":
-  version: 0.1.445
-  resolution: "@eventdex/auth@npm:0.1.445"
+"@eventdex/auth@npm:0.1.446":
+  version: 0.1.446
+  resolution: "@eventdex/auth@npm:0.1.446"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4140f09a98960d17e2f74fde7c15c599174df0a4015eddd26fa09f51d7cafacd7354be96cdeb1fd56c41bbaa33a9adf01239a5e5b52c41c653526b6980f7c965
+  checksum: 724fd7c4d3619fa89cec05c4fcbb3b9e93496cafb65c94a5b0c1467411d957a71730c81c33fe1675b0ce2ee9816ec69f1467bbc04c8be200c6c0c589fda35395
   languageName: node
   linkType: hard
 
-"@eventdex/bootstrap@npm:0.1.384":
-  version: 0.1.384
-  resolution: "@eventdex/bootstrap@npm:0.1.384"
+"@eventdex/bootstrap@npm:0.1.385":
+  version: 0.1.385
+  resolution: "@eventdex/bootstrap@npm:0.1.385"
   dependencies:
     babel-plugin-direct-import: ^1.0.0
     circular-dependency-plugin: ^5.2.0
@@ -1774,13 +1774,13 @@ __metadata:
     semver: ^7.5.0
     speed-measure-webpack-plugin: ^1.5.0
     webpack-bundle-analyzer: ^4.5.0
-  checksum: b1f2fa693b1eab70773a04487a05c8df68490d016b67d0f03e17a342ad604ea57eddd2210e40da69790f9d69aa497117e93d494721856edfd9985e20333552db
+  checksum: 30bc0aa257f0a23d2283379ba6a77e65ef12011a378829043d3ef6e462824afc1e207708108db8a0ece487a7cada8936c95443229a9d45f4d312dbecd5f73611
   languageName: node
   linkType: hard
 
-"@eventdex/builder@npm:0.1.411":
-  version: 0.1.411
-  resolution: "@eventdex/builder@npm:0.1.411"
+"@eventdex/builder@npm:0.1.412":
+  version: 0.1.412
+  resolution: "@eventdex/builder@npm:0.1.412"
   dependencies:
     changedpi: ^1.0.4
     fabric: ^5.3.0
@@ -1793,26 +1793,26 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 225e69af452d95cc3fcd00185ac5aee6a7f73d9b5f738a4182a7551c9bc8b03dc9f8751277f6c54dce250caa0f405be88da66be4744c73c9803c097bbdf00c46
+  checksum: 7004c7f22c9d601ede405234f81c20702300f8f92454a9ceca6f541cef2f794b9b65eb28b3be4a9bf59a8db9602afef198b4a99ef2b12a81937b9018dcd1407e
   languageName: node
   linkType: hard
 
-"@eventdex/chat@npm:0.1.488":
-  version: 0.1.488
-  resolution: "@eventdex/chat@npm:0.1.488"
+"@eventdex/chat@npm:0.1.489":
+  version: 0.1.489
+  resolution: "@eventdex/chat@npm:0.1.489"
   dependencies:
     react-linkify: ^1.0.0-alpha
-  checksum: 1fe474261c8f24acf2345608e213dbc0ece3db38f4ac635a58c90b3f568e699b7b5238193355d22cd1255e3bcd8038a0ba08b4d6bde50c0019c5606736a5f998
+  checksum: c6c70f396cfe4ad5b5a8a6534ffc755c1a45e686d97d917c8761fc8911211de2b403088ee810da50e30978b7f51e15e1f8f92d99b3c7934b770bb602113f7510
   languageName: node
   linkType: hard
 
-"@eventdex/common@npm:0.1.696":
-  version: 0.1.696
-  resolution: "@eventdex/common@npm:0.1.696"
+"@eventdex/common@npm:0.1.697":
+  version: 0.1.697
+  resolution: "@eventdex/common@npm:0.1.697"
   dependencies:
     "@emotion/react": ^11.1.4
     "@emotion/styled": ^11.6.0
-    "@eventdex/components": 0.1.105
+    "@eventdex/components": 0.1.106
     fontname: ^1.0.1
     react-color: ^2.19.3
     react-coverflow: ^0.2.20
@@ -1826,20 +1826,20 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 700c4eba830dee25b64a2c656f8d12115ac84942c8aebeb8e83e90c8bd0cb0c1be14fb394e50878906367eff1e8678d2d623411e1cb61045ea66548360f345e0
+  checksum: 60a385721f5ad37fd936ac57abf7a8268b42437f47227469c5cfcefd0b7c2751b1996dec18188ad69eb2c557c0a6e17bb2eb2775e0e963d419360ef8387b8eb7
   languageName: node
   linkType: hard
 
-"@eventdex/components@npm:0.1.105":
-  version: 0.1.105
-  resolution: "@eventdex/components@npm:0.1.105"
-  checksum: 56a36a82dacc54df30fa9db04c250b1b0af42b9f56a44151e82d598f0c830708fda34336315ee5caac8a5263f484fc8fa08d3d322e7121da1735d2c9a01e3892
+"@eventdex/components@npm:0.1.106":
+  version: 0.1.106
+  resolution: "@eventdex/components@npm:0.1.106"
+  checksum: 2d0c6f4beea3f9ab9d3bf9a3195d01ecac9eace095cc20d13accbee45aa13cf7fa82f5662fa205d52f99cccd262f6351ddf4f235596e3efbf34eb247f77fc672
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.587":
-  version: 0.1.587
-  resolution: "@eventdex/core@npm:0.1.587"
+"@eventdex/core@npm:0.1.588":
+  version: 0.1.588
+  resolution: "@eventdex/core@npm:0.1.588"
   dependencies:
     "@mui/icons-material": ^5.10.6
     "@mui/lab": ^5.0.0-alpha.102
@@ -1863,70 +1863,70 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 9cc29e8257fb6c7851bb8ce141118da9beb897c4543dad057b9352a95942103724eeb3612ccb03af6e77631498e3475d8b0b7a1d959e8cd36dede327ad26330c
+  checksum: 267c27924224d9179f0ae23a97476544d8a74fdbe5f26b74aa947fb4df28bc5725732e721c87535cd1f60e606a5ea8781a25fefe88c680ceaf2905d5ab440164
   languageName: node
   linkType: hard
 
-"@eventdex/event@npm:0.1.689":
-  version: 0.1.689
-  resolution: "@eventdex/event@npm:0.1.689"
+"@eventdex/event@npm:0.1.690":
+  version: 0.1.690
+  resolution: "@eventdex/event@npm:0.1.690"
   dependencies:
-    "@eventdex/components": 0.1.105
-    "@eventdex/salesforce": 0.1.35
+    "@eventdex/components": 0.1.106
+    "@eventdex/salesforce": 0.1.36
     react-joyride: ^2.5.3
     react-perfect-scrollbar: ^1.5.8
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6e0a40fc7daab4d9ee6d6ee7b30b543395364df4e56cbe9f2129da713441f53697d064f9b62cfd3a275e9c2dd25647f74b1515b39ced6a9bf2814e6e3c1ef4f2
+  checksum: 12500c672d60a98e6e551d79950d17c154074b54ca686faa7687f1e5887ed8090ac3f3b3a9ed011b62e2cdf2bf3fe1a0fb3477206c1c99ab919b64cecc00dacf
   languageName: node
   linkType: hard
 
-"@eventdex/leads@npm:0.1.409":
-  version: 0.1.409
-  resolution: "@eventdex/leads@npm:0.1.409"
+"@eventdex/leads@npm:0.1.410":
+  version: 0.1.410
+  resolution: "@eventdex/leads@npm:0.1.410"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 8797f21d59dc4c5f3ef21a985eaa86cb90adb3b962c910683b1d88b18ca6b071dd1cf16ae0173723e565a718d4d586377e50ece454fba469288d5f971325066c
+  checksum: a99e1cea3d6e73f0b9f251d25ffa8e4e7e33573e0c44a864bacbe4e1bf499d455f216f32df5ca88a823bdd22688fb742a2989ed6c562a960075a8fda2557e995
   languageName: node
   linkType: hard
 
-"@eventdex/lounge@npm:0.1.722":
-  version: 0.1.722
-  resolution: "@eventdex/lounge@npm:0.1.722"
+"@eventdex/lounge@npm:0.1.723":
+  version: 0.1.723
+  resolution: "@eventdex/lounge@npm:0.1.723"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 8a08e05e7080ecc4d386c94654eb2c85f386b7b19183a1e7210437f0a2d5cc797adde95c483420781da93f056a5a734e5e4e65fb95abe82c1399d3654a0824c8
+  checksum: 0d993001844e7ddcdf450200c9dd60c4e8566471bd36e4ab3503d0381dcd3ec6a0f049b3785f97550d93274dc3b8009038a34794b010b072a43cfb26796f2d40
   languageName: node
   linkType: hard
 
-"@eventdex/manageappt@npm:0.0.180":
-  version: 0.0.180
-  resolution: "@eventdex/manageappt@npm:0.0.180"
+"@eventdex/manageappt@npm:0.0.181":
+  version: 0.0.181
+  resolution: "@eventdex/manageappt@npm:0.0.181"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 50e08c34d9469f07c4d1ca0cb385df96032af10a2776c6b893da84820228b6994c8275ac5c312e84a305342109a4b36a9e06953525a0a2b2ae133010f485401b
+  checksum: 316a9c7134ee5f1beb2b26be7c10ff22ea2099ec011993b8fdb1a35be5ae927de4a4bbd47f676163db7439e07f794669776d63d4754cb10c0c15f8fe351b2889
   languageName: node
   linkType: hard
 
-"@eventdex/player@npm:0.1.386":
-  version: 0.1.386
-  resolution: "@eventdex/player@npm:0.1.386"
+"@eventdex/player@npm:0.1.387":
+  version: 0.1.387
+  resolution: "@eventdex/player@npm:0.1.387"
   dependencies:
     react-player: ^2.5.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 432518794bbc0c1f06150e7264d595915de2d6cce8dcbb9534a3ce520a45714ed1588f0bbdfbe1912f4b1108b1b7da2d174be2b521e1c6c468147e68de00c613
+  checksum: 1c1b5b58cb9457590ed79e267f5108f7bbcf430be9d5ab604c72cc67bd93d976b2511e299aada415925199c12b03f00b562ebc019f56437269913f6e5b195e7c
   languageName: node
   linkType: hard
 
-"@eventdex/profile@npm:0.1.295":
-  version: 0.1.295
-  resolution: "@eventdex/profile@npm:0.1.295"
+"@eventdex/profile@npm:0.1.296":
+  version: 0.1.296
+  resolution: "@eventdex/profile@npm:0.1.296"
   dependencies:
     "@tinymce/tinymce-react": ^4.2.0
     draft-js: ^0.11.7
@@ -1939,49 +1939,49 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 4d325422487d177e3ef0edf8166586af226529ed0407854634197e09f9bafb9e11855b8ec588e18c3ba4ecebc01b1cb86a893195af5f4c8d8b0d1767606a601e
+  checksum: 700f7257dbd84742cab4c2a08f51d4739d7d3b4a3d4ffdbdb1065802885d53a779a5c8e601f2ce3ee5b881decea9d40c6b5b65965c7ae72c1c5f7f6b01e443e6
   languageName: node
   linkType: hard
 
-"@eventdex/salesforce@npm:0.1.35":
-  version: 0.1.35
-  resolution: "@eventdex/salesforce@npm:0.1.35"
-  checksum: ab74c29759b93d79359cad9041a389a2cfba405293497827eb5988471d6d57848fc87eae3b4c58865ca705f6cdae627cc964faed888ef78554246d6e62ec7216
+"@eventdex/salesforce@npm:0.1.36":
+  version: 0.1.36
+  resolution: "@eventdex/salesforce@npm:0.1.36"
+  checksum: c064a4011ec8ced04d3efded517c64c068ffdbb867b9098faf82e720e0710ea836b22a74c644eedf4187546d4598cdb46060c0366b2570510cbba99a384021fb
   languageName: node
   linkType: hard
 
-"@eventdex/schedule@npm:0.1.500":
-  version: 0.1.500
-  resolution: "@eventdex/schedule@npm:0.1.500"
+"@eventdex/schedule@npm:0.1.501":
+  version: 0.1.501
+  resolution: "@eventdex/schedule@npm:0.1.501"
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: a1163accbb8a5ede135bcdbbe4103858dcb9ff3f294242c8500627f84382cfebeef2232ea6f04aaa4e23cce216dfc194f969db0d6d0a631b22fd7777441e28df
+  checksum: 3ec8b8e746a7e1c9a41a856b40191e1710f26cb330d8abe11ade50aad69438148c8bbf5323397677d3e468a33678be37de0179368bc06cee1073fbe74b686820
   languageName: node
   linkType: hard
 
-"@eventdex/twilio@npm:0.1.20":
-  version: 0.1.20
-  resolution: "@eventdex/twilio@npm:0.1.20"
+"@eventdex/twilio@npm:0.1.21":
+  version: 0.1.21
+  resolution: "@eventdex/twilio@npm:0.1.21"
   dependencies:
     "@twilio/conversations": 2.0.1
     twilio-sync: ^3.0.6
-  checksum: 9ba8de1dc14987cf7e3e137a22f6713e5ffc67a8747ef046aa3c50100e29b89a74a22452ebe79b89bc12a7f85187c739c3ec45218ba8670efaa298515a8c4d9b
+  checksum: cb4207b239326293ecee17cb12eb4a5da4e9070fee9ce0dca1cd968f94bdcad15b82c16901d497af0051ac60067ad7a95213cde02c095928086666c699273c9e
   languageName: node
   linkType: hard
 
-"@eventdex/utils@npm:0.1.361":
-  version: 0.1.361
-  resolution: "@eventdex/utils@npm:0.1.361"
+"@eventdex/utils@npm:0.1.362":
+  version: 0.1.362
+  resolution: "@eventdex/utils@npm:0.1.362"
   dependencies:
     platform-detect: ^3.0.1
-  checksum: 5526b43c38a5761884c04d81ce24ef8ff24af6e822fecabf7ef952673f997132189009c8d65a6ce4f10a75d9631bc220573d3d822b48a09a4cc55741f6370882
+  checksum: 8895509eac389653d2ba2ffdd994a796988e5d478e9bad665f511c458a718fcea3ada3b1ae470d27894790a87ab5b15a0fcd44ba78364d478b0ae4507ee9c448
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.632":
-  version: 0.1.632
-  resolution: "@eventdex/video@npm:0.1.632"
+"@eventdex/video@npm:0.1.633":
+  version: 0.1.633
+  resolution: "@eventdex/video@npm:0.1.633"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.10.0
@@ -1993,14 +1993,14 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 79df9d31571bc13d345038d02497f7a2f650e25bd5828d91379549c89b2b6c628201823f9c404075fa5628430a24ecbae71f4f12e3c4426d0f3d54948632d21a
+  checksum: 2abcaf001e896855fa790137a3bd8d2a7e99f497397a69d257d28bd348bb50f086ae4cf680b1c0180d23bfbb175742158c7c22528178bb172dc6c87dcd2ccde7
   languageName: node
   linkType: hard
 
-"@eventdex/widgets@npm:0.0.346":
-  version: 0.0.346
-  resolution: "@eventdex/widgets@npm:0.0.346"
-  checksum: 7edc36e788ac8d2dc33e62247c47ccd51c4511efc14e89911b0318bb152aec5bc6c5fa83835d7bd6c49866da10de690ea35295d9e5a4ca9cf9879b0cc14cc216
+"@eventdex/widgets@npm:0.0.347":
+  version: 0.0.347
+  resolution: "@eventdex/widgets@npm:0.0.347"
+  checksum: f87cb9c99ee3cbabfe7b2f267e7c1476fe015ff9a099e4e6b95e909e5e7122c02d8d7a831ab018d6cb94be0fdb8263c277253544b2ead5ac73375adb4093b4fd
   languageName: node
   linkType: hard
 
@@ -17386,26 +17386,26 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/api": 0.1.371
-    "@eventdex/assets": 0.1.153
-    "@eventdex/auth": 0.1.445
-    "@eventdex/bootstrap": 0.1.384
-    "@eventdex/builder": 0.1.411
-    "@eventdex/chat": 0.1.488
-    "@eventdex/common": 0.1.696
-    "@eventdex/core": 0.1.587
-    "@eventdex/event": 0.1.689
-    "@eventdex/leads": 0.1.409
-    "@eventdex/lounge": 0.1.722
-    "@eventdex/manageappt": 0.0.180
-    "@eventdex/player": 0.1.386
-    "@eventdex/profile": 0.1.295
-    "@eventdex/salesforce": 0.1.35
-    "@eventdex/schedule": 0.1.500
-    "@eventdex/twilio": 0.1.20
-    "@eventdex/utils": 0.1.361
-    "@eventdex/video": 0.1.632
-    "@eventdex/widgets": 0.0.346
+    "@eventdex/api": 0.1.372
+    "@eventdex/assets": 0.1.154
+    "@eventdex/auth": 0.1.446
+    "@eventdex/bootstrap": 0.1.385
+    "@eventdex/builder": 0.1.412
+    "@eventdex/chat": 0.1.489
+    "@eventdex/common": 0.1.697
+    "@eventdex/core": 0.1.588
+    "@eventdex/event": 0.1.690
+    "@eventdex/leads": 0.1.410
+    "@eventdex/lounge": 0.1.723
+    "@eventdex/manageappt": 0.0.181
+    "@eventdex/player": 0.1.387
+    "@eventdex/profile": 0.1.296
+    "@eventdex/salesforce": 0.1.36
+    "@eventdex/schedule": 0.1.501
+    "@eventdex/twilio": 0.1.21
+    "@eventdex/utils": 0.1.362
+    "@eventdex/video": 0.1.633
+    "@eventdex/widgets": 0.0.347
     "@opentok/client": ^2.19.0
     "@primer/octicons-react": ^9.4.0
     "@testing-library/jest-dom": ^4.2.4
