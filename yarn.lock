@@ -1734,13 +1734,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/api@npm:0.1.372":
-  version: 0.1.372
-  resolution: "@eventdex/api@npm:0.1.372"
+"@eventdex/api@npm:0.1.373":
+  version: 0.1.373
+  resolution: "@eventdex/api@npm:0.1.373"
   peerDependencies:
     "@tanstack/react-query": ^4.41.0
     axios: ^0.21.4
-  checksum: 64123c37a617a555913fc45ccc7aa4901e313f4a7ffc96c24a50b95b5f9e00231fd96ea43cfb531d175272613dc7ea9f1f628f19f74de15c5ef547809267cf47
+  checksum: c312bf12a91f15ee0dccc9323cb9b458deac13ac17fad4bbedc5356249b1c46e03fbb89b8bd7ee3ede9814b81dffdb18576821b3a601a4d14a360cee23011ed3
   languageName: node
   linkType: hard
 
@@ -1837,9 +1837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.588":
-  version: 0.1.588
-  resolution: "@eventdex/core@npm:0.1.588"
+"@eventdex/core@npm:0.1.589":
+  version: 0.1.589
+  resolution: "@eventdex/core@npm:0.1.589"
   dependencies:
     "@mui/icons-material": ^5.10.6
     "@mui/lab": ^5.0.0-alpha.102
@@ -1863,7 +1863,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 267c27924224d9179f0ae23a97476544d8a74fdbe5f26b74aa947fb4df28bc5725732e721c87535cd1f60e606a5ea8781a25fefe88c680ceaf2905d5ab440164
+  checksum: 6217418db0f6fc1497d82938e25511b5a9e3ffa90537967e459688f3c4dda35c6b228a1851228a4855e52a8a961bf99537ca7d0b1c00712b14974794ee4ac97a
   languageName: node
   linkType: hard
 
@@ -17386,14 +17386,14 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/api": 0.1.372
+    "@eventdex/api": 0.1.373
     "@eventdex/assets": 0.1.154
     "@eventdex/auth": 0.1.446
     "@eventdex/bootstrap": 0.1.385
     "@eventdex/builder": 0.1.412
     "@eventdex/chat": 0.1.489
     "@eventdex/common": 0.1.697
-    "@eventdex/core": 0.1.588
+    "@eventdex/core": 0.1.589
     "@eventdex/event": 0.1.690
     "@eventdex/leads": 0.1.410
     "@eventdex/lounge": 0.1.723
