@@ -1734,13 +1734,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/api@npm:0.1.374":
-  version: 0.1.374
-  resolution: "@eventdex/api@npm:0.1.374"
+"@eventdex/api@npm:0.1.375":
+  version: 0.1.375
+  resolution: "@eventdex/api@npm:0.1.375"
   peerDependencies:
     "@tanstack/react-query": ^4.41.0
     axios: ^0.21.4
-  checksum: b205ab0bb407093c2b0845c4bd386c16b2a00c66bbaa628e06b5ad48d22317c2566917b41142566068138631b1581271bd2c5dbb143d9d6f066dfb6ec59e87d3
+  checksum: 1761ca8393375b0654e8cdaf7ceb586b4a9df46a15030a161ee312c1c8f6cc5c90fe7afbd96ee2290e4984da1f8215089c32c914c6b01202dc9dd45e5690392a
   languageName: node
   linkType: hard
 
@@ -17386,7 +17386,7 @@ __metadata:
   resolution: "twilio-video-app-react@workspace:."
   dependencies:
     "@babel/plugin-proposal-decorators": ^7.12.1
-    "@eventdex/api": 0.1.374
+    "@eventdex/api": 0.1.375
     "@eventdex/assets": 0.1.154
     "@eventdex/auth": 0.1.446
     "@eventdex/bootstrap": 0.1.385
