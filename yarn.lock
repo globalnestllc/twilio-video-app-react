@@ -1797,12 +1797,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/chat@npm:0.1.489":
-  version: 0.1.489
-  resolution: "@eventdex/chat@npm:0.1.489"
+"@eventdex/chat@npm:0.1.490":
+  version: 0.1.490
+  resolution: "@eventdex/chat@npm:0.1.490"
   dependencies:
     react-linkify: ^1.0.0-alpha
-  checksum: c6c70f396cfe4ad5b5a8a6534ffc755c1a45e686d97d917c8761fc8911211de2b403088ee810da50e30978b7f51e15e1f8f92d99b3c7934b770bb602113f7510
+  checksum: 829f73820e0afbdd4575f264251f3c75390fefdac8ac84af924313b9e138c2ef4590001e13495ec0ffd5b9071bdd004a76a19c6103e50d273ace995de95cc5cf
   languageName: node
   linkType: hard
 
@@ -1837,9 +1837,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/core@npm:0.1.589":
-  version: 0.1.589
-  resolution: "@eventdex/core@npm:0.1.589"
+"@eventdex/core@npm:0.1.595":
+  version: 0.1.595
+  resolution: "@eventdex/core@npm:0.1.595"
   dependencies:
     "@mui/icons-material": ^5.10.6
     "@mui/lab": ^5.0.0-alpha.102
@@ -1863,7 +1863,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 6217418db0f6fc1497d82938e25511b5a9e3ffa90537967e459688f3c4dda35c6b228a1851228a4855e52a8a961bf99537ca7d0b1c00712b14974794ee4ac97a
+  checksum: 089abed1bc65efba8fae6de34257fffdc26ceb7d3b2db8e9913caac63cb8b76ee43c7c3dbe8cefd68349e5c2267ea7c29fd32c19faa42d384ee6adb92c2451f2
   languageName: node
   linkType: hard
 
@@ -1960,13 +1960,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/twilio@npm:0.1.21":
-  version: 0.1.21
-  resolution: "@eventdex/twilio@npm:0.1.21"
+"@eventdex/twilio@npm:0.1.22":
+  version: 0.1.22
+  resolution: "@eventdex/twilio@npm:0.1.22"
   dependencies:
     "@twilio/conversations": 2.0.1
     twilio-sync: ^3.0.6
-  checksum: cb4207b239326293ecee17cb12eb4a5da4e9070fee9ce0dca1cd968f94bdcad15b82c16901d497af0051ac60067ad7a95213cde02c095928086666c699273c9e
+  checksum: bd84583fdb892b87a323c0d8c468f2b6125b33a2523be32007607645bf957350152882d1468a637afeee71fe9faeadc9bc99480003604805cf5d59aa853fd357
   languageName: node
   linkType: hard
 
@@ -1979,9 +1979,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eventdex/video@npm:0.1.633":
-  version: 0.1.633
-  resolution: "@eventdex/video@npm:0.1.633"
+"@eventdex/video@npm:0.1.638":
+  version: 0.1.638
+  resolution: "@eventdex/video@npm:0.1.638"
   dependencies:
     d3-timer: ^1.0.10
     firebase: ^9.10.0
@@ -1993,7 +1993,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 2abcaf001e896855fa790137a3bd8d2a7e99f497397a69d257d28bd348bb50f086ae4cf680b1c0180d23bfbb175742158c7c22528178bb172dc6c87dcd2ccde7
+  checksum: 193b61c03dce070a753ad2b3b2249914270daa4000a3d7268b3a05903dbd2c74d31d2cec7b1f470ebf609ab1ab23f658db1ecb06db5d1f99360c79fa520eb3f6
   languageName: node
   linkType: hard
 
@@ -17391,9 +17391,9 @@ __metadata:
     "@eventdex/auth": 0.1.446
     "@eventdex/bootstrap": 0.1.385
     "@eventdex/builder": 0.1.412
-    "@eventdex/chat": 0.1.489
+    "@eventdex/chat": 0.1.490
     "@eventdex/common": 0.1.697
-    "@eventdex/core": 0.1.589
+    "@eventdex/core": 0.1.595
     "@eventdex/event": 0.1.690
     "@eventdex/leads": 0.1.410
     "@eventdex/lounge": 0.1.723
@@ -17402,9 +17402,9 @@ __metadata:
     "@eventdex/profile": 0.1.296
     "@eventdex/salesforce": 0.1.36
     "@eventdex/schedule": 0.1.501
-    "@eventdex/twilio": 0.1.21
+    "@eventdex/twilio": 0.1.22
     "@eventdex/utils": 0.1.362
-    "@eventdex/video": 0.1.633
+    "@eventdex/video": 0.1.638
     "@eventdex/widgets": 0.0.347
     "@opentok/client": ^2.19.0
     "@primer/octicons-react": ^9.4.0
